@@ -16,6 +16,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,6 +29,7 @@ jobs:
       - run: npm run build
         env:
           BASE_URL: /zod-website/
+      - run: touch dist/.nojekyll
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
