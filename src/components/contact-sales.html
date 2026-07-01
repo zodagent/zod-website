@@ -1,0 +1,127 @@
+<main id="main">
+
+<!-- Hero -->
+<section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v1.5 max-w-2xl">
+      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Contact sales — bring Zod to your organization.</h1>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl">Learn more about Zod enterprise pricing, volume discounts, and how we can help your organization ship faster with AI-powered development tools.</p>
+    </div>
+    <div class="media-border-w-full relative overflow-hidden rounded-sm">
+      <div class="relative w-full h-full"><img alt="" src="/images/misc/wallpaper-1.jpg" data-wallpaper class="w-full object-cover max-sm:min-h-[200px] sm:min-h-[280px] md:min-h-[360px] rounded-sm" loading="lazy"/><div class="absolute inset-0 z-10" data-ui-example></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Value prop -->
+<section class="px-g2 py-[3rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 text-center">
+    <p class="text-lg md:text-xl leading-relaxed text-balance max-w-3xl mx-auto text-theme-text-sec">Trusted by over half of the Fortune 500. Zod helps engineering teams of every size accelerate development with AI agents that understand your codebase, your conventions, and your workflows.</p>
+  </div>
+</section>
+
+<!-- Form + info -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-g2">
+      <div class="lg:col-span-2">
+        <div class="max-w-prose">
+          <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Why teams choose Zod</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-4 h-4 text-accent" aria-hidden="true"></i></div>
+              <div><span class="text-sm font-medium">Enterprise-grade security</span><p class="text-xs text-theme-text-sec">SOC 2 Type II, SSO, SCIM, audit logs, and privacy mode</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-4 h-4 text-accent" aria-hidden="true"></i></div>
+              <div><span class="text-sm font-medium">Volume pricing</span><p class="text-xs text-theme-text-sec">Discounted rates for teams and pooled usage across the org</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-4 h-4 text-accent" aria-hidden="true"></i></div>
+              <div><span class="text-sm font-medium">Dedicated support</span><p class="text-xs text-theme-text-sec">Priority support with SLAs and a dedicated account manager</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-4 h-4 text-accent" aria-hidden="true"></i></div>
+              <div><span class="text-sm font-medium">Custom onboarding</span><p class="text-xs text-theme-text-sec">Tailored rollout plan, team training, and migration support</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-4 h-4 text-accent" aria-hidden="true"></i></div>
+              <div><span class="text-sm font-medium">Admin controls</span><p class="text-xs text-theme-text-sec">Centralized billing, usage analytics, and team policy management</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <h3 class="text-base font-semibold mb-v1">Send us an inquiry</h3>
+          <form class="grid gap-4" x-data="contactForm" @submit.prevent="submit">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Name <span class="text-theme-text-sec">*</span></label>
+                <input type="text" required placeholder="Your name" x-model="name" class="w-full px-3 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-sm text-theme-text">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Email <span class="text-theme-text-sec">*</span></label>
+                <input type="email" required placeholder="you@company.com" x-model="email" class="w-full px-3 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-sm text-theme-text">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Company name <span class="text-theme-text-sec">*</span></label>
+              <input type="text" required placeholder="Acme Inc." x-model="company" class="w-full px-3 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-sm text-theme-text">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Team size</label>
+                <select x-model="teamSize" class="w-full px-3 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-sm text-theme-text">
+                  <option value="">Select team size</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="201-1000">201-1000</option>
+                  <option value="1000+">1000+</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Phone (optional)</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" x-model="phone" class="w-full px-3 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-sm text-theme-text">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Message <span class="text-theme-text-sec">*</span></label>
+              <textarea required rows="4" placeholder="Tell us about your needs, team size, and timeline..." x-model="message" class="w-full px-3 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-sm text-theme-text resize-y font-sans"></textarea>
+            </div>
+            <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg justify-center w-full">Send inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Email option -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto max-w-prose-medium-wide">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto mb-v1">Prefer to email us?</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Reach out directly at <a href="mailto:contact@zodagent.com" class="text-accent underline">contact@zodagent.com</a> and our team will get back to you within 24 hours.</p>
+      <a href="mailto:contact@zodagent.com" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">Send us an email<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text overflow-hidden">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto mb-v2.5 max-w-prose-medium-wide">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">Trusted by engineering leaders.</h2>
+    </div>
+  </div>
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="grid grid-cols-1 gap-g1.5 md:grid-cols-2 items-stretch">
+      <div><div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 relative flex h-full min-h-44 w-full shrink-0 flex-col"><figure class="flex h-full flex-col"><blockquote class="grow overflow-hidden"><p class="text-base leading-normal line-clamp-4 whitespace-pre-wrap md:line-clamp-5">"We rolled Zod out to our entire engineering org of 200+ developers. The feedback has been overwhelmingly positive. It's become as essential as our IDE."</p></blockquote><div class="mt-v2 flex items-center gap-x-g1"><div class="rounded-full overflow-hidden shrink-0 h-7 w-7 bg-theme-card-03-hex text-theme-text-sec flex items-center justify-center text-xs font-medium">DC</div><figcaption><div class="text-sm leading-normal">David Chen <span class="text-sm leading-normal text-theme-text-sec block">Engineering Manager</span></div></figcaption></div></figure></div></div>
+      <div><div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 relative flex h-full min-h-44 w-full shrink-0 flex-col"><figure class="flex h-full flex-col"><blockquote class="grow overflow-hidden"><p class="text-base leading-normal line-clamp-4 whitespace-pre-wrap md:line-clamp-5">"Zod's enterprise support has been exceptional. The onboarding was smooth, and our team was productive within days. The security and compliance features gave our legal team confidence."</p></blockquote><div class="mt-v2 flex items-center gap-x-g1"><div class="rounded-full overflow-hidden shrink-0 h-7 w-7 bg-theme-card-03-hex text-theme-text-sec flex items-center justify-center text-xs font-medium">AL</div><figcaption><div class="text-sm leading-normal">Amanda Liu <span class="text-sm leading-normal text-theme-text-sec block">VP of Engineering</span></div></figcaption></div></figure></div></div>
+    </div>
+  </div>
+</section>
+
+</main>

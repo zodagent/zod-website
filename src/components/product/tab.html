@@ -1,0 +1,185 @@
+<main id="main">
+
+<!-- Hero -->
+<section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v1.5 max-w-2xl">
+      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Tab — AI-powered code completions</h1>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Zod Tab anticipates your next edit with context-aware inline suggestions.</p>
+      <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Download Zod<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+    </div>
+    <div class="media-border-w-full relative overflow-hidden rounded-sm">
+      <div class="relative w-full h-full"><img alt="" src="/images/misc/wallpaper-1.jpg" data-wallpaper class="w-full object-cover max-sm:min-h-[200px] sm:min-h-[360px] md:min-h-[540px] lg:min-h-[720px] rounded-sm" loading="lazy"/><div class="absolute inset-0 z-10" data-ui-example></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Value Prop -->
+<section class="px-g2 py-[3rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 text-center">
+    <p class="text-lg md:text-xl leading-relaxed text-balance max-w-3xl mx-auto text-theme-text-sec">Tab predicts your next edit with sub-100ms latency, understanding your project context and coding style to deliver suggestions that feel like they came from you.</p>
+  </div>
+</section>
+
+<!-- Feature: Context-aware completions -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
+      <div class="w-full lg:w-1/4">
+        <div class="max-w-prose">
+          <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Context-aware completions</h2>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Tab understands your entire project — imports, types, recent changes, and coding patterns. Every suggestion is informed by your actual codebase, not just the current file.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/product/tab">Learn about Tab<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-3/4">
+        <div class="relative overflow-hidden rounded-sm">
+          <div class="bg-theme-product-chrome rounded-sm overflow-hidden">
+            <div class="flex items-center gap-1.5 px-3 py-2 bg-theme-product-chrome">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+              <span class="text-xs text-gray-400 ml-2 font-mono">App.tsx — Zod</span>
+            </div>
+            <div class="p-3 bg-theme-product-editor font-mono text-xs leading-relaxed">
+              <div><span class="text-theme-product-syntax-keyword">import</span> { useState, useEffect } <span class="text-theme-product-syntax-keyword">from</span> <span class="text-theme-product-syntax-string">'react'</span></div>
+              <div><span class="text-theme-product-syntax-keyword">import</span> { Card, Button } <span class="text-theme-product-syntax-keyword">from</span> <span class="text-theme-product-syntax-string">'@/components/ui'</span></div>
+              <div class="mt-1"><span class="text-theme-product-syntax-keyword">function</span> <span class="text-theme-product-syntax-function">UserProfile</span>({ userId }: { userId: string }) {</div>
+              <div class="ml-3"><span class="text-theme-product-syntax-keyword">const</span> [user, setUser] = useState&lt;User | null&gt;(null)</div>
+              <div class="ml-3"><span class="text-theme-product-syntax-keyword">const</span> [loading, setLoading] = useState(true)</div>
+              <div class="ml-3 mt-1">useEffect(() => {</div>
+              <div class="ml-6">fetchUser(userId).then(setUser).finally(() => setLoading(false))</div>
+              <div class="ml-3">}, [userId])</div>
+              <div class="ml-3 mt-1"><span class="text-theme-product-syntax-keyword">if</span> (loading) <span class="text-theme-product-syntax-keyword">return</span> &lt;LoadingSpinner /&gt;</div>
+              <div class="ml-3"><span class="text-theme-product-syntax-keyword">return</span> (</div>
+              <div class="ml-6">&lt;Card&gt;</div>
+              <div class="ml-9">&lt;h2&gt;{user.name}&lt;/h2&gt;</div>
+              <div class="ml-9">&lt;p&gt;{user.email}&lt;/p&gt;</div>
+              <div class="relative ml-9">
+                <span>&lt;Button onClick={handleEdit}&gt;</span>
+                <span class="text-theme-product-syntax-keyword opacity-60">Edit Profile&lt;/Button&gt;</span>
+                <span class="absolute inset-0 border-l-2 border-accent/50 pl-1 text-accent/60">Edit Profile&lt;/Button&gt;</span>
+              </div>
+              <div class="ml-6">&lt;/Card&gt;</div>
+              <div class="ml-3">)</div>
+              <div>}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Tab -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v2">
+      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Why Tab</h2>
+    </div>
+    <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+          <i data-lucide="zap" class="w-5 h-5" aria-hidden="true"></i>
+        </div>
+        <h3 class="text-base font-semibold mb-v0.5">Lightning fast</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Sub-100ms completions that keep your flow. Tab predicts multi-line changes as you type.</p>
+      </div>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+          <i data-lucide="globe" class="w-5 h-5" aria-hidden="true"></i>
+        </div>
+        <h3 class="text-base font-semibold mb-v0.5">Context-aware</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Understands your entire project — imports, types, and recent changes inform every suggestion.</p>
+      </div>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+          <i data-lucide="check-square" class="w-5 h-5" aria-hidden="true"></i>
+        </div>
+        <h3 class="text-base font-semibold mb-v0.5">High accuracy</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Trained on real-world code patterns. Tab's accept rate leads the industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature: Multi-line predictions -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+      <div class="w-full lg:w-1/4">
+        <div class="max-w-prose">
+          <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Multi-line predictions</h2>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Tab doesn't just complete the current line — it predicts entire blocks of logic. Add a new function and watch Tab fill in the body, error handling, and tests.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/product/tab">See Tab in action<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-3/4">
+        <div class="grid gap-g1 grid-cols-1 md:grid-cols-2">
+          <div class="bg-theme-card-hex rounded-sm p-g1.75">
+            <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+              <i data-lucide="code" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <h3 class="text-sm font-semibold mb-v0.5">Context-aware predictions</h3>
+            <p class="text-xs text-theme-text-sec">Tab reads your imports, types, and recent edits to generate completions that match your codebase's patterns and conventions.</p>
+          </div>
+          <div class="bg-theme-card-hex rounded-sm p-g1.75">
+            <div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+              <i data-lucide="zap" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <h3 class="text-sm font-semibold mb-v0.5">Blazing fast inference</h3>
+            <p class="text-xs text-theme-text-sec">Tab uses a specialized model optimized for low-latency inference. Get suggestions in under 100ms, every time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text overflow-hidden">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto mb-v2.5 max-w-prose-medium-wide">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">Loved by developers worldwide.</h2>
+    </div>
+  </div>
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="grid grid-cols-1 gap-g1.5 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+      <div><div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 relative flex h-full min-h-44 w-full shrink-0 flex-col"><figure class="flex h-full flex-col"><blockquote class="grow overflow-hidden"><p class="text-base leading-normal line-clamp-4 whitespace-pre-wrap md:line-clamp-5">"Tab completions are uncanny. It predicts exactly what I'm about to write, including multi-line edits. It feels like the editor reads my mind."</p></blockquote><div class="mt-v2 flex items-center gap-x-g1"><div class="rounded-full overflow-hidden shrink-0 h-7 w-7 bg-theme-card-03-hex text-theme-text-sec flex items-center justify-center text-xs font-medium">AL</div><figcaption><div class="text-sm leading-normal">Alex Liu <span class="text-sm leading-normal text-theme-text-sec block">Full-Stack Developer</span></div></figcaption></div></figure></div></div>
+      <div><div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 relative flex h-full min-h-44 w-full shrink-0 flex-col"><figure class="flex h-full flex-col"><blockquote class="grow overflow-hidden"><p class="text-base leading-normal line-clamp-4 whitespace-pre-wrap md:line-clamp-5">"I've tried every autocomplete tool. Tab is the first one that actually understands my project context. The suggestions are always relevant."</p></blockquote><div class="mt-v2 flex items-center gap-x-g1"><div class="rounded-full overflow-hidden shrink-0 h-7 w-7 bg-theme-card-03-hex text-theme-text-sec flex items-center justify-center text-xs font-medium">NM</div><figcaption><div class="text-sm leading-normal">Nina Morales <span class="text-sm leading-normal text-theme-text-sec block">Independent Developer</span></div></figcaption></div></figure></div></div>
+      <div><div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 relative flex h-full min-h-44 w-full shrink-0 flex-col"><figure class="flex h-full flex-col"><blockquote class="grow overflow-hidden"><p class="text-base leading-normal line-clamp-4 whitespace-pre-wrap md:line-clamp-5">"The multi-line predictions are a game changer. I type a function signature and Tab fills in the implementation, tests, and even the JSDoc comments."</p></blockquote><div class="mt-v2 flex items-center gap-x-g1"><div class="rounded-full overflow-hidden shrink-0 h-7 w-7 bg-theme-card-03-hex text-theme-text-sec flex items-center justify-center text-xs font-medium">RK</div><figcaption><div class="text-sm leading-normal">Raj Kapoor <span class="text-sm leading-normal text-theme-text-sec block">Software Engineer, Stripe</span></div></figcaption></div></figure></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Stay on the Frontier -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v1">
+      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Stay on the frontier</h2>
+    </div>
+    <div class="grid gap-g1.5 grid-cols-1 xl:grid-cols-3 items-stretch">
+      <div class="h-full"><div class="bg-theme-card-hex rounded-sm overflow-hidden flex h-full grow flex-col"><div class="p-g1.75 flex flex-col grow"><div class="text-base leading-normal max-w-prose flex grow flex-col"><div><h3>Project-aware suggestions</h3><div class="text-theme-text-sec text-pretty">Tab reads your imports, types, and recent edits to generate completions that match your codebase's patterns and conventions.</div></div><div class="mt-auto pt-4"><a href="/product/tab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-accent underline underline-offset-3 decoration-accent/30 cursor-pointer transition-colors duration-150 ease-out hover:text-accent/75">Learn about Tab <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></a></div></div></div><div class="relative w-full h-full"><img alt="" loading="lazy" class="w-full aspect-[3/4] object-cover rounded-sm" data-wallpaper/><div class="absolute inset-0 z-10" data-ui-example></div></div></div></div>
+      <div class="h-full"><div class="bg-theme-card-hex rounded-sm overflow-hidden flex h-full grow flex-col"><div class="p-g1.75 flex flex-col grow"><div class="text-base leading-normal max-w-prose flex grow flex-col"><div><h3>Blazing fast inference</h3><div class="text-theme-text-sec text-pretty">Tab uses a specialized model optimized for low-latency inference. Get suggestions in under 100ms, every time.</div></div><div class="mt-auto pt-4"><a href="/product/tab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-accent underline underline-offset-3 decoration-accent/30 cursor-pointer transition-colors duration-150 ease-out hover:text-accent/75">View performance benchmarks <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></a></div></div></div><div class="relative w-full h-full"><img alt="" loading="lazy" class="w-full aspect-[3/4] object-cover rounded-sm" data-wallpaper/><div class="absolute inset-0 z-10" data-ui-example></div></div></div></div>
+      <div class="h-full"><div class="bg-theme-card-hex rounded-sm overflow-hidden flex h-full grow flex-col"><div class="p-g1.75 flex flex-col grow"><div class="text-base leading-normal max-w-prose flex grow flex-col"><div><h3>Privacy-first design</h3><div class="text-theme-text-sec text-pretty">Tab runs a local model on your machine for single-line completions. Your code never leaves your device unless you choose to use cloud models.</div></div><div class="mt-auto pt-4"><a class="inline-flex items-center gap-1 text-sm font-medium text-accent underline underline-offset-3 decoration-accent/30 cursor-pointer transition-colors duration-150 ease-out hover:text-accent/75" href="/legal/security">Learn about privacy <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></a></div></div></div><div class="relative w-full h-full"><img alt="" loading="lazy" class="w-full aspect-[3/4] object-cover rounded-sm" data-wallpaper/><div class="absolute inset-0 z-10" data-ui-example></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="px-g2 bg-theme-bg text-theme-text py-28 md:py-52">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto max-w-prose-medium-wide">
+      <h2 class="text-4xl md:text-7xl font-normal tracking-tighter text-balance mx-auto mb-v2">Experience Tab today.</h2>
+      <div class="flex justify-center gap-x-g3 items-center">
+        <div>
+          <div class="hidden items-center md:flex"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download" x-data="{ os: detectOS() }">Download for <span x-text="os === 'mac' ? 'macOS' : os.charAt(0).toUpperCase() + os.slice(1)"></span><i data-lucide="download" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
+          <div class="flex items-center md:hidden"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/login">Get started<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
+        </div>
+        <div class="hidden md:block"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/contact-sales?source=tab_footer">Contact Sales<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>

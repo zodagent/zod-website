@@ -1,0 +1,66 @@
+<header class="sticky top-0 z-50 w-full border-b border-theme-border-02 bg-theme-bg" x-data="{ mobileOpen: false }">
+  <div class="flex h-12 w-full items-center px-6">
+    <!-- Left: Logo + Nav -->
+    <div class="flex items-center space-x-6 flex-1">
+      <a href="/resources/docs" aria-label="Docs Home">
+        <svg class="h-5 w-auto text-theme-text" viewBox="4.0365 3.7214 478 174.3693" aria-hidden="true">
+          <!-- @import "./logo.html" -->
+        </svg>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-1">
+        <a href="/resources/docs" class="nav-link relative px-3 py-2 text-sm font-medium transition-colors rounded-sm text-theme-text-sec hover:text-theme-text" data-page="docs">Docs</a>
+        <a href="/resources/docs/api" class="nav-link relative px-3 py-2 text-sm font-medium transition-colors rounded-sm text-theme-text-sec hover:text-theme-text" data-page="api">API</a>
+        <a href="/resources/learn" class="nav-link relative px-3 py-2 text-sm font-medium transition-colors rounded-sm text-theme-text-sec hover:text-theme-text" data-page="learn">Learn</a>
+        <a href="/resources/help" class="nav-link relative px-3 py-2 text-sm font-medium transition-colors rounded-sm text-theme-text-sec hover:text-theme-text" data-page="help">Help</a>
+      </nav>
+    </div>
+    <!-- Center: Search + Ask AI -->
+    <div class="flex justify-center flex-1">
+      <div class="flex items-center gap-2 hidden sm:flex">
+        <div class="relative">
+          <button class="relative h-9 min-w-0 lg:min-w-80 items-center rounded-md border border-theme-border-02 bg-theme-bg pl-9 pr-16 text-left text-sm text-theme-text-sec hover:bg-theme-card-hex transition-colors cursor-pointer" type="button">
+            <i data-lucide="search" class="absolute left-3 top-1/2 size-[14px] -translate-y-1/2 text-theme-text-sec" aria-hidden="true"></i>
+            <span class="text-sm text-theme-text-sec truncate block max-w-full">Search docs...</span>
+            <span class="absolute right-2 top-1/2 -translate-y-1/2">
+              <span class="tracking-wider bg-theme-card-hex h-5 px-1 py-1 text-[12px] font-medium rounded">⌘K</span>
+            </span>
+          </button>
+        </div>
+        <button class="relative h-9 items-center rounded-md border border-theme-border-02 bg-theme-bg pl-3 pr-12 text-left text-sm text-theme-text-sec hover:bg-theme-card-hex transition-colors whitespace-nowrap cursor-pointer" type="button">
+          <span class="text-sm text-theme-text-sec">Ask AI</span>
+          <span class="absolute right-2 top-1/2 -translate-y-1/2">
+            <span class="tracking-wider bg-theme-card-hex h-5 px-1 py-1 text-[12px] font-medium rounded">⌘I</span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- Right: Actions -->
+    <div class="flex items-center space-x-2 flex-1 justify-end">
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="https://cursor.com/dashboard" class="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-normal cursor-pointer bg-theme-bg text-theme-text border border-theme-border-02 hover:bg-theme-card-hex transition-colors">Sign in</a>
+        <a href="https://cursor.com/downloads" class="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-normal cursor-pointer bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg transition-colors">Download</a>
+      </div>
+      <button class="inline-flex items-center justify-center rounded-md hover:bg-theme-card-hex size-7 cursor-pointer sm:hidden" type="button" aria-label="Search">
+        <i data-lucide="search" class="h-5 w-5 text-theme-text" aria-hidden="true"></i>
+      </button>
+      <button class="inline-flex items-center justify-center rounded-md hover:bg-theme-card-hex size-7 cursor-pointer lg:hidden" type="button" aria-label="Menu" @click="mobileOpen = !mobileOpen">
+        <i data-lucide="menu" class="h-5 w-5 text-theme-text" aria-hidden="true" x-show="!mobileOpen"></i>
+        <i data-lucide="x" class="h-5 w-5 text-theme-text" aria-hidden="true" x-show="mobileOpen" x-cloak></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile drawer -->
+  <div x-show="mobileOpen" x-cloak x-collapse class="lg:hidden border-t border-theme-border-02 bg-theme-card-hex">
+    <nav class="flex flex-col px-4 py-3 space-y-1">
+      <a href="/resources/docs" class="px-3 py-2 text-sm font-medium rounded-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-bg/80 transition-colors">Docs</a>
+      <a href="/resources/docs/api" class="px-3 py-2 text-sm font-medium rounded-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-bg/80 transition-colors">API</a>
+      <a href="/resources/learn" class="px-3 py-2 text-sm font-medium rounded-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-bg/80 transition-colors">Learn</a>
+      <a href="/resources/help" class="px-3 py-2 text-sm font-medium rounded-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-bg/80 transition-colors">Help</a>
+      <div class="pt-2 mt-2 border-t border-theme-border-02 flex gap-2">
+        <a href="https://cursor.com/dashboard" class="flex-1 inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-normal cursor-pointer bg-theme-bg text-theme-text border border-theme-border-02 hover:bg-theme-card-hex transition-colors">Sign in</a>
+        <a href="https://cursor.com/downloads" class="flex-1 inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-normal cursor-pointer bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg transition-colors">Download</a>
+      </div>
+    </nav>
+  </div>
+  <script>document.querySelectorAll('.nav-link').forEach(function(l){if(l.getAttribute('href')===window.location.pathname){l.classList.add('text-theme-text');var d=document.createElement('div');d.className='absolute -bottom-[6px] left-0 right-0 h-0.5 bg-theme-text';l.appendChild(d)}})</script>
+</header>

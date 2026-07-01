@@ -1,0 +1,79 @@
+<main id="main">
+
+<!-- Hero -->
+<section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[800px]">
+    <div class="mb-v1">
+      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Data Use and Privacy Overview</h1>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v1">Last updated: June 9, 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy Mode ON -->
+<section class="px-g2 py-[3rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[720px]">
+    <div class="flex items-start gap-3 mb-v1">
+      <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
+        <i data-lucide="shield-check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight leading-snug">Privacy Mode ON</h2>
+      </div>
+    </div>
+    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">When Privacy Mode is enabled:</p>
+    <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-1">
+      <li>Customer Data will not be used for training by ZOD</li>
+      <li>ZOD maintains zero data retention (ZDR) agreements with all providers</li>
+      <li>AI model providers will not store or train on your data</li>
+      <li>Model providers may run risk classifiers to detect violations</li>
+      <li>Non-ZDR models designated as such or require admin opt-in</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Privacy Mode OFF -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[720px]">
+    <div class="flex items-start gap-3 mb-v1">
+      <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center shrink-0">
+        <i data-lucide="info" class="w-5 h-5" aria-hidden="true"></i>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight leading-snug">Privacy Mode OFF</h2>
+      </div>
+    </div>
+    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">When Privacy Mode is disabled:</p>
+    <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-1">
+      <li>We may use and store codebase data, prompts, editor actions, code snippets, and other code data and actions to improve our AI features and train our models</li>
+      <li>Prompts and limited telemetry may be shared with model providers when you explicitly select their models</li>
+      <li>Inference providers (Baseten, Together AI, Fireworks) may temporarily access and store model inputs/outputs to improve inference performance; data deleted after use</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Other important notes -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[720px]">
+    <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Other important notes</h2>
+    <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-2">
+      <li>Even with your API key, requests go through ZOD backend for final prompt building</li>
+      <li><strong>Codebase indexing:</strong> code uploaded in small chunks to compute embeddings; plaintext code ceases to exist after the request; embeddings and metadata (hashes, file names) may be stored</li>
+      <li><strong>File caching:</strong> temporary, encrypted with unique client-generated keys, never permanently stored, never used as training data when privacy mode is enabled</li>
+      <li>Data not shared with model providers if account created before Oct 15, 2025</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto max-w-prose-medium-wide">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto mb-v1">Have questions about data use?</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl mx-auto">Contact us at contact@zodagent.com</p>
+      <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/contact-sales">Contact us<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+</main>

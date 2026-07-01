@@ -1,0 +1,226 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <!-- Sidebar -->
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <div class="relative mb-5">
+        <i data-lucide="search" class="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-theme-text-sec/60" aria-hidden="true"></i>
+        <input type="search" placeholder="Search docs..." class="w-full rounded-md border border-theme-border-02 bg-theme-card-hex pl-8 pr-3 py-1.5 text-sm text-theme-text placeholder:text-theme-text-sec/60 outline-none focus:border-theme-text/30 transition-colors">
+      </div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Agent</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Agents</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">API</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/api" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">API Reference</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Context</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/context" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Context &amp; Codebase</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All Docs</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Using Zod agents</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">Build software at the speed of thought. Learn how to use Zod agents effectively — from starting a conversation to reviewing and applying changes.</p>
+
+      <div class="space-y-8">
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">Starting an agent</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">Open the agent panel by pressing the keyboard shortcut in your editor. Describe what you want to build in natural language and Zod takes it from there.</p>
+          <div class="bg-theme-card-hex rounded-sm p-4 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center shrink-0">
+              <i data-lucide="bot" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Natural language to code</h3>
+              <p class="text-xs text-theme-text-sec">Describe your task in plain English. Zod creates route handlers, validation, business logic, and tests automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Providing context</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Help Zod understand your project by providing context:</p>
+          <div class="space-y-3">
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0">
+                <i data-lucide="at-sign" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">@-mention files</h3>
+                <p class="text-xs text-theme-text-sec">Type @ followed by a filename to point Zod at specific files or folders.</p>
+              </div>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0">
+                <i data-lucide="image" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Upload images</h3>
+                <p class="text-xs text-theme-text-sec">Drag and drop screenshots, mockups, or diagrams as reference material.</p>
+              </div>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0">
+                <i data-lucide="file-text" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Reference docs</h3>
+                <p class="text-xs text-theme-text-sec">Point Zod at documentation files, API specs, or design documents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Agent modes</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Zod offers different modes for different workflows:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="message-square" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Chat mode</h3>
+              <p class="text-xs text-theme-text-sec">Ask questions, get explanations, and explore your codebase conversationally.</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="bot" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Agent mode</h3>
+              <p class="text-xs text-theme-text-sec">Zod plans and executes multi-step tasks autonomously. Reviews changes with you.</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="cloud" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Cloud agents</h3>
+              <p class="text-xs text-theme-text-sec">Run agents on cloud infrastructure, 24/7, in parallel. For long-running and background tasks.</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="palette" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Design mode</h3>
+              <p class="text-xs text-theme-text-sec">Direct agents with visual prompts, screenshots, and design mockups.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">Reviewing changes</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Zod shows you a diff of all changes before applying them. You have full control:</p>
+          <div class="space-y-3">
+            <div class="bg-theme-card-hex rounded-sm p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center shrink-0">
+                <i data-lucide="check" class="w-4 h-4 text-green-500" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Accept changes</h3>
+                <p class="text-xs text-theme-text-sec">Approve the changes and they're applied to your project.</p>
+              </div>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center shrink-0">
+                <i data-lucide="x" class="w-4 h-4 text-red-500" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Reject changes</h3>
+                <p class="text-xs text-theme-text-sec">Discard the proposed changes entirely.</p>
+              </div>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center shrink-0">
+                <i data-lucide="edit" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Request modifications</h3>
+                <p class="text-xs text-theme-text-sec">Ask Zod to adjust specific parts of the implementation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Tips for best results</h2>
+          <div class="space-y-3">
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">1</div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Be specific</h3>
+                <p class="text-xs text-theme-text-sec">Instead of "add a form", try "add a contact form with name, email, message fields and validation".</p>
+              </div>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">2</div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Reference existing code</h3>
+                <p class="text-xs text-theme-text-sec">Use @-mentions to point Zod at similar files or patterns you want it to follow.</p>
+              </div>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-3">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">3</div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Iterate</h3>
+                <p class="text-xs text-theme-text-sec">Review changes and ask for refinements. Agent mode shines in iterative workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Related documentation</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/resources/docs/getting-started" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Getting Started <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">Install Zod and set up your first project.</p>
+            </a>
+            <a href="/resources/docs/context" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Context &amp; Codebase <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">How Zod understands and indexes your codebase.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center pt-4">
+          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Download Zod<i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

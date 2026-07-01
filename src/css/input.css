@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'ZodGothic';
+  src: url('/fonts/ZodGothic_Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ZodGothic';
+  src: url('/fonts/ZodGothic_Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ZodGothic';
+  src: url('/fonts/ZodGothic_Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ZodGothic';
+  src: url('/fonts/ZodGothic_BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ZodGothic Fallback';
+  src: local(Arial);
+  size-adjust: 103.58%;
+  ascent-override: 91%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'berkeleyMono';
+  src: url('/fonts/BerkeleyMono_Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'berkeleyMono';
+  src: url('/fonts/BerkeleyMono_Oblique.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: 'ZodGothic', 'ZodGothic Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'berkeleyMono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-serif: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  --g: calc(10rem / 16);
+  --v: calc(1rem * 1.4);
+
+  --site-header-height: 56px;
+
+  --color-theme-bg: #f7f7f4;
+  --color-theme-fg: #26251e;
+  --color-theme-fg-02: #33322b;
+  --color-theme-accent: #00a3f5;
+  --color-theme-card-hex: #efede6;
+  --color-theme-card-01-hex: #e7e5dd;
+  --color-theme-card-02-hex: #dfddd4;
+  --color-theme-card-03-hex: #d7d5cb;
+  --color-theme-card-04-hex: #cfcdc2;
+  --color-theme-card-hover-hex: #e7e5dd;
+  --color-theme-card-hover-light-hex: #efede6;
+  --color-theme-card-warm-hex: #f0e9e0;
+  --color-theme-border-01: rgba(38, 37, 30, 0.08);
+  --color-theme-border-02: rgba(38, 37, 30, 0.13);
+  --color-theme-border-02-5: rgba(38, 37, 30, 0.24);
+  --color-theme-border-03: rgba(38, 37, 30, 0.65);
+
+  --color-theme-button-bg: var(--color-theme-fg);
+  --color-theme-button-text: var(--color-theme-bg);
+  --color-theme-button-hover-bg: var(--color-theme-fg-02);
+}
+
+[data-theme="dark"] {
+  --color-theme-bg: #14120b;
+  --color-theme-fg: #edecec;
+  --color-theme-fg-02: #c8c7c5;
+  --color-theme-card-hex: #1f1d16;
+  --color-theme-card-01-hex: #242119;
+  --color-theme-card-02-hex: #29251c;
+  --color-theme-card-03-hex: #2e2a20;
+  --color-theme-card-04-hex: #332e23;
+  --color-theme-card-hover-hex: #242119;
+  --color-theme-card-hover-light-hex: #1f1d16;
+  --color-theme-card-warm-hex: #1c1713;
+  --color-theme-border-01: rgba(237, 236, 236, 0.08);
+  --color-theme-border-02: rgba(237, 236, 236, 0.13);
+  --color-theme-border-02-5: rgba(237, 236, 236, 0.24);
+  --color-theme-border-03: rgba(237, 236, 236, 0.65);
+  --shadow-flyout: 0 0 1rem rgba(0,0,0,0.2), 0 0 0.5rem rgba(0,0,0,0.1);
+  --color-theme-button-hover-bg: var(--color-theme-fg-02);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-theme-bg: #14120b;
+    --color-theme-fg: #edecec;
+    --color-theme-fg-02: #c8c7c5;
+    --color-theme-card-hex: #1f1d16;
+    --color-theme-card-01-hex: #242119;
+    --color-theme-card-02-hex: #29251c;
+    --color-theme-card-03-hex: #2e2a20;
+    --color-theme-card-04-hex: #332e23;
+    --color-theme-card-hover-hex: #242119;
+    --color-theme-card-hover-light-hex: #1f1d16;
+    --color-theme-card-warm-hex: #1c1713;
+    --color-theme-border-01: rgba(237, 236, 236, 0.08);
+    --color-theme-border-02: rgba(237, 236, 236, 0.13);
+    --color-theme-border-02-5: rgba(237, 236, 236, 0.24);
+    --color-theme-border-03: rgba(237, 236, 236, 0.65);
+    --shadow-flyout: 0 0 1rem rgba(0,0,0,0.2), 0 0 0.5rem rgba(0,0,0,0.1);
+    --color-theme-button-hover-bg: var(--color-theme-fg-02);
+  }
+}
+
+@theme {
+  --color-theme-bg: var(--color-theme-bg);
+  --color-theme-text: var(--color-theme-fg);
+  --color-theme-text-sec: color-mix(in oklab, var(--color-theme-fg) 60%, transparent);
+  --color-theme-text-tertiary: color-mix(in oklab, var(--color-theme-fg) 40%, transparent);
+  --color-theme-text-mid: color-mix(in oklab, var(--color-theme-fg) 50%, transparent);
+  --color-theme-border: var(--color-theme-border-02);
+  --color-theme-border-01: var(--color-theme-border-01);
+  --color-theme-border-02: var(--color-theme-border-02);
+  --color-theme-border-02-5: var(--color-theme-border-02-5);
+  --color-theme-border-03: var(--color-theme-border-03);
+  --color-theme-card: var(--color-theme-card-hex);
+  --color-theme-card-hex: var(--color-theme-card-hex);
+  --color-theme-card-01-hex: var(--color-theme-card-01-hex);
+  --color-theme-card-02-hex: var(--color-theme-card-02-hex);
+  --color-theme-card-03-hex: var(--color-theme-card-03-hex);
+  --color-theme-card-04-hex: var(--color-theme-card-04-hex);
+  --color-theme-card-hover: var(--color-theme-card-hover-hex);
+  --color-theme-card-hover-hex: var(--color-theme-card-hover-hex);
+  --color-theme-card-hover-light-hex: var(--color-theme-card-hover-light-hex);
+  --color-theme-card-warm-hex: var(--color-theme-card-warm-hex);
+  --color-theme-product-chrome: #1a1a1a;
+  --color-theme-product-editor: #1e1e1e;
+  --color-theme-product-syntax-keyword: #c084fc;
+  --color-theme-product-syntax-function: #eab308;
+  --color-theme-product-syntax-string: #22c55e;
+  --color-theme-product-ansi-green: #22c55e;
+  --color-theme-product-ansi-red: #ef4444;
+  --color-accent: var(--color-theme-accent);
+  --color-theme-button-bg: var(--color-theme-button-bg);
+  --color-theme-button-text: var(--color-theme-button-text);
+  --color-theme-button-hover-bg: var(--color-theme-button-hover-bg);
+  --font-sans: 'ZodGothic', 'ZodGothic Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'berkeleyMono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-serif: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-theme-bg);
+    color: var(--color-theme-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    padding-top: var(--site-header-height);
+  }
+
+  [x-cloak] { display: none !important; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-theme-fg);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  :focus:not(:focus-visible) { outline: none; }
+
+  ::selection {
+    background: var(--color-theme-fg);
+    color: var(--color-theme-bg);
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  hr { border-color: var(--color-theme-border-02); }
+}
+
+/* UI example overlays - centered on full-width hero sections */
+.media-border-w-full [data-ui-example] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-border-w-full [data-ui-example] img {
+  max-width: 70% !important;
+  max-height: 75% !important;
+  width: auto;
+  height: auto;
+}
+
+/* UI example overlays - right-side clipped on card images */
+.h-full [data-ui-example] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.h-full [data-ui-example] img {
+  margin-left: 20%;
+  max-width: none !important;
+  width: 150%;
+  height: auto;
+}
+
+/* Section images with rounded-sm overlay - right-clipped */
+.relative.overflow-hidden.rounded-sm:not(.media-border-w-full) [data-ui-example] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.relative.overflow-hidden.rounded-sm:not(.media-border-w-full) [data-ui-example] img {
+  margin-left: 20%;
+  max-width: none !important;
+  width: 150%;
+  height: auto;
+}
+
+/* Docs index hero image - centered */
+.rounded-sm.overflow-hidden.border [data-ui-example] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack > * + * {
+  margin-top: calc(var(--v));
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0, 0, 0.2, 1), transform 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+.fade-in-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.media-light { display: block; }
+.media-dark { display: none; }
+[data-theme="dark"] .media-light { display: none; }
+[data-theme="dark"] .media-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .media-light { display: none; }
+  :root:not([data-theme="light"]) .media-dark { display: block; }
+}
+
+@layer base {
+  [data-os="mac"] { --os-font-smoothing: antialiased; }
+  [data-os="windows"] { --os-font-smoothing: auto; }
+  [data-os="linux"] { --os-font-smoothing: auto; }
+  [data-os="mac"] .os-label { content: "macOS"; }
+  [data-os="windows"] .os-label { content: "Windows"; }
+  [data-os="linux"] .os-label { content: "Linux"; }
+  [data-os="mac"] .os-key { font-family: -apple-system, system-ui, sans-serif; }
+  [data-os="windows"] .os-key { font-family: 'Segoe UI', system-ui, sans-serif; }
+  [data-os="linux"] .os-key { font-family: 'Ubuntu', system-ui, sans-serif; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-os="mac"] ::-webkit-scrollbar { width: 6px; height: 6px; }
+  [data-os="mac"] ::-webkit-scrollbar-track { background: transparent; }
+  [data-os="mac"] ::-webkit-scrollbar-thumb { background: var(--color-theme-border-02-5); border-radius: 3px; }
+  [data-os="windows"] ::-webkit-scrollbar { width: 8px; height: 8px; }
+  [data-os="windows"] ::-webkit-scrollbar-track { background: var(--color-theme-card-hex); }
+  [data-os="windows"] ::-webkit-scrollbar-thumb { background: var(--color-theme-border-02-5); border-radius: 4px; }
+  [data-os="linux"] ::-webkit-scrollbar { width: 8px; height: 8px; }
+  [data-os="linux"] ::-webkit-scrollbar-track { background: var(--color-theme-card-hex); }
+  [data-os="linux"] ::-webkit-scrollbar-thumb { background: var(--color-theme-border-02-5); border-radius: 0; }
+}
+
+@theme {
+  --spacing-g0\.25: calc(var(--g) * .25);
+  --spacing-g0\.5: calc(var(--g) * .5);
+  --spacing-g0\.75: calc(var(--g) * .75);
+  --spacing-g1: calc(var(--g) * 1);
+  --spacing-g1\.25: calc(var(--g) * 1.25);
+  --spacing-g1\.5: calc(var(--g) * 1.5);
+  --spacing-g1\.75: calc(var(--g) * 1.75);
+  --spacing-g2: calc(var(--g) * 2);
+  --spacing-g2\.5: calc(var(--g) * 2.5);
+  --spacing-g3: calc(var(--g) * 3);
+  --spacing-v1: calc(var(--v));
+  --spacing-v1\.5: calc(var(--v) * 1.5);
+  --spacing-v2: calc(var(--v) * 2);
+  --spacing-v2\.5: calc(var(--v) * 2.5);
+  --spacing-v3: calc(var(--v) * 3);
+  --spacing-v4: calc(var(--v) * 4);
+  --spacing-v5: calc(var(--v) * 5);
+  --spacing-v6: calc(var(--v) * 6);
+  --width-prose-medium-wide: 80ch;
+}

@@ -1,0 +1,381 @@
+<div class="flex min-h-[calc(100vh-3rem)]">
+
+  <!-- Sidebar -->
+  <aside class="sticky top-12 h-[calc(100vh-3rem)] w-60 flex-shrink-0 hidden lg:flex flex-col bg-theme-card-hex border-r border-theme-border-02 z-40">
+
+    <!-- Search -->
+    <div class="relative px-4 pt-3 pb-2">
+      <i data-lucide="search" class="w-3.5 h-3.5 absolute left-6 top-1/2 -translate-y-1/2 text-theme-text-sec/60 pointer-events-none" aria-hidden="true"></i>
+      <input type="search" placeholder="Search docs..." class="w-full rounded-md border border-theme-border-02 bg-theme-bg/60 pl-8 pr-3 py-1.5 text-sm text-theme-text placeholder:text-theme-text-sec/60 outline-none focus:border-theme-text/30 transition-colors">
+    </div>
+
+    <!-- Nav -->
+    <nav class="flex-1 overflow-y-auto px-3 py-2 space-y-5 scrollbar-thin">
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Getting Started</div>
+        <div class="flex flex-col gap-px">
+          <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Quickstart</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Agent</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Agents Window</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Agent Review</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Plan Mode</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Design Mode</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Debug Mode</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Prompting</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Security</a>
+          <div class="flex flex-col gap-px pl-3 mt-1">
+            <div class="text-[11px] text-theme-text-sec/40 px-2 py-[3px]">Tools</div>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Browser</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Canvas</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Search</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Terminal</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">MCP</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Install Links</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Rules</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Skills</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">CLI</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Installation</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Using the CLI</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Shell Mode</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Headless Mode</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">GitHub Actions</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">MCP</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">ACP</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Changelog</a>
+          <div class="flex flex-col gap-px pl-3 mt-1">
+            <div class="text-[11px] text-theme-text-sec/40 px-2 py-[3px]">Reference</div>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Authentication</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Configuration</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Output Format</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Parameters</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Permissions</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Slash Commands</a>
+            <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Terminal Setup</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Cursor Review</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">PR Inbox</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">PR Page</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Merge Queue</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Cloud Agent</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Setup</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Settings</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Capabilities</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Automations</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Best Practices</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Choose Runtime</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">My Machines</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Private Workers</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Mobile</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Security &amp; Network</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Models</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Models &amp; Pricing</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Integrations</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">GitHub</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">GitLab</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Azure DevOps</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Bitbucket</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Slack</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Jira</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Linear</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Notion</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Microsoft Teams</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">JetBrains</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Xcode</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Cursor Blame</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Account &amp; Teams</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Teams Setup</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Members</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Dashboard</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Pricing</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">SCIM</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">SSO</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Admin API</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Analytics</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Enterprise</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Overview</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">BAA</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Compliance &amp; Monitoring</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Deployment Patterns</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Endpoint Security</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Identity &amp; Access</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">LLM Safety &amp; Controls</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Network Configuration</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Organizations</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Privacy &amp; Data Governance</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Security Hardening</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[11px] font-semibold text-theme-text-sec/60 uppercase tracking-wider mb-1 px-2">Reference</div>
+        <div class="flex flex-col gap-px">
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Deep Links</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Ignore File</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Keyboard Shortcuts</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Permissions</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Plugins</a>
+          <a href="#" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-bg/80 transition-colors">Sandbox</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Theme toggle -->
+    <div class="flex-shrink-0 px-4 py-3 border-t border-theme-border-02" x-data="themeToggle">
+      <div class="flex items-center rounded-full bg-theme-card-01-hex p-0.5 w-fit">
+        <button @click="setTheme('system')" class="flex items-center justify-center rounded-full leading-none px-2.5 py-1 text-xs text-theme-text-sec hover:text-theme-text transition-colors duration-150" :class="theme === 'system' ? 'bg-theme-bg text-theme-text shadow-sm' : ''" aria-label="System theme" type="button"><i data-lucide="monitor" class="w-3.5 h-3.5" aria-hidden="true"></i></button>
+        <button @click="setTheme('light')" class="flex items-center justify-center rounded-full leading-none px-2.5 py-1 text-xs text-theme-text-sec hover:text-theme-text transition-colors duration-150" :class="theme === 'light' ? 'bg-theme-bg text-theme-text shadow-sm' : ''" aria-label="Light theme" type="button"><i data-lucide="sun" class="w-3.5 h-3.5" aria-hidden="true"></i></button>
+        <button @click="setTheme('dark')" class="flex items-center justify-center rounded-full leading-none px-2.5 py-1 text-xs text-theme-text-sec hover:text-theme-text transition-colors duration-150" :class="theme === 'dark' ? 'bg-theme-bg text-theme-text shadow-sm' : ''" aria-label="Dark theme" type="button"><i data-lucide="moon" class="w-3.5 h-3.5" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main" class="flex-1 min-w-0">
+
+    <div class="max-w-[1300px] mx-auto px-g2 lg:pl-10 py-10 lg:py-12">
+
+      <!-- Mobile nav strip -->
+      <div class="flex lg:hidden items-center gap-1 overflow-x-auto no-scrollbar pb-3 -mx-6 px-6 mb-2 border-b border-theme-border-02 -mt-2">
+        <a href="/resources/docs/getting-started" class="flex-shrink-0 whitespace-nowrap px-2.5 py-1 text-sm font-medium rounded-md bg-theme-card-hex text-theme-text hover:bg-theme-card-03-hex transition-colors">Quickstart</a>
+        <a href="#" class="flex-shrink-0 whitespace-nowrap px-2.5 py-1 text-sm font-medium rounded-md text-theme-text-sec hover:bg-theme-card-hex hover:text-theme-text transition-colors">Agent</a>
+        <a href="#" class="flex-shrink-0 whitespace-nowrap px-2.5 py-1 text-sm font-medium rounded-md text-theme-text-sec hover:bg-theme-card-hex hover:text-theme-text transition-colors">CLI</a>
+        <a href="#" class="flex-shrink-0 whitespace-nowrap px-2.5 py-1 text-sm font-medium rounded-md text-theme-text-sec hover:bg-theme-card-hex hover:text-theme-text transition-colors">Models</a>
+        <a href="#" class="flex-shrink-0 whitespace-nowrap px-2.5 py-1 text-sm font-medium rounded-md text-theme-text-sec hover:bg-theme-card-hex hover:text-theme-text transition-colors">Integrations</a>
+        <a href="#" class="flex-shrink-0 whitespace-nowrap px-2.5 py-1 text-sm font-medium rounded-md text-theme-text-sec hover:bg-theme-card-hex hover:text-theme-text transition-colors">Enterprise</a>
+      </div>
+
+      <!-- Hero -->
+      <section>
+        <h1 class="text-2xl md:text-[32px] leading-[1.15] font-semibold tracking-tight text-theme-text">Documentation</h1>
+        <p class="text-sm text-theme-text-sec leading-relaxed mt-2 max-w-2xl">Zod is a coding agent for building ambitious software. Use it to understand your codebase, plan and build features, fix bugs, review changes, and work with the tools you already use.</p>
+        <div class="mt-6 rounded-sm overflow-hidden border border-theme-border-02">
+          <div class="relative w-full h-full"><img alt="Welcome to Zod, the AI editor and coding agent" src="/images/misc/wallpaper-1.jpg" data-wallpaper class="w-full object-cover max-sm:min-h-[160px] sm:min-h-[240px] md:min-h-[320px] rounded-sm" loading="lazy"/><div class="absolute inset-0 z-10" data-ui-example></div></div>
+        </div>
+      </section>
+
+      <!-- Start here -->
+      <section class="mt-12">
+        <h2 class="text-base font-semibold text-theme-text mb-4">Start here</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <a href="/resources/docs/getting-started" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="rocket" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Get started</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Go from install to your first useful change in Zod.</p>
+            </div>
+          </a>
+          <a href="/product/pricing" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Models &amp; Pricing</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Compare models, usage pools, and plan pricing.</p>
+            </div>
+          </a>
+          <a href="/resources/changelog" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="scroll-text" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Changelog</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Stay up to date with the latest features and improvements.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- What you can do with Zod -->
+      <section class="mt-12">
+        <h2 class="text-base font-semibold text-theme-text mb-4">What you can do with Zod</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="/resources/docs/context" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Understand your code</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Trace how a repo fits together and find the right places to start.</p>
+            </div>
+          </a>
+          <a href="/resources/docs/agents" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="pencil" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Plan and build features</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Scope changes, use Plan Mode, and ship bigger work with confidence.</p>
+            </div>
+          </a>
+          <a href="#" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="bug" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Find and fix bugs</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Reproduce issues, narrow the root cause, and verify the fix.</p>
+            </div>
+          </a>
+          <a href="#" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="git-pull-request" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Review changes</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Inspect diffs, run checks, and catch problems before you merge.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- More resources -->
+      <section class="mt-12 mb-16">
+        <h2 class="text-base font-semibold text-theme-text mb-4">More resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="/resources/download" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="download" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Downloads</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Get Zod for your computer.</p>
+            </div>
+          </a>
+          <a href="/resources/help" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="life-buoy" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Help</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Find answers to common questions and troubleshooting guides.</p>
+            </div>
+          </a>
+          <a href="/resources/marketplace" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="puzzle" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Customize Zod</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Add plugins, skills, MCPs, and rules from one place.</p>
+            </div>
+          </a>
+          <a href="/product/cli" class="block overflow-hidden rounded-sm border border-theme-border-02 bg-theme-bg transition-all hover:border-accent/50 group">
+            <div class="flex items-center gap-3 border-b border-theme-border-02 bg-theme-card-hex/50 px-4 py-3">
+              <div class="w-7 h-7 rounded-[4px] bg-theme-card flex items-center justify-center">
+                <i data-lucide="terminal" class="w-3.5 h-3.5 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <span class="font-semibold text-theme-text text-sm group-hover:text-accent transition-colors">Connect your workflow</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 ml-auto text-theme-text-sec/40" aria-hidden="true"></i>
+            </div>
+            <div class="px-4 py-3">
+              <p class="text-sm text-theme-text-sec leading-relaxed">Work with GitHub, GitLab, Azure DevOps, and more.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+
+
+    </div>
+
+  </main>
+
+</div>

@@ -1,0 +1,93 @@
+<main id="main">
+  <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text text-center">
+    <div class="w-full mx-auto px-g2 max-w-[720px]">
+      <h1 class="text-5xl md:text-7xl font-normal tracking-tight leading-[1.15] mb-3">Download Zod</h1>
+      <p class="text-base leading-normal text-theme-text-sec mb-8">Zod is the AI-powered code editor for building ambitious software. Available for macOS, Windows, and Linux.</p>
+      <div class="flex flex-wrap gap-3 justify-center mb-8" x-data="{ os: detectOS() }">
+        <template x-if="os === 'mac'">
+          <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-base md:text-lg px-5 md:px-7 py-2.5 md:py-3.5">Download for macOS</a>
+        </template>
+        <template x-if="os === 'windows'">
+          <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-base md:text-lg px-5 md:px-7 py-2.5 md:py-3.5">Download for Windows</a>
+        </template>
+        <template x-if="os === 'linux'">
+          <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-base md:text-lg px-5 md:px-7 py-2.5 md:py-3.5">Download for Linux</a>
+        </template>
+        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex">macOS</a>
+        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex">Windows</a>
+        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex">Linux</a>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="https://marketplace.visualstudio.com/items?itemName=cursor-ai.zod" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" target="_blank" rel="noopener noreferrer">VS Code Extension</a>
+        <a href="https://brew.sh/" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex" target="_blank" rel="noopener noreferrer">brew install zod</a>
+        <a href="https://winget.run/" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex" target="_blank" rel="noopener noreferrer">winget install Zod</a>
+      </div>
+    </div>
+  </section>
+  <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+    <div class="w-full mx-auto px-g2 max-w-[800px]">
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 items-start">
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-4">
+            <i data-lucide="monitor" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-sm font-semibold mb-v0.5">Desktop app</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">The full Zod experience, built on VS Code with deep AI integration. Includes agent mode, Tab completions, codebase indexing, and all models.</p>
+        </div>
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-4">
+            <i data-lucide="terminal" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-sm font-semibold mb-v0.5">VS Code extension</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">Use Zod's AI features directly inside your existing VS Code setup. Available from the VS Code marketplace.</p>
+        </div>
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-4">
+            <i data-lucide="book-open" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-sm font-semibold mb-v0.5">CLI</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">Run Zod's AI agent directly from your terminal. Install with <code class="font-mono text-[13px]">brew install zod</code>, <code class="font-mono text-[13px]">winget install Zod</code>, or download the binary.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+    <div class="w-full mx-auto px-g2 max-w-[1300px]">
+      <div class="text-center mb-v2">
+        <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Import from VS Code</h2>
+        <p class="text-base leading-normal text-theme-text-sec text-pretty">Zod is built on the same foundation as VS Code, so importing your settings, extensions, and themes is seamless.</p>
+      </div>
+      <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
+          <i data-lucide="settings" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
+          <h3 class="text-sm font-semibold mb-v0.5">Settings</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">All your VS Code settings, keybindings, and snippets carry over automatically.</p>
+        </div>
+        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
+          <i data-lucide="package" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
+          <h3 class="text-sm font-semibold mb-v0.5">Extensions</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">Install your favorite VS Code extensions directly in Zod.</p>
+        </div>
+        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
+          <i data-lucide="palette" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
+          <h3 class="text-sm font-semibold mb-v0.5">Themes</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">Your color themes and icon packs work right out of the box.</p>
+        </div>
+        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
+          <i data-lucide="folder" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
+          <h3 class="text-sm font-semibold mb-v0.5">Workspaces</h3>
+          <p class="text-xs text-theme-text-sec leading-relaxed">Open your existing projects and workspaces without any migration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text text-center">
+    <div class="w-full mx-auto px-g2 max-w-[1300px]">
+      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v2">Get started with Zod.</h2>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Download Zod</a>
+        <a href="/login" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">Sign in</a>
+      </div>
+    </div>
+  </section>
+</main>

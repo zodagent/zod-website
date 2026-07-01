@@ -1,0 +1,803 @@
+<main id="main" class="flex flex-col min-h-screen">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+
+  <!-- Grid layout: sidebar + main content -->
+  <div class="grid grid-cols-1 min-[900px]:grid-cols-[minmax(0,220px)_minmax(0,1fr)] min-[900px]:gap-x-6">
+
+    <!-- Sidebar -->
+    <aside class="sticky top-[57px] h-[calc(100vh-57px)] overflow-y-auto py-6 pr-4 hidden min-[900px]:block scrollbar-thin">
+      <p class="text-base font-medium text-theme-text mb-1">Marketplace</p>
+      <nav class="flex flex-col gap-[6px] mt-4">
+        <button type="button" class="w-full text-left px-3 py-1.5 rounded-md text-sm text-theme-text bg-theme-card-hex transition-colors font-medium">Featured</button>
+        <button type="button" class="w-full text-left px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-card-hex transition-colors">Recently Added</button>
+        <button type="button" class="w-full text-left px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-card-hex transition-colors">Plugins</button>
+        <button type="button" class="w-full text-left px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-card-hex transition-colors">Automations</button>
+      </nav>
+      <div class="h-px bg-theme-border-02 my-4"></div>
+      <div class="flex flex-col gap-[6px]">
+        <a href="#" class="block px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-card-hex transition-colors">Manage Automations</a>
+        <a href="#" class="block px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-card-hex transition-colors">Documentation</a>
+        <a href="#" class="block px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:text-theme-text hover:bg-theme-card-hex transition-colors">Publish</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="py-6 min-w-0">
+
+      <!-- Mobile sidebar nav -->
+      <div class="block min-[900px]:hidden mb-4 pb-4 border-b border-theme-border-02">
+        <div class="flex gap-1 overflow-x-auto pb-1 scrollbar-none">
+          <button class="flex-shrink-0 whitespace-nowrap px-3 py-1.5 rounded-md text-sm bg-theme-card-hex text-theme-text font-medium">Featured</button>
+          <button class="flex-shrink-0 whitespace-nowrap px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:bg-theme-card-hex transition-colors">Recently Added</button>
+          <button class="flex-shrink-0 whitespace-nowrap px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:bg-theme-card-hex transition-colors">Plugins</button>
+          <button class="flex-shrink-0 whitespace-nowrap px-3 py-1.5 rounded-md text-sm text-theme-text-sec hover:bg-theme-card-hex transition-colors">Automations</button>
+        </div>
+      </div>
+
+      <!-- Header: Extend the Agent + Search -->
+      <div class="flex flex-col gap-4 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-6 mb-6">
+        <h1 class="text-2xl md:text-[28px] leading-[34px] font-medium text-theme-text flex-shrink-0 whitespace-nowrap">Extend the Agent</h1>
+        <div class="w-full min-[900px]:w-[300px] min-[900px]:flex-shrink-0">
+          <input type="text" placeholder="Search plugins and automations" class="w-full rounded-full border-0 px-3.5 py-2 text-sm bg-theme-card-hex text-theme-text placeholder:text-theme-text-sec/60 outline-none focus:ring-1 focus:ring-theme-text/20 transition-shadow">
+        </div>
+      </div>
+
+      <!-- All sections -->
+      <div class="flex flex-col gap-12">
+
+        <!-- Featured Plugins -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Featured Plugins</h2>
+            <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors">See All Plugins</span>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <!-- Datadog -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#632CA6] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">DD</div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-sm font-medium text-theme-text truncate">Datadog</span>
+                </div>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Use Datadog directly in Zod through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Slack -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#4A154B] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">SL</div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-sm font-medium text-theme-text truncate">Slack</span>
+                </div>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Slack MCP server. Search channels, send messages, and perform other Slack actions through MCP-compatible clients.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Figma -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0ACF83] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">FG</div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-sm font-medium text-theme-text truncate">Figma</span>
+                </div>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Plugin that includes the Figma MCP server and Skills for common workflows.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Linear -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#5E6AD2] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">LN</div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-sm font-medium text-theme-text truncate">Linear</span>
+                </div>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Zod Plugin for Linear — enables AI assistants to manage issues, projects, documents, and more across your Linear workspace.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Automations -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Featured Automations</h2>
+            <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors">See All Automations</span>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f5a623] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Assign PR reviewers</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Assign reviewers based on code changes and auto-approve low-risk PRs.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#e8d5b7] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Summarize changes daily</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Post a daily Slack digest summarizing notable repository changes and risks from the previous day.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#6c8ebf] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Find vulnerabilities</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Review pull requests for exploitable security issues and flag only validated findings before merge.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f0bfaf] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Fix bugs reported in Slack</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Monitor a Slack channel for bug reports, investigate the codebase, and fix with a PR.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#8fbc8f] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Triage failed GitHub Actions</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Investigate failed or cancelled workflow runs and report findings in Slack.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recently Added -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Recently Added</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <!-- Railway -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0B0D0E] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">RW</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Railway</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Railway agent skills and MCP server for deploying, configuring, monitoring, and troubleshooting apps and infrastructure on Railway from Zod.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- HyperFrames -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#6366f1] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">HF</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">HyperFrames by HeyGen</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Write HTML, render video. Compositions, Tailwind v4 styles, GSAP animations, captions, voiceovers, and more.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Databricks -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF3621] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">DB</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Databricks</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Databricks skills for the CLI, Apps, Lakebase, Model Serving, Spark Pipelines, and more.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Port -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#00B4D8] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">PT</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Port</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Port MCP Server gives Zod's AI agent full engineering context — every service, team, dependency, and standard.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Kraken -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#5843BE] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">KR</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Kraken</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Agent-first CLI for trading crypto, stocks, forex, and derivatives on Kraken. Paper trading by default.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <!-- Microsoft Dataverse -->
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0078D4] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MD</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Microsoft Dataverse</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Powering CRUD, bulk data operations, queries, schema lifecycle, and environment management.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 12 more</span>
+        </section>
+
+        <!-- Infrastructure -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Infrastructure</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF9900] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AW</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">AWS Core</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Build, deploy, and operate applications on AWS with CDK, Lambda, ECS, Bedrock, and more.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#00C7B7] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">NL</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Netlify</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Netlify platform skills — functions, edge, blobs, database, identity, and deployment.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#E33B5E] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">CG</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Coralogix</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Query logs, metrics, traces, and RUM, manage alerts and dashboards from the editor.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#5B5B5B] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">SC</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">ScyllaDB</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Official ScyllaDB agent skills for Cloud setup, CQL data modeling, and Vector Search.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#2563EB] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">PD</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">ParadeDB</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Elastic-quality search in Postgres including BM25 scoring, highlighting, and aggregates.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0F172A] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MK</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Monk.io</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Deploy and operate full applications with Monk — cloud infra, SaaS, and containerized workloads.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 33 more</span>
+        </section>
+
+        <!-- Data & Analytics -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Data &amp; Analytics</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#1DB954] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">CF</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Confidence by Spotify</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Access feature flags, experiments, and migration tools directly from Zod.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF9900] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AD</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">AWS Data Analytics</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Data lake, analytics, and ETL workflows with S3 Tables, Glue, and Athena.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0052CC] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">GL</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Grafana Cloud</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Hosted MCP server for AI-assisted Grafana Cloud observability.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#6E56CF] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MX</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Mixpanel</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Mixpanel skills for tracking implementation, metric investigation, and more.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#005EB8] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">OS</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">OpenSearch</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Build search applications, analyze observability data, deploy to Amazon OpenSearch Service.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0C4A6E] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">DG</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Dagster</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Expert guidance for working with Dagster and the dg CLI.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 21 more</span>
+        </section>
+
+        <!-- Productivity -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Productivity</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF6B6B] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AS</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Asana</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Connect Zod to Asana. Create tasks, update projects, search your workspace.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#F5A623] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">ML</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Mintlify</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Comprehensive reference for building Mintlify documentation sites.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#CC79FF] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">CP</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">ChatPRD</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Product requirements in your editor. Write PRDs from code context.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#00A3F5] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MD</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Monday.com</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Seven skills for monday CRM users — setup, briefings, dashboards, and more.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#DA291C] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AD</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Adobe Developer App Builder</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Development, customization, testing, and deployment skills for Adobe App Builder.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#7B61FF] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MG</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">MagicPath</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Multiplayer canvas for your code. Create component libraries and apply design-system themes.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 23 more</span>
+        </section>
+
+        <!-- Payments -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Payments</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF453A] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">RC</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">RevenueCat Play Billing</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Deep Google Play subscription lifecycle skills for the RevenueCat Android SDK.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF453A] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">RC</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">RevenueCat</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Configure your RevenueCat integration and access data from your RevenueCat projects.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0E1628] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">RX</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Revolut X</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Use the Revolut X CLI (revx) for crypto trading, market data, and monitoring.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#95BF47] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">CB</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Chargebee</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">API integration patterns, webhook handling, and SDK usage for billing operations.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#96BF48] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">SH</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Shopify</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Search Shopify docs, generate and validate GraphQL, Liquid, and UI extension code.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0A2540] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AW</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Airwallex</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Airwallex CLI plugin for Zod.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 4 more</span>
+        </section>
+
+        <!-- Agent Orchestration -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Agent Orchestration</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF9900] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AW</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">AWS Agents</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Build, deploy, and operate AI agents on AWS with Bedrock AgentCore and LangGraph.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#6C47FF] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AZ</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Arize</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Add Arize AX observability to LLM applications — auto-instrumentation and trace export.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#0080FF] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MR</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Merge</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Connect Zod to hundreds of enterprise tools via the Merge CLI.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#F97316] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">SG</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Sourcegraph</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">1 skill, 1 MCP server, 2 commands.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#00E5FF] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">SB</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Subtext</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Tools that let coding agents verify and show their work against your running application.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#2D3748] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">AT</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Atlan</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">The context layer for enterprise AI. Connect Zod to your organization's context repos.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 15 more</span>
+        </section>
+
+        <!-- Canvas -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Canvas</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#8B5CF6] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">PR</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">PR Review Canvas</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Render PR diffs as interactive Zod Canvases organized for reviewer comprehension.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#3B82F6] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">DC</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Docs Canvas</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Render documentation as a navigable Zod Canvas with sections, TOC, diagrams, and cross-references.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Plugins (uncategorized) -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">Plugins</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#E11D48] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">RF</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Roboflow</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Computer vision skills and MCP tools for datasets, annotation, training, and inference.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF6D01] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">LV</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Lovable</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Drive Lovable from Zod — create projects, manage databases, and deploy.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#009B77] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">DB</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">D&amp;B Risk Analytics</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Execute risk workflows such as KYC/KYB, entity resolution, screening, and alert triage.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#1A1A1A] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">SK</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Snyk API &amp; Web</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Onboard scan targets, configure authentication, run DAST scans, and triage findings.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#4A90D9] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">MF</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Mainframe</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Create and share short video updates from agent work.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-md bg-[#FF6B9D] flex items-center justify-center flex-shrink-0 text-white text-xs font-bold">QA</div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">QuiverAI</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Create, refine, and vectorize SVG assets with the hosted QuiverAI MCP server.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+          <span class="text-sm text-theme-text-sec/60 cursor-pointer hover:text-theme-text-sec transition-colors self-start">View 34 more</span>
+        </section>
+
+        <!-- All Automations -->
+        <section class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-medium text-theme-text">All Automations</h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f5a623] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Add test coverage</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Review recent changes and add tests for high-risk logic that lacks adequate coverage.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f5a623] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Assign PR reviewers</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Assign reviewers based on code changes and auto-approve low-risk PRs.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#20b2aa] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Autofix PR review comments</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Take a first pass at addressing inline review comments on PR diffs.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f5a623] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Fix CI failures</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Detect CI failures on main and automatically open PRs.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#8fbc8f] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Clean up feature flags</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Find stale feature flags that are fully rolled out and remove dead code paths.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#8fbc8f] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Customer Health Monitoring Agent</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Find at-risk customers using usage analytics and Slack escalations.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#e8d5b7] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Summarize changes daily</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Post a daily Slack digest of notable repository changes and risks.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#20b2aa] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Find critical bugs</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Analyze recent commits for high-severity correctness bugs and submit safe fixes.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#6c8ebf] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Find vulnerabilities</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Review PRs for exploitable security issues and validate findings.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f0bfaf] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Fix bugs reported in Slack</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Monitor Slack for bug reports, investigate, and fix with a PR.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#20b2aa] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Generate docs</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Create and update developer documentation for changed code.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f0bfaf] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Investigate top Datadog errors</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Investigate recurring production errors from Datadog and propose fixes.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#8fbc8f] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Investigate Sentry issues</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Investigate errors from Sentry, identify root causes, and propose fixes.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#e8d5b7] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Triage Linear issues</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Triage new issues, investigate bugs, plan features, and open PRs.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#e8d5b7] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Monitor engineering invariants</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Re-check critical repository invariants on a schedule and alert on regressions.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#20b2aa] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Investigate PagerDuty incidents</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Investigate incidents using Datadog and code context.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#d4c5a9] flex items-center justify-center flex-shrink-0"><span class="text-lg">◉</span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Prepare Anyone onboarding session</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Prepare onboarding materials by opening a teammate PR and capturing rollback prep.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#e8d5b7] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Product Analytics Agent</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Weekly product usage, activation, retention, and adoption digest.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#e8d5b7] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Product FAQ Agent</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Answer product questions in Slack using Slack, Notion, Linear, and GitHub context.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f0bfaf] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Product Finance Agent</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Analyze Stripe revenue, churn signals, and product pricing opportunities.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#20b2aa] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Remediate dependency vulnerabilities</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Triage dependency-vulnerability tickets and open upgrade PRs when safe.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#20b2aa] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Scan codebase for vulnerabilities</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Review the full repository on a schedule and alert on validated security issues.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#f5a623] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Slack Digest Agent</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Summarize important DMs, mentions, and top active Slack channels.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg border border-theme-border-02 hover:border-theme-border-02-5 transition-colors cursor-pointer group bg-theme-bg">
+              <div class="w-10 h-10 rounded-lg bg-[#8fbc8f] flex items-center justify-center flex-shrink-0"><span class="text-lg"></span></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-sm font-medium text-theme-text">Triage failed GitHub Actions</span>
+                <p class="text-xs text-theme-text-sec leading-relaxed line-clamp-2 mt-0.5">Investigate failed workflow runs and report findings in Slack.</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-theme-text-sec/40 flex-shrink-0 mt-1.5" aria-hidden="true"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mobile sidebar links -->
+        <div class="flex flex-col gap-2 min-[900px]:hidden pt-8 border-t border-theme-border-02">
+          <a href="#" class="block py-1 text-sm text-theme-text-sec hover:text-theme-text transition-colors">Manage Automations</a>
+          <a href="#" class="block py-1 text-sm text-theme-text-sec hover:text-theme-text transition-colors">Documentation</a>
+          <a href="#" class="block py-1 text-sm text-theme-text-sec hover:text-theme-text transition-colors">Publish Plugins</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
