@@ -62,5 +62,5 @@
       </div>
     </nav>
   </div>
-  <script>(function(){var base='';var s=document.querySelector('script[src*=\"/src/app.js\"],script[src*=\"/assets/app\"]');if(s){var m=s.src.match(/^(?:https?:\/\/[^/]+)?(\/[^/]+)?\/(?:src\/app|assets\/app)(?:\.js|-.+\.js)/);if(m&&m[1])base=m[1]}var p=window.location.pathname.replace(new RegExp('^'+base.replace(/[-\/\\^$*+?.()|[\]{}]/g,'\\$&')),'').replace(/\/$/,'');document.querySelectorAll('.nav-link').forEach(function(l){var h=l.getAttribute('href').replace(/\/$/,'');if(h===p){l.classList.add('text-theme-text');var d=document.createElement('div');d.className='absolute -bottom-[6px] left-0 right-0 h-0.5 bg-theme-text';l.appendChild(d)}})})()</script>
+  <script>document.querySelectorAll('.nav-link').forEach(function(l){var h=l.getAttribute('href').replace(/\/$/,'');var p=window.location.pathname.replace(/\/$/,'');if(h===p){l.classList.add('text-theme-text');var d=document.createElement('div');d.className='absolute -bottom-[6px] left-0 right-0 h-0.5 bg-theme-text';l.appendChild(d)}})</script>
 </header>
