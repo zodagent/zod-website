@@ -82,6 +82,7 @@ const pages = {
   blog: 'resources/blog.html',
   research: 'resources/research.html',
   workshops: 'resources/workshops.html',
+  usecases: 'resources/usecases.html',
   download: 'resources/download.html',
   future: 'resources/future.html',
   marketplace: 'resources/marketplace.html',
