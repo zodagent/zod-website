@@ -3,13 +3,8 @@
 <div class="max-w-[1300px] mx-auto w-full px-g2">
   <div class="flex mx-auto max-w-[1280px]">
 
-    <!-- Sidebar -->
     <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
       <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
-      <div class="relative mb-5">
-        <i data-lucide="search" class="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-theme-text-sec/60" aria-hidden="true"></i>
-        <input type="search" placeholder="Search docs..." class="w-full rounded-md border border-theme-border-02 bg-theme-card-hex pl-8 pr-3 py-1.5 text-sm text-theme-text placeholder:text-theme-text-sec/60 outline-none focus:border-theme-text/30 transition-colors">
-      </div>
       <nav class="flex flex-col gap-6">
         <div>
           <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
@@ -18,21 +13,21 @@
           </div>
         </div>
         <div>
-          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Agent</div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using the App</div>
           <div class="flex flex-col gap-px">
-            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents</a>
+            <a href="/resources/docs/context" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Chat &amp; Context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; Sessions</a>
+            <a href="/resources/docs/orchestrator" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Orchestrator &amp; Workflows</a>
+            <a href="/resources/docs/scheduler" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Scheduling &amp; Background Agents</a>
           </div>
         </div>
         <div>
-          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">API</div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Configuration</div>
           <div class="flex flex-col gap-px">
-            <a href="/resources/docs/api" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">API Reference</a>
-          </div>
-        </div>
-        <div>
-          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Context</div>
-          <div class="flex flex-col gap-px">
-            <a href="/resources/docs/context" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Context &amp; Codebase</a>
+            <a href="/resources/docs/api" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Providers &amp; API</a>
+            <a href="/resources/docs/yaml" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">YAML Configuration</a>
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Tools</a>
+            <a href="/resources/docs/mcp" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">MCP Servers</a>
           </div>
         </div>
         <div>
@@ -44,121 +39,162 @@
       </nav>
     </aside>
 
-    <!-- Main Content -->
     <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
 
       <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
         <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
         Back to docs
       </a>
-      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Context &amp; codebase</h1>
-      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">Zod uses a custom embedding model to index your codebase, giving agents best-in-class recall across large codebases. Here's how it works.</p>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Chat &amp; context</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">Everything you see in the chat workspace is local-first: your sessions, memory, and preferences persist in a single <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">localStorage</code> key (<code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">zodagent</code>). No data leaves your machine except the requests you send to the LLM providers you configure.</p>
 
       <div class="space-y-8">
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
-          <h2 class="text-base font-semibold text-theme-text mb-3">Codebase indexing</h2>
-          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">When you open a project in Zod, it automatically indexes your codebase. This process creates a searchable index that agents use to understand your project structure, dependencies, and conventions.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="bg-theme-card-hex rounded-sm p-4">
-              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
-                <i data-lucide="zap" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-              </div>
-              <h3 class="text-sm font-semibold text-theme-text mb-1">Automatic</h3>
-              <p class="text-xs text-theme-text-sec">Indexing happens in the background as you work. No manual setup required.</p>
-            </div>
-            <div class="bg-theme-card-hex rounded-sm p-4">
-              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
-                <i data-lucide="refresh-cw" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-              </div>
-              <h3 class="text-sm font-semibold text-theme-text mb-1">Incremental</h3>
-              <p class="text-xs text-theme-text-sec">Only changed files are re-indexed. Fast updates even in large codebases.</p>
-            </div>
-            <div class="bg-theme-card-hex rounded-sm p-4">
-              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
-                <i data-lucide="shield" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-              </div>
-              <h3 class="text-sm font-semibold text-theme-text mb-1">Secure</h3>
-              <p class="text-xs text-theme-text-sec">Indexing happens locally. With Privacy Mode, your code is never sent externally.</p>
-            </div>
-            <div class="bg-theme-card-hex rounded-sm p-4">
-              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
-                <i data-lucide="globe" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-              </div>
-              <h3 class="text-sm font-semibold text-theme-text mb-1">Multi-language</h3>
-              <p class="text-xs text-theme-text-sec">Supports JavaScript, Python, TypeScript, Go, Rust, Java, and 20+ languages.</p>
+          <h2 class="text-base font-semibold text-theme-text mb-3">The hub</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">The hub is the home screen you land on. It shows the logo, a greeting, the current time, a large prompt box, and a set of quick actions: search sessions, open settings, open the orchestrator, and start a new conversation.</p>
+          <div class="bg-theme-card-hex rounded-sm p-4">
+            <div class="text-xs text-theme-text-sec mb-2">Hub quick actions</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-theme-bg border border-theme-border-02 rounded-full px-3 py-1 text-theme-text">Search sessions</span>
+              <span class="text-xs bg-theme-bg border border-theme-border-02 rounded-full px-3 py-1 text-theme-text">Settings</span>
+              <span class="text-xs bg-theme-bg border border-theme-border-02 rounded-full px-3 py-1 text-theme-text">Open orchestrator</span>
+              <span class="text-xs bg-theme-bg border border-theme-border-02 rounded-full px-3 py-1 text-theme-text">New conversation</span>
+              <span class="text-xs bg-theme-bg border border-theme-border-02 rounded-full px-3 py-1 text-theme-text">Run active workflow</span>
             </div>
           </div>
         </div>
 
         <div>
-          <h2 class="text-base font-semibold text-theme-text mb-3">Semantic search</h2>
-          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Ask questions in natural language and Zod finds the relevant code, documentation, and context. Unlike regex or keyword search, semantic search understands code semantics.</p>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Sessions &amp; search</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">The sessions drawer lets you create, search, switch, rename, and delete sessions. Search matches session titles <em>and</em> message content, and also covers harnesses — so you can jump straight back into any past conversation or workflow.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Title + content search</h3>
+              <p class="text-xs text-theme-text-sec">Full-text search across message bodies, not just session names.</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Harness coverage</h3>
+              <p class="text-xs text-theme-text-sec">Named workflows stored as harnesses appear in search results too.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Streaming chat</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">Messages stream in token by token over SSE from your configured provider. The input auto-resizes, send with Enter, and the context meter tracks how much of the window you are using.</p>
           <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-5">
-            <div class="flex flex-col sm:flex-row gap-5">
-              <div class="sm:w-2/5">
-                <ul class="text-sm text-theme-text-sec space-y-1.5 list-disc pl-4">
-                  <li>Find functions by what they do, not just their name</li>
-                  <li>Discover related code across the entire codebase</li>
-                  <li>Understand type relationships and dependencies</li>
-                </ul>
+            <h3 class="text-sm font-semibold text-theme-text mb-2">Context-length meter</h3>
+            <p class="text-xs text-theme-text-sec leading-relaxed mb-3">A live meter in the chat bar shows approximate token usage as a percentage of a 4096-token window, alongside the message count — so you know when a conversation is getting long.</p>
+            <div class="bg-theme-card-hex rounded-sm p-3">
+              <div class="flex items-center gap-2 text-xs text-theme-text-sec mb-1">
+                <span>Context</span>
+                <span class="ml-auto">~62% of 4096</span>
               </div>
-              <div class="sm:w-3/5">
-                <div class="bg-theme-card-hex rounded-sm p-4">
-                  <div class="text-xs text-theme-text-sec mb-2">Try asking Zod:</div>
-                  <div class="bg-theme-bg rounded-lg p-3 font-mono text-xs leading-relaxed border border-theme-border-02">
-                    <div class="text-accent mb-1">"Where do we handle user authentication?"</div>
-                    <div class="text-theme-text-sec">Found in auth source files including login, session, and middleware modules.</div>
-                    <div class="text-accent mt-2 mb-1">"Find all places where we format dates"</div>
-                    <div class="text-theme-text-sec">7 matches across utils, components, and API layer</div>
-                  </div>
-                </div>
+              <div class="h-1.5 rounded-full bg-theme-bg overflow-hidden">
+                <div class="h-full w-[62%] bg-accent rounded-full"></div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
-          <h2 class="text-base font-semibold text-theme-text mb-3">Privacy mode</h2>
-          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">When privacy mode is enabled, your code is never used for training. Zod maintains zero data retention agreements with all model providers.</p>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Message actions</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Every assistant reply has actions for copy, regenerate, delete, a thumbs up / thumbs down rating, and its timestamp. User messages can be edited, copied, or deleted.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="bg-theme-card-hex rounded-sm p-4">
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Assistant replies</h3>
+              <p class="text-xs text-theme-text-sec">Copy, regenerate, delete, rate, timestamp.</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-4">
+              <h3 class="text-sm font-semibold text-theme-text mb-1">User messages</h3>
+              <p class="text-xs text-theme-text-sec">Edit, copy, or delete your own prompts.</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-4">
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Rich rendering</h3>
+              <p class="text-xs text-theme-text-sec">Structured output renders as cards — see Agents &amp; Sessions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Chat input superpowers</h2>
           <div class="space-y-3">
-            <div class="bg-theme-card-hex rounded-sm p-4 flex items-start gap-3">
-              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center shrink-0">
-                <i data-lucide="shield-check" class="w-4 h-4 text-green-500" aria-hidden="true"></i>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0">
+                <i data-lucide="command" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
               </div>
               <div>
-                <h3 class="text-sm font-semibold text-theme-text mb-1">Privacy Mode ON</h3>
-                <p class="text-xs text-theme-text-sec">No code data is sent to model providers for training. Zero data retention. Your codebase is indexed locally and only relevant context is sent with each request.</p>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">Slash commands</h3>
+                <p class="text-xs text-theme-text-sec">Type <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">/</code> to insert a prompt template: think step by step, write code, explain, fix bugs, review, docs, tests, refactor, plan, summarize, translate, optimize, diagram, table, expand.</p>
               </div>
             </div>
-            <div class="bg-theme-card-hex rounded-sm p-4 flex items-start gap-3">
-              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center shrink-0">
-                <i data-lucide="info" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0">
+                <i data-lucide="at-sign" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
               </div>
               <div>
-                <h3 class="text-sm font-semibold text-theme-text mb-1">Privacy Mode OFF</h3>
-                <p class="text-xs text-theme-text-sec">Your code may be used to improve models. You can toggle Privacy Mode at any time in Settings.</p>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">@ mentions</h3>
+                <p class="text-xs text-theme-text-sec">Type <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">@</code> to mention agents, sessions, and tools with a searchable, grouped picker. Both popovers support keyboard navigation (arrows, Enter/Tab, Esc).</p>
+              </div>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0">
+                <i data-lucide="paperclip" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-theme-text mb-1">File attachments</h3>
+                <p class="text-xs text-theme-text-sec">The paperclip in the chat bar attaches text files (<code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">.txt</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">.md</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">.json</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">.yaml</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">.js</code>, and more). Their contents are embedded in the LLM context and shown as chips on your message.</p>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">Session data panel</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">A database panel collapses in next to the chat with three tabs, all persisted across sessions:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="bg-theme-card-hex rounded-sm p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
+                <i data-lucide="list-checks" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Tasks</h3>
+              <p class="text-xs text-theme-text-sec">A persistent to-do list — check, edit, delete, clear.</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
+                <i data-lucide="sticky-note" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Notes</h3>
+              <p class="text-xs text-theme-text-sec">Key/value scratch notes you can set, get, delete, and list.</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card flex items-center justify-center mb-3">
+                <i data-lucide="database" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Data</h3>
+              <p class="text-xs text-theme-text-sec">A namespaced key/value store — a tiny database.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">Local-first persistence</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed">There is no backend and no account. The whole app state — sessions, agents, harnesses, preferences, memory, and scheduled tasks — is stored as a single JSON document under the <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">zodagent</code> key in <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">localStorage</code> and survives reloads. For background scheduling, the same document is mirrored into IndexedDB (<code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">zod-bg</code>) so the service worker can read it. You can export or import the full state as JSON from Settings → General.</p>
         </div>
 
         <div>
           <h2 class="text-base font-semibold text-theme-text mb-3">Related documentation</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a href="/resources/docs/getting-started" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
-              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Getting Started <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
-              <p class="text-xs text-theme-text-sec">Install Zod and set up your first project.</p>
-            </a>
             <a href="/resources/docs/agents" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
-              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Using Zod Agents <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
-              <p class="text-xs text-theme-text-sec">Learn how to use agents effectively.</p>
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Agents &amp; Sessions <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">How the agent loop and structured output work.</p>
+            </a>
+            <a href="/resources/docs/tools" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Tools <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">The built-in toolbelt and custom tools.</p>
             </a>
           </div>
-        </div>
-
-        <div class="text-center pt-4">
-          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Download Zod<i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
 
       </div>

@@ -2,110 +2,77 @@
 
 <div class="mx-auto max-w-[1300px] px-g2">
 
-  <!-- Hero -->
   <section class="px-g2 py-[2.5rem] text-center max-w-2xl mx-auto">
     <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Help Center</h1>
-    <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Answers, help articles, and walkthroughs for Zod.</p>
+    <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Answers, walkthroughs, and troubleshooting for Zod Agent.</p>
     <div class="relative max-w-md mx-auto">
       <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-theme-text-sec/60" aria-hidden="true"></i>
       <input type="search" placeholder="Search for answers..." class="w-full rounded-full border border-theme-border-02 bg-theme-card-hex pl-10 pr-4 py-2.5 text-sm text-theme-text placeholder:text-theme-text-sec/60 outline-none focus:border-theme-text/30 focus:bg-theme-bg transition-all">
     </div>
   </section>
 
-  <!-- Category cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-    <a href="/resources/docs/getting-started" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+    <a href="/resources/docs/api" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
       <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
-        <i data-lucide="rocket" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+        <i data-lucide="plug" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
       </div>
-      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Getting Started</h3>
-      <p class="text-xs text-theme-text-sec leading-relaxed">Install Zod, set up your first project, and start building with AI agents.</p>
+      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Providers &amp; models</h3>
+      <p class="text-xs text-theme-text-sec leading-relaxed">Add OpenAI-compatible providers, pick defaults and fallbacks, and tune requests.</p>
     </a>
-    <a href="#" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
-      <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
-        <i data-lucide="credit-card" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-      </div>
-      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Account &amp; Billing</h3>
-      <p class="text-xs text-theme-text-sec leading-relaxed">Manage your account, subscription, team settings, and billing information.</p>
-    </a>
-    <a href="#" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
-      <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
-        <i data-lucide="bot" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-      </div>
-      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Using Agents</h3>
-      <p class="text-xs text-theme-text-sec leading-relaxed">Learn how to use Zod agents effectively — from simple chat to complex workflows.</p>
-    </a>
-    <a href="#" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
-      <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
-        <i data-lucide="shield" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
-      </div>
-      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Security &amp; Privacy</h3>
-      <p class="text-xs text-theme-text-sec leading-relaxed">Privacy Mode, data handling, encryption, and enterprise security features.</p>
-    </a>
-    <a href="#" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
+    <a href="/resources/docs/tools" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
       <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
         <i data-lucide="wrench" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
       </div>
-      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Troubleshooting</h3>
-      <p class="text-xs text-theme-text-sec leading-relaxed">Common issues, error messages, and solutions for using Zod.</p>
+      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Tools</h3>
+      <p class="text-xs text-theme-text-sec leading-relaxed">Built-in toolbelt, custom JavaScript tools, and how the agent loop executes them.</p>
     </a>
-    <a href="#" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
+    <a href="/resources/docs/orchestrator" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
       <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
-        <i data-lucide="link" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+        <i data-lucide="workflow" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
       </div>
-      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Integrations</h3>
-      <p class="text-xs text-theme-text-sec leading-relaxed">Connect Zod with GitHub, GitLab, Slack, Jira, Linear, and more.</p>
+      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Orchestrator</h3>
+      <p class="text-xs text-theme-text-sec leading-relaxed">Compose multi-step agent workflows with the line-based harness editor.</p>
     </a>
-  </div>
+    <a href="/resources/docs/scheduler" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
+      <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+        <i data-lucide="calendar-clock" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+      </div>
+      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Scheduler</h3>
+      <p class="text-xs text-theme-text-sec leading-relaxed">Schedule prompts once, on an interval, daily, or weekly — including in the background.</p>
+    </a>
+    <a href="/resources/docs/mcp" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
+      <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+        <i data-lucide="server" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+      </div>
+      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">MCP servers</h3>
+      <p class="text-xs text-theme-text-sec leading-relaxed">Connect Model Context Protocol servers over HTTP and surface their tools.</p>
+    </a>
+    <a href="/resources/docs/yaml" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-5 transition-all hover:border-accent/50 group">
+      <div class="w-9 h-9 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+        <i data-lucide="file-code" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+      </div>
+      <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">YAML configuration</h3>
+      <p class="text-xs text-theme-text-sec leading-relaxed">Everything is configurable as live, aligned YAML in the settings drawer.</p>
+    </a>
+  </section>
 
-  <!-- FAQ -->
   <section class="max-w-3xl mx-auto mb-16">
     <h2 class="text-base font-semibold text-theme-text mb-6 text-center">Frequently asked questions</h2>
-    <div class="space-y-2">
-      <details class="rounded-sm border border-theme-border-02 bg-theme-bg overflow-hidden group">
-        <summary class="flex items-center justify-between px-5 py-3.5 text-sm font-medium text-theme-text cursor-pointer list-none hover:bg-theme-card-hex/50 transition-colors">
-          <span>How do I install Zod?</span>
-          <i data-lucide="chevron-down" class="w-4 h-4 text-theme-text-sec/60 flex-shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true"></i>
-        </summary>
-        <div class="px-5 pb-4">
-          <p class="text-sm text-theme-text-sec leading-relaxed">Visit our <a href="/resources/download" class="text-accent underline underline-offset-2 decoration-accent/30">download page</a> for platform-specific install instructions. Zod supports macOS, Linux, and Windows. You can also use package managers like Homebrew.</p>
-        </div>
-      </details>
-      <details class="rounded-sm border border-theme-border-02 bg-theme-bg overflow-hidden group">
-        <summary class="flex items-center justify-between px-5 py-3.5 text-sm font-medium text-theme-text cursor-pointer list-none hover:bg-theme-card-hex/50 transition-colors">
-          <span>How do I reset or update my subscription?</span>
-          <i data-lucide="chevron-down" class="w-4 h-4 text-theme-text-sec/60 flex-shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true"></i>
-        </summary>
-        <div class="px-5 pb-4">
-          <p class="text-sm text-theme-text-sec leading-relaxed">You can manage your subscription from the Settings dashboard in the Zod app. For billing questions, contact our support team.</p>
-        </div>
-      </details>
-      <details class="rounded-sm border border-theme-border-02 bg-theme-bg overflow-hidden group">
-        <summary class="flex items-center justify-between px-5 py-3.5 text-sm font-medium text-theme-text cursor-pointer list-none hover:bg-theme-card-hex/50 transition-colors">
-          <span>How do I enable Privacy Mode?</span>
-          <i data-lucide="chevron-down" class="w-4 h-4 text-theme-text-sec/60 flex-shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true"></i>
-        </summary>
-        <div class="px-5 pb-4">
-          <p class="text-sm text-theme-text-sec leading-relaxed">Privacy Mode can be enabled in Settings or by a team admin. When enabled, Zod will not train on your data. Learn more in our Data Use policy.</p>
-        </div>
-      </details>
-      <details class="rounded-sm border border-theme-border-02 bg-theme-bg overflow-hidden group">
-        <summary class="flex items-center justify-between px-5 py-3.5 text-sm font-medium text-theme-text cursor-pointer list-none hover:bg-theme-card-hex/50 transition-colors">
-          <span>How do I contact support?</span>
-          <i data-lucide="chevron-down" class="w-4 h-4 text-theme-text-sec/60 flex-shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true"></i>
-        </summary>
-        <div class="px-5 pb-4">
-          <p class="text-sm text-theme-text-sec leading-relaxed">Email us at <a href="mailto:contact@zodagent.com" class="text-accent underline underline-offset-2 decoration-accent/30">contact@zodagent.com</a> or visit the community forum for help from other users.</p>
-        </div>
-      </details>
+    <div x-data="faq" class="border-t border-theme-border-02">
+      <div><button @click="toggle('q1')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q1' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q1'"><span>How do I add a provider?</span><span x-show="open !== 'q1'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q1'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q1'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">Open Settings → Providers and add a new provider with a name, base URL, API key, and model. Zod works with any OpenAI-compatible endpoint — OpenAI, OpenRouter, Together, Groq, or a local server like Ollama or LM Studio. The model list auto-fetches from the provider's <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">/models</code> endpoint, then set your default and optional fallback in Settings → General. <a href="/resources/docs/api" class="text-accent underline underline-offset-2 decoration-accent/30">Read the providers docs</a>.</div></div>
+      <div class="border-t border-theme-border-02"><button @click="toggle('q2')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q2' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q2'"><span>Where are my API keys stored?</span><span x-show="open !== 'q2'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q2'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q2'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">API keys are stored only in your browser's <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">localStorage</code>. There is no backend, no account, and no telemetry — keys are sent only to the provider <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">baseUrl</code> you configured, as part of the requests you make. <a href="/legal/privacy" class="text-accent underline underline-offset-2 decoration-accent/30">See our privacy policy</a>.</div></div>
+      <div class="border-t border-theme-border-02"><button @click="toggle('q3')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q3' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q3'"><span>How do I create a custom tool?</span><span x-show="open !== 'q3'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q3'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q3'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">In Settings → Tools, add a YAML entry with a <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">name</code>, a <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">description</code>, and a JavaScript <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">implementation</code>. When the model calls it, Zod runs the code in a sandbox exposing <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">sandbox.args</code> and <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">sandbox.ctx</code> (persistent state, <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">fetch</code>, timers). Custom tools work in chat, the scheduler, and workflow steps. <a href="/resources/docs/tools" class="text-accent underline underline-offset-2 decoration-accent/30">Read the tools docs</a>.</div></div>
+      <div class="border-t border-theme-border-02"><button @click="toggle('q4')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q4' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q4'"><span>How do I connect an MCP server?</span><span x-show="open !== 'q4'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q4'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q4'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">Declare MCP servers in Settings → MCP as YAML: a <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">name</code>, an HTTP <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">url</code>, and optional <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">headers</code>. Zod uses a built-in MCP-over-HTTP client (JSON-RPC <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">initialize</code> / <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">tools/list</code> / <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">tools/call</code>), so connected servers' tools appear in the agent loop. <a href="/resources/docs/mcp" class="text-accent underline underline-offset-2 decoration-accent/30">Read the MCP docs</a>.</div></div>
+      <div class="border-t border-theme-border-02"><button @click="toggle('q5')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q5' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q5'"><span>Do scheduled tasks keep running when I close the tab?</span><span x-show="open !== 'q5'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q5'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q5'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">Yes. A service worker mirrors your state into IndexedDB and runs due crons — prompts or whole workflows — through the full agent loop even when the tab is closed, up to three concurrently. Results are written back and appear when you reopen Zod. One caveat: the browser itself must be open; fully closing the browser suspends the worker until it's next woken. <a href="/resources/docs/scheduler" class="text-accent underline underline-offset-2 decoration-accent/30">Read the scheduler docs</a>.</div></div>
+      <div class="border-t border-theme-border-02"><button @click="toggle('q6')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q6' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q6'"><span>How do I back up or move my data?</span><span x-show="open !== 'q6'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q6'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q6'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">Go to Settings → General → Data. <strong>Export data (JSON)</strong> downloads your full <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">zodagent</code> state — sessions, memory, providers, tools, MCP, and scheduled tasks. <strong>Import data</strong> restores it and reloads the app. This is also how you move your setup between machines or between the web app, extension, and desktop builds.</div></div>
+      <div class="border-t border-theme-border-02"><button @click="toggle('q7')" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q7' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q7'"><span>Still stuck? Ask the community</span><span x-show="open !== 'q7'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q7'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">−</span></button><div x-show="open === 'q7'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-[1.6]">If the docs don't cover it, the community forum is a great place to ask. Drop your question there and other users — and often the Zod Agent team — will help you out. <a href="/resources/forum" class="text-accent underline underline-offset-2 decoration-accent/30">Visit the forum</a>.</div></div>
     </div>
   </section>
 
-  <!-- Contact CTA -->
-  <section class="text-center max-w-lg mx-auto">
+  <section class="text-center max-w-lg mx-auto mb-16">
     <h2 class="text-lg font-semibold text-theme-text mb-2">Still need help?</h2>
-    <p class="text-sm text-theme-text-sec leading-relaxed mb-5">Our support team typically responds within 24 hours.</p>
-    <a href="mailto:contact@zodagent.com" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Email Support<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+    <p class="text-sm text-theme-text-sec leading-relaxed mb-5">Ask the community in the forum — someone's usually already solved it.</p>
+    <a href="/resources/forum" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Ask the forum<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
   </section>
 
 </div>

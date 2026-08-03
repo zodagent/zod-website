@@ -1,192 +1,59 @@
 <main id="main">
 
-<!-- Hero -->
 <section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v1.5 max-w-2xl">
-      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Research — pushing the frontier of AI-assisted development.</h1>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl">Our work on secure codebase indexing, semantic search, reinforcement learning for code agents, and multi-agent collaboration systems.</p>
-      <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="#publications">View publications<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
-    </div>
-    <div class="media-border-w-full relative overflow-hidden rounded-sm">
-      <div class="relative w-full h-full"><img alt="" src="/images/misc/wallpaper-1.jpg" data-wallpaper class="w-full object-cover max-sm:min-h-[200px] sm:min-h-[360px] md:min-h-[480px] rounded-sm" loading="lazy"/><div class="absolute inset-0 z-10" data-ui-example></div></div>
+      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Research &amp; engineering notes</h1>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl">Honest, technical writeups on how Zod Agent is built. No hype — just the architecture decisions behind a client-side agent runtime.</p>
+      <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="#notes">Read the notes<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
 
-<!-- Value Prop -->
-<section class="px-g2 py-[3rem] bg-theme-card text-theme-text">
-  <div class="w-full mx-auto max-w-[1300px] px-g2 text-center">
-    <p class="text-lg md:text-xl leading-relaxed text-balance max-w-3xl mx-auto text-theme-text-sec">We're an applied research team focused on building AI that helps developers ship ambitious software faster and more reliably than ever before. Our research spans model training, systems engineering, and human-computer interaction.</p>
+<section id="notes" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[860px]">
+    <div class="grid gap-g1.5 items-stretch">
+      <div class="bg-theme-card-hex rounded-sm p-g1.75">
+        <div class="flex items-center gap-x-2 text-xs text-theme-text-mid mb-v0.5">
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card text-accent">Architecture</span>
+        </div>
+        <h2 class="text-base font-semibold mb-v0.5">The client-side agent loop</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Zod Agent runs a real multi-round function-calling loop entirely in the browser. When you send a message, it builds history from the current session, calls your configured provider with the full set of tool schemas, executes any requested tool calls locally, and feeds the results back — repeating up to six rounds. Everything from the request to the tool execution to the final streamed answer uses browser APIs only: <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">fetch</code> + <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">ReadableStream</code> for streaming, <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">localStorage</code> for persistence. Because there's no server, the same codebase ports cleanly to the Chrome extension and the desktop app — the entire platform surface is just the browser APIs the app already uses.</p>
+      </div>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75">
+        <div class="flex items-center gap-x-2 text-xs text-theme-text-mid mb-v0.5">
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card text-accent">Rendering</span>
+        </div>
+        <h2 class="text-base font-semibold mb-v0.5">Structured output rendering</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Instead of building a structured-output schema layer on top of the provider API, Zod takes a lighter approach: the default system prompt invites the model to optionally emit lightweight <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">[section]</code> markers, and a parser (<code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">parseLlmOutput</code>) turns those into distinct UI cards — thinking steps, findings, suggestions, to-dos, code blocks, files, errors, security warnings, visualizations, and Approve/Reject confirmation plans. Plain text passes through untouched. This keeps rendering flexible across every OpenAI-compatible provider without depending on a specific tool-call output format. It's pragmatic: markers are a contract with the model, not a guarantee, which is why every renderer also handles their absence gracefully.</p>
+      </div>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75">
+        <div class="flex items-center gap-x-2 text-xs text-theme-text-mid mb-v0.5">
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card text-accent">Tooling</span>
+        </div>
+        <h2 class="text-base font-semibold mb-v0.5">The aligned YAML formatter</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">One of Zod's signatures is a hand-rolled YAML formatter that re-emits every config document with all mapping colons aligned to a single global column. It parses with <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">js-yaml</code>, then chooses inline vs. block layout based on a live line budget measured from the editor width, and wraps long scalar values — like API keys — at the value column. The editor layer ("Socratic" line rendering) highlights keys, masks secrets unless toggled, makes booleans clickable, links URLs, and highlights <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">$ENV</code> variables. Each config section also gets an "ask AI" input that sends the current YAML to the provider and asks for a complete, valid replacement document. The same formatter powers the <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">yaml_format</code> tool, so what you see in the editor is what the agent produces.</p>
+      </div>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75">
+        <div class="flex items-center gap-x-2 text-xs text-theme-text-mid mb-v0.5">
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card text-accent">Durability</span>
+        </div>
+        <h2 class="text-base font-semibold mb-v0.5">The service-worker background scheduler</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Scheduled work in a browser normally dies with the tab. Zod's scheduler doesn't: a classic service worker mirrors the app's <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">localStorage</code> document into an IndexedDB store on every save, ticks due crons every two seconds, and runs each one through the full agent loop — tools included, or a whole workflow harness if the task is wired to one — against your configured provider. Up to three cron runs execute concurrently. Results are pushed to an IndexedDB outbox that the page imports on reopen, so a run that completes while you're away shows up as a done task with its reply. The honest caveat is that a service worker only lives while the browser is open. Making it truly always-on — firing even when the browser is closed — is why the extension target plans to move the scheduler onto <code class="text-xs font-mono bg-theme-card-hex px-1 py-0.5 rounded">chrome.alarms</code>; that's on the roadmap.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Research Areas -->
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
-  <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="text-left mb-v2">
-      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Research areas</h2>
-    </div>
-    <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
-          <i data-lucide="search" class="w-5 h-5" aria-hidden="true"></i>
-        </div>
-        <h3 class="text-base font-semibold mb-v0.5">Codebase indexing</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Custom embedding models that index entire codebases with high recall. Agents get instant access to relevant code, documentation, and context across millions of lines.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
-          <i data-lucide="brain" class="w-5 h-5" aria-hidden="true"></i>
-        </div>
-        <h3 class="text-base font-semibold mb-v0.5">Semantic search for code</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">State-of-the-art semantic search that understands code semantics, not just syntax. Ask questions in natural language and find exactly what you need.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
-          <i data-lucide="trophy" class="w-5 h-5" aria-hidden="true"></i>
-        </div>
-        <h3 class="text-base font-semibold mb-v0.5">Reinforcement learning for agents</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Training coding agents with RL on real-world scenarios. Our agents learn from millions of successful coding sessions to make better decisions.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
-          <i data-lucide="share-2" class="w-5 h-5" aria-hidden="true"></i>
-        </div>
-        <h3 class="text-base font-semibold mb-v0.5">Multi-agent collaboration</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Systems that enable multiple AI agents to work together on complex tasks, dividing work, sharing context, and collaborating in parallel.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
-          <i data-lucide="zap" class="w-5 h-5" aria-hidden="true"></i>
-        </div>
-        <h3 class="text-base font-semibold mb-v0.5">Tab prediction models</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Specialized transformer models trained for sub-100ms code completion. Our Tab model predicts multi-line edits with industry-leading accuracy.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
-          <i data-lucide="shield" class="w-5 h-5" aria-hidden="true"></i>
-        </div>
-        <h3 class="text-base font-semibold mb-v0.5">Privacy-preserving AI</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Techniques for running AI models without compromising user privacy. Including zero data retention, on-device processing, and differentially private training.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Publications -->
-<section id="publications" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
-  <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="text-left mb-v2">
-      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Publications</h2>
-    </div>
-    <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-2 items-stretch">
-      <a href="/resources/blog" class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col group">
-        <div class="text-xs text-theme-text-mid font-medium mb-v0.5">2026</div>
-        <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors duration-150">Secure codebase indexing at scale</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">How Zod securely indexes millions of lines of code across thousands of repositories without compromising privacy or performance.</p>
-        <div class="mt-auto pt-3 flex items-center gap-2 text-xs text-theme-text-mid">
-          <span>Sasha Rush, Naman Jain</span>
-          <span aria-hidden="true">·</span>
-          <span>ICLR 2026</span>
-        </div>
-      </a>
-      <a href="/resources/blog" class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col group">
-        <div class="text-xs text-theme-text-mid font-medium mb-v0.5">2026</div>
-        <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors duration-150">Semantic search for code</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Building high-recall semantic search across large codebases using custom-trained embedding models and retrieval-augmented generation.</p>
-        <div class="mt-auto pt-3 flex items-center gap-2 text-xs text-theme-text-mid">
-          <span>Naman Jain, Erik Nilsson</span>
-          <span aria-hidden="true">·</span>
-          <span>ACL 2026</span>
-        </div>
-      </a>
-      <a href="/resources/blog" class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col group">
-        <div class="text-xs text-theme-text-mid font-medium mb-v0.5">2025</div>
-        <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors duration-150">Reinforcement learning for code agents</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Training coding agents with RL on millions of real-world scenarios. Our approach achieves state-of-the-art results on SWE-Bench.</p>
-        <div class="mt-auto pt-3 flex items-center gap-2 text-xs text-theme-text-mid">
-          <span>Research Team</span>
-          <span aria-hidden="true">·</span>
-          <span>NeurIPS 2025</span>
-        </div>
-      </a>
-      <a href="/resources/blog" class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col group">
-        <div class="text-xs text-theme-text-mid font-medium mb-v0.5">2024</div>
-        <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors duration-150">Multi-agent collaboration systems</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Enabling multiple agents to work together on complex tasks through shared context, task decomposition, and parallel execution.</p>
-        <div class="mt-auto pt-3 flex items-center gap-2 text-xs text-theme-text-mid">
-          <span>Ian Huang, Chris Liu</span>
-          <span aria-hidden="true">·</span>
-          <span>ICML 2024</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Conference appearances -->
-<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
-  <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
-      <div class="w-full lg:w-1/4">
-        <div class="max-w-prose">
-          <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Conferences & appearances</h2>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Our team regularly presents at top ML and software engineering conferences worldwide. Meet us at our next event.</p>
-          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/community/events">See upcoming events<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <div class="w-full lg:w-3/4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-g1">
-          <div class="bg-theme-card-hex rounded-sm p-g1.75 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center shrink-0">
-              <i data-lucide="presentation" class="w-5 h-5" aria-hidden="true"></i>
-            </div>
-            <div>
-              <div class="text-sm font-medium">NeurIPS 2025</div>
-              <div class="text-xs text-theme-text-sec">Vancouver · Dec 2025</div>
-            </div>
-          </div>
-          <div class="bg-theme-card-hex rounded-sm p-g1.75 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center shrink-0">
-              <i data-lucide="presentation" class="w-5 h-5" aria-hidden="true"></i>
-            </div>
-            <div>
-              <div class="text-sm font-medium">ICLR 2026</div>
-              <div class="text-xs text-theme-text-sec">Vienna · Apr 2026</div>
-            </div>
-          </div>
-          <div class="bg-theme-card-hex rounded-sm p-g1.75 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center shrink-0">
-              <i data-lucide="presentation" class="w-5 h-5" aria-hidden="true"></i>
-            </div>
-            <div>
-              <div class="text-sm font-medium">ACL 2026</div>
-              <div class="text-xs text-theme-text-sec">Barcelona · Jul 2026</div>
-            </div>
-          </div>
-          <div class="bg-theme-card-hex rounded-sm p-g1.75 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center shrink-0">
-              <i data-lucide="presentation" class="w-5 h-5" aria-hidden="true"></i>
-            </div>
-            <div>
-              <div class="text-sm font-medium">ICML 2024</div>
-              <div class="text-xs text-theme-text-sec">Vienna · Jul 2024</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Join the team -->
-<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto max-w-prose-medium-wide">
-      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto mb-v1">Join our research team.</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl mx-auto">We're hiring research scientists and ML engineers to push the frontier of AI-assisted development.</p>
-      <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/company/careers">View open positions<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto mb-v1">Deeper reading</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl mx-auto">Want the full picture? The changelog walks through how these pieces shipped, and the docs go into operational detail.</p>
+      <div class="flex justify-center gap-x-g2 items-center flex-wrap">
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/changelog">Read the changelog<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/resources/docs">Browse the docs<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
 </section>

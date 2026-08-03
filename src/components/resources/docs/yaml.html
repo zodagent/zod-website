@@ -1,0 +1,169 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using the App</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/context" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chat &amp; Context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; Sessions</a>
+            <a href="/resources/docs/orchestrator" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Orchestrator &amp; Workflows</a>
+            <a href="/resources/docs/scheduler" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Scheduling &amp; Background Agents</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Configuration</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/api" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Providers &amp; API</a>
+            <a href="/resources/docs/yaml" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">YAML Configuration</a>
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Tools</a>
+            <a href="/resources/docs/mcp" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">MCP Servers</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All Docs</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">YAML configuration</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">YAML is everywhere in Zod. Providers, memory, custom tools, and MCP servers are all edited as live, syntax-highlighted YAML — formatted by a hand-rolled aligned formatter and edited in the "Socratic editor", with an "ask AI to edit" button on every section.</p>
+
+      <div class="space-y-8">
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Aligned YAML formatter</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">Zod's formatter parses YAML with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">js-yaml</code> and re-emits it with <span class="text-theme-text font-medium">all mapping colons aligned to a single global column</span>. It chooses inline vs. block layout based on a max-line budget that is re-measured live from the editor width, and it wraps long scalar values across lines at the value column — so a long API key wraps cleanly:</p>
+          <div class="bg-theme-card-hex rounded-sm p-4">
+            <pre class="text-sm overflow-x-auto"><code>providers:
+  - name        : OpenRouter
+    baseUrl     : https://openrouter.ai/api/v1
+    apiKey      : sk-or-v1-REPLACE-ME-00000000000000
+                  0000000000000000000000000000000000
+    model       : openrouter/free
+    enabled     : true</code></pre>
+          </div>
+          <ul class="text-sm text-theme-text-sec leading-relaxed list-disc pl-4 mt-3 space-y-1">
+            <li>Used by the providers, memory, tools, and MCP editors, and by the <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">yaml_format</code> tool.</li>
+            <li>Inline vs. block layout adapts to your editor width in real time.</li>
+            <li>Long values wrap at the aligned value column for readability.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">The Socratic editor</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Each YAML line is rendered with syntax-aware highlighting and live affordances:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="palette" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Syntax highlighting</h3>
+              <p class="text-xs text-theme-text-sec">Keys, quoted strings, numbers, and booleans are each rendered in their own color.</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="eye-off" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Secret masking</h3>
+              <p class="text-xs text-theme-text-sec">Secret keys are masked with <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">••••••••</code> until you toggle "show API keys".</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="toggle-right" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">Clickable toggles</h3>
+              <p class="text-xs text-theme-text-sec">Booleans render as clickable toggles — click to flip <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">true</code> / <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">false</code>.</p>
+            </div>
+            <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
+              <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
+                <i data-lucide="link" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-sm font-semibold text-theme-text mb-1">URLs &amp; $ENV vars</h3>
+              <p class="text-xs text-theme-text-sec">URLs become links, and <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">$ENV</code> variables are highlighted so you can spot placeholders instantly.</p>
+            </div>
+          </div>
+          <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 mt-3">
+            <h3 class="text-sm font-semibold text-theme-text mb-1">Line-by-line editing</h3>
+            <p class="text-xs text-theme-text-sec">Click to edit a line, Enter to split with smart indent, Backspace to merge, Tab to indent — a fast, tactile editing model instead of a raw text area.</p>
+          </div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">Ask AI to edit this YAML</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed">Every config section has an <span class="text-theme-text font-medium">"Ask AI"</span> input. It sends the current YAML to your provider and asks it to return a complete, valid replacement document — so you can describe a change in plain language and get back correctly formatted, aligned YAML.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Orchestrator: line format ⇄ YAML</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">The orchestrator is a second, similar editor — but for workflow text. The friendly line format converts to and from strict YAML:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <div class="text-xs font-semibold text-theme-text-sec mb-2">Line format</div>
+              <div class="bg-theme-card-hex rounded-sm p-4">
+                <pre class="text-sm overflow-x-auto"><code># Research brief
+## @step:gather
+@tool:web_search
+@skill:research
+→ @goto:summarize
+## @step:summarize
+@tool:notes</code></pre>
+              </div>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-theme-text-sec mb-2">Strict YAML</div>
+              <div class="bg-theme-card-hex rounded-sm p-4">
+                <pre class="text-sm overflow-x-auto"><code>title: Research brief
+steps:
+  - name : gather
+    tools: [web_search]
+    skills: [research]
+    gotos:
+      - goto: summarize
+  - name : summarize
+    tools: [notes]</code></pre>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-theme-text-sec leading-relaxed mt-3">The YAML form has <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">title</code> plus a <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">steps[]</code> array, each step carrying <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">tools</code>, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">skills</code>, and <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">gotos</code> — see the Orchestrator page for how these run.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Related documentation</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/resources/docs/api" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Providers &amp; API <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">The provider YAML schema and request tuning.</p>
+            </a>
+            <a href="/resources/docs/orchestrator" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Orchestrator &amp; Workflows <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">Compose and run multi-step workflows.</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

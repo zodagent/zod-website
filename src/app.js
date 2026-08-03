@@ -56,8 +56,8 @@ Alpine.data('versionSelect', () => ({
 
 Alpine.data('modelSelect', () => ({
   open: false,
-  selected: 'Auto',
-  models: ['Auto', 'Composer 2.5', 'GPT-5.5', 'Opus 4.8', 'Gemini 3.1 Pro', 'Grok 4.3'],
+  selected: 'OpenRouter',
+  models: ['OpenRouter', 'OpenAI', 'Groq', 'Together', 'Ollama', 'LM Studio'],
   select(val) { this.selected = val; this.open = false },
   toggle() { this.open = !this.open },
 }))

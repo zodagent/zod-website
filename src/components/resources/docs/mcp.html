@@ -1,0 +1,123 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using the App</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/context" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chat &amp; Context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; Sessions</a>
+            <a href="/resources/docs/orchestrator" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Orchestrator &amp; Workflows</a>
+            <a href="/resources/docs/scheduler" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Scheduling &amp; Background Agents</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Configuration</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/api" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Providers &amp; API</a>
+            <a href="/resources/docs/yaml" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">YAML Configuration</a>
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Tools</a>
+            <a href="/resources/docs/mcp" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">MCP Servers</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All Docs</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">MCP servers</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">Zod includes a minimal Model Context Protocol (MCP) client over HTTP. Declare an MCP server in Settings → MCP, and its tools are surfaced to the agent loop alongside built-ins and custom tools.</p>
+
+      <div class="space-y-8">
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">What is MCP?</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed">MCP (Model Context Protocol) is a standard way to expose external tools and data to an AI agent. Instead of wiring each integration by hand, you point Zod at an MCP server over HTTP — the server advertises its tools, and Zod executes them on call, all from the browser.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Configuring a server</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">MCP servers are declared as YAML in Settings → MCP. Each server is a <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">name</code>, an HTTP <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">url</code>, and optional <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">headers</code>:</p>
+          <div class="bg-theme-card-hex rounded-sm p-4">
+            <pre class="text-sm overflow-x-auto"><code>mcpServers:
+  - name    : weather
+    url     : http://localhost:8000/mcp
+    headers :
+      Authorization: Bearer sk-test-1234</code></pre>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">How the client works</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">The built-in MCP-over-HTTP client speaks JSON-RPC 2.0. On connect it performs the standard handshake, then lists and calls tools:</p>
+          <div class="bg-theme-card-hex rounded-sm p-4">
+            <pre class="text-sm overflow-x-auto"><code>POST /mcp
+
+initialize                → server responds with capabilities &amp; protocol
+notifications.initialized → notify the server the session is ready
+tools/list                → returns the server's available tools
+tools/call                → invokes a tool with arguments</code></pre>
+          </div>
+          <ul class="text-sm text-theme-text-sec leading-relaxed list-disc pl-4 mt-3 space-y-1">
+            <li>The client tracks the <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">Mcp-Session-Id</code> header returned by the server and sends it on subsequent requests.</li>
+            <li>Responses are parsed from both plain JSON and SSE (server-sent events) streams.</li>
+            <li>Custom headers are sent with every request, so authenticated servers work out of the box.</li>
+          </ul>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">Tools in the loop</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed">Each connected server's tools are appended to the schemas offered to the model in the agent loop. When the model calls one, it is dispatched through the shared <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">runAnyTool</code> (custom → MCP → built-in), so MCP tools work identically in chat, the scheduler, and workflow steps. Connected MCP tools are refreshed automatically on init and on save.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Connecting</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">To test, point Zod at any MCP server that speaks JSON-RPC over HTTP. For example, a local mock server:</p>
+          <div class="bg-theme-card-hex rounded-sm p-4">
+            <pre class="text-sm overflow-x-auto"><code>mcpServers:
+  - name    : mock-tools
+    url     : http://localhost:8000/mcp</code></pre>
+          </div>
+          <p class="text-sm text-theme-text-sec leading-relaxed mt-3">Once saved, the server's tools appear in the loop automatically. Keep the server running and make sure its URL is reachable from your browser.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Related documentation</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/resources/docs/tools" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Tools <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">The tool loop and dispatch order.</p>
+            </a>
+            <a href="/resources/docs/yaml" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">YAML Configuration <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">How MCP config is edited and formatted.</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

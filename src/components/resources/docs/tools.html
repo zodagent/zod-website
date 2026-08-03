@@ -1,0 +1,187 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using the App</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/context" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chat &amp; Context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; Sessions</a>
+            <a href="/resources/docs/orchestrator" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Orchestrator &amp; Workflows</a>
+            <a href="/resources/docs/scheduler" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Scheduling &amp; Background Agents</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Configuration</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/api" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Providers &amp; API</a>
+            <a href="/resources/docs/yaml" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">YAML Configuration</a>
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Tools</a>
+            <a href="/resources/docs/mcp" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">MCP Servers</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All Docs</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Tools</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">Zod ships a fully functional client-side function-calling toolbelt. The model can call built-in tools, custom JavaScript tools you write, and MCP server tools — all executed in your browser, with results fed back into the conversation.</p>
+
+      <div class="space-y-8">
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">The tool loop</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed">When you send a message, Zod calls your provider with all tool schemas. If the model requests tool calls, Zod executes them in the browser and appends the results, repeating up to 6 rounds before streaming the final answer. Tools are dispatched through a shared <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">runAnyTool</code> in this order: <span class="text-theme-text font-medium">custom → MCP → built-in</span> — so custom and MCP tools work identically in chat, the scheduler, and workflow steps.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Built-in tools</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Eleven tools ship with Zod. Each declares a JSON Schema and a runner, wired together so the model always gets accurate call signatures.</p>
+          <div class="bg-theme-card-hex rounded-sm p-4 overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-theme-border-02 text-left">
+                  <th class="py-2 pr-4 font-semibold text-theme-text">Tool</th>
+                  <th class="py-2 pr-4 font-semibold text-theme-text">Actions</th>
+                  <th class="py-2 font-semibold text-theme-text">What it does</th>
+                </tr>
+              </thead>
+              <tbody class="text-theme-text-sec">
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">memory</td>
+                  <td class="py-2 pr-4">read / write / delete / clear</td>
+                  <td class="py-2">Long-term markdown memory blocks (<code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">## heading</code>), persists across sessions</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">todo</td>
+                  <td class="py-2 pr-4">add / check / uncheck / delete / list</td>
+                  <td class="py-2">Persistent to-do list, persisted as markdown</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">notes</td>
+                  <td class="py-2 pr-4">set / get / delete / list</td>
+                  <td class="py-2">Key → value scratch facts</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">calculator</td>
+                  <td class="py-2 pr-4">evaluate</td>
+                  <td class="py-2">Safe arithmetic with a hand-written tokenizer/parser: <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">+ - * / % ^</code>, parentheses, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">sqrt</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">exp</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">log/ln</code>, trig, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">min/max</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">pi</code>, <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">e</code></td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">clipboard</td>
+                  <td class="py-2 pr-4">read / write</td>
+                  <td class="py-2">System clipboard access (requires browser permission)</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">timer</td>
+                  <td class="py-2 pr-4">set / list / cancel</td>
+                  <td class="py-2">In-browser reminders that surface as a chat message + browser Notification</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">code_tools</td>
+                  <td class="py-2 pr-4">json_format / json_validate / yaml_to_json / json_to_yaml / yaml_format</td>
+                  <td class="py-2">JSON &amp; YAML utilities, including the global-aligned YAML formatter</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">data_store</td>
+                  <td class="py-2 pr-4">set / get / delete / list / clear</td>
+                  <td class="py-2">Namespaced persistent KV store (a tiny database)</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">confirm</td>
+                  <td class="py-2 pr-4">ask</td>
+                  <td class="py-2">Prompts the user with a yes/no modal before destructive actions</td>
+                </tr>
+                <tr class="border-b border-theme-border-02">
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">random</td>
+                  <td class="py-2 pr-4">uuid / dice / number / hash</td>
+                  <td class="py-2">UUIDs, dice rolls, random numbers, WebCrypto hashes</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-4 font-mono text-xs text-theme-text">time</td>
+                  <td class="py-2 pr-4">now / convert / list_timezones</td>
+                  <td class="py-2">Current time, timezone conversions, common IANA zones</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Custom tools</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-3">Define your own tools in Settings → Tools as YAML with a JavaScript <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">implementation</code>. When the model calls one, the code runs in a sandbox exposing <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">sandbox.args</code> (the tool arguments) and <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">sandbox.ctx</code> (persistent state, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">fetch</code>, timers, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">askUser</code>, and memory getters/setters) and returns a string or JSON value back into the loop.</p>
+          <div class="bg-theme-card-hex rounded-sm p-4">
+            <pre class="text-sm overflow-x-auto"><code>tools:
+  - name        : greet
+    description : Greet a person by name
+    implementation: |
+      export default ({ args, ctx }) => {
+        return `Hello, ${args.name}!`;
+      };</code></pre>
+          </div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
+          <h2 class="text-base font-semibold text-theme-text mb-3">How tool context persists</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed mb-4">Tool execution wires persistent state into every call: memory, todos, notes, and the data store are handed to the tools, changes are saved after every mutation, and the timer registry and the <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">askUser</code> bridge are provided. That state lives in the same <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">localStorage</code> document as everything else, so tools remember across sessions.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+            <div class="bg-theme-card-hex rounded-sm p-3">
+              <h3 class="text-xs font-semibold text-theme-text mb-1">Memory</h3>
+              <p class="text-xs text-theme-text-sec">Markdown blocks persisted across sessions</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-3">
+              <h3 class="text-xs font-semibold text-theme-text mb-1">Todos</h3>
+              <p class="text-xs text-theme-text-sec">Persistent to-do list</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-3">
+              <h3 class="text-xs font-semibold text-theme-text mb-1">Notes</h3>
+              <p class="text-xs text-theme-text-sec">Key/value scratch facts</p>
+            </div>
+            <div class="bg-theme-card-hex rounded-sm p-3">
+              <h3 class="text-xs font-semibold text-theme-text mb-1">Data store</h3>
+              <p class="text-xs text-theme-text-sec">Namespaced KV database</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Related documentation</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/resources/docs/api" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Providers &amp; API <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">How tool schemas travel to the provider.</p>
+            </a>
+            <a href="/resources/docs/mcp" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group">
+              <h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">MCP Servers <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3>
+              <p class="text-xs text-theme-text-sec">Surface MCP server tools in the loop.</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

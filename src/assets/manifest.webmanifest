@@ -1,0 +1,23 @@
+{
+  "name": "Zod Agent",
+  "short_name": "Zod",
+  "description": "A client-side, agentic AI chat workspace in your browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14120b",
+  "theme_color": "#14120b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

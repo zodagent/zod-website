@@ -1,93 +1,141 @@
 <main id="main">
-  <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text text-center">
-    <div class="w-full mx-auto px-g2 max-w-[720px]">
-      <h1 class="text-5xl md:text-7xl font-normal tracking-tight leading-[1.15] mb-3">Download Zod</h1>
-      <p class="text-base leading-normal text-theme-text-sec mb-8">Zod is the AI-powered code editor for building ambitious software. Available for macOS, Windows, and Linux.</p>
-      <div class="flex flex-wrap gap-3 justify-center mb-8" x-data="{ os: detectOS() }">
-        <template x-if="os === 'mac'">
-          <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-base md:text-lg px-5 md:px-7 py-2.5 md:py-3.5">Download for macOS</a>
-        </template>
-        <template x-if="os === 'windows'">
-          <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-base md:text-lg px-5 md:px-7 py-2.5 md:py-3.5">Download for Windows</a>
-        </template>
-        <template x-if="os === 'linux'">
-          <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-base md:text-lg px-5 md:px-7 py-2.5 md:py-3.5">Download for Linux</a>
-        </template>
-        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex">macOS</a>
-        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex">Windows</a>
-        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex">Linux</a>
-      </div>
-      <div class="flex flex-wrap gap-3 justify-center">
-        <a href="https://marketplace.visualstudio.com/items?itemName=cursor-ai.zod" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" target="_blank" rel="noopener noreferrer">VS Code Extension</a>
-        <a href="https://brew.sh/" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex" target="_blank" rel="noopener noreferrer">brew install zod</a>
-        <a href="https://winget.run/" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-transparent text-theme-text border border-theme-border-02-5 hover:bg-theme-card-hex" target="_blank" rel="noopener noreferrer">winget install Zod</a>
-      </div>
+
+<!-- Hero -->
+<section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto px-g2 max-w-[720px] text-center">
+    <h1 class="text-2xl md:text-5xl font-normal tracking-tight leading-[1.15] mb-v1 mt-v3">Get the app</h1>
+    <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">Run Zod Agent however you like — in your browser, as a Chrome extension, or as a desktop app. It's the same workspace everywhere, and it's free.</p>
+    <div class="flex flex-wrap gap-g1.5 justify-center">
+      <a href="#web" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Web app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      <a href="#extension" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">Chrome extension<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      <a href="#desktop" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">Desktop app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
     </div>
-  </section>
-  <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
-    <div class="w-full mx-auto px-g2 max-w-[800px]">
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 items-start">
-        <div class="bg-theme-card-hex rounded-sm p-g1.75">
-          <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-4">
+  </div>
+</section>
+
+<!-- Three ways to run -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-3 items-stretch" id="web">
+
+      <!-- Web app -->
+      <div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex flex-col">
+        <div class="flex items-center justify-between mb-g1">
+          <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center">
+            <i data-lucide="globe" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-03-hex text-theme-text-sec">Free</span>
+        </div>
+        <h3 class="text-lg font-semibold tracking-tight leading-snug mb-v0.5">Web app</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow mb-v1">Open Zod Agent in any modern browser, or install it as a PWA for an offline shell and background scheduling. No install, no account.</p>
+        <a href="/product/web" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg w-full">Open the web app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      </div>
+
+      <!-- Chrome extension -->
+      <div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex flex-col" id="extension">
+        <div class="flex items-center justify-between mb-g1">
+          <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center">
+            <i data-lucide="puzzle" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-03-hex text-theme-text-sec">Free</span>
+        </div>
+        <h3 class="text-lg font-semibold tracking-tight leading-snug mb-v0.5">Chrome extension</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow mb-v1">The same workspace as an MV3 extension. Gives your agent control of the full browser, with background scheduling via the service worker.</p>
+        <a href="/product/extension" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex w-full">Install the extension<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      </div>
+
+      <!-- Desktop app -->
+      <div class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex flex-col" id="desktop">
+        <div class="flex items-center justify-between mb-g1">
+          <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center">
             <i data-lucide="monitor" class="w-5 h-5" aria-hidden="true"></i>
           </div>
-          <h3 class="text-sm font-semibold mb-v0.5">Desktop app</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">The full Zod experience, built on VS Code with deep AI integration. Includes agent mode, Tab completions, codebase indexing, and all models.</p>
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-03-hex text-theme-text-sec">Free</span>
         </div>
-        <div class="bg-theme-card-hex rounded-sm p-g1.75">
-          <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-4">
-            <i data-lucide="terminal" class="w-5 h-5" aria-hidden="true"></i>
-          </div>
-          <h3 class="text-sm font-semibold mb-v0.5">VS Code extension</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">Use Zod's AI features directly inside your existing VS Code setup. Available from the VS Code marketplace.</p>
+        <h3 class="text-lg font-semibold tracking-tight leading-snug mb-v0.5">Desktop app</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow mb-v1">A lightweight native app for macOS, Windows, and Linux. Summon it with a global hotkey, keep it in the tray, and let it reach your desktop.</p>
+        <div class="flex flex-wrap gap-1.5 mb-v1">
+          <span class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec">macOS</span>
+          <span class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec">Windows</span>
+          <span class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec">Linux</span>
         </div>
-        <div class="bg-theme-card-hex rounded-sm p-g1.75">
-          <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-4">
-            <i data-lucide="book-open" class="w-5 h-5" aria-hidden="true"></i>
-          </div>
-          <h3 class="text-sm font-semibold mb-v0.5">CLI</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">Run Zod's AI agent directly from your terminal. Install with <code class="font-mono text-[13px]">brew install zod</code>, <code class="font-mono text-[13px]">winget install Zod</code>, or download the binary.</p>
+        <a href="/product/desktop" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex w-full">Get the desktop app<i data-lucide="download" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Self-host -->
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
+      <div class="w-full lg:w-1/4">
+        <div class="max-w-prose">
+          <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Or self-host it</h2>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">The web build is pure static HTML, CSS, and JS. Drop it on your own server and run Zod Agent yourself — no backend required.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/product/web">Learn about self-hosting<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-3/4">
+        <div class="relative overflow-hidden rounded-sm">
+          <div class="relative w-full h-full"><img alt="" loading="lazy" class="h-auto w-full object-cover aspect-[4/3] rounded-sm" data-wallpaper/><div class="absolute inset-0 z-10" data-ui-example></div></div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
-    <div class="w-full mx-auto px-g2 max-w-[1300px]">
-      <div class="text-center mb-v2">
-        <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Import from VS Code</h2>
-        <p class="text-base leading-normal text-theme-text-sec text-pretty">Zod is built on the same foundation as VS Code, so importing your settings, extensions, and themes is seamless.</p>
+  </div>
+</section>
+
+<!-- First run -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v2">
+      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Your first run</h2>
+      <p class="text-base text-theme-text-sec text-pretty mt-v0.5">Getting started takes about a minute.</p>
+    </div>
+    <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-3 items-stretch">
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+          <i data-lucide="monitor" class="w-5 h-5" aria-hidden="true"></i>
+        </div>
+        <h3 class="text-base font-semibold mb-v0.5">1. Open the app</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Launch Zod Agent in the browser, as an extension, or as a desktop app — it's the same workspace.</p>
       </div>
-      <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch">
-        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-          <i data-lucide="settings" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
-          <h3 class="text-sm font-semibold mb-v0.5">Settings</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">All your VS Code settings, keybindings, and snippets carry over automatically.</p>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+          <i data-lucide="settings" class="w-5 h-5" aria-hidden="true"></i>
         </div>
-        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-          <i data-lucide="package" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
-          <h3 class="text-sm font-semibold mb-v0.5">Extensions</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">Install your favorite VS Code extensions directly in Zod.</p>
+        <h3 class="text-base font-semibold mb-v0.5">2. Add a provider</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Open Settings → Providers, add an OpenAI-compatible API (OpenAI, OpenRouter, Together, Groq, Ollama, LM Studio...), and set it as your default.</p>
+      </div>
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
+          <i data-lucide="message-square" class="w-5 h-5" aria-hidden="true"></i>
         </div>
-        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-          <i data-lucide="palette" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
-          <h3 class="text-sm font-semibold mb-v0.5">Themes</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">Your color themes and icon packs work right out of the box.</p>
-        </div>
-        <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-          <i data-lucide="folder" class="w-8 h-8 mb-2 mx-auto block" aria-hidden="true"></i>
-          <h3 class="text-sm font-semibold mb-v0.5">Workspaces</h3>
-          <p class="text-xs text-theme-text-sec leading-relaxed">Open your existing projects and workspaces without any migration.</p>
-        </div>
+        <h3 class="text-base font-semibold mb-v0.5">3. Pick a model &amp; chat</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Choose a model, then start chatting on the hub. Try slash commands, mentions, tools, or schedule a prompt to run later.</p>
       </div>
     </div>
-  </section>
-  <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text text-center">
-    <div class="w-full mx-auto px-g2 max-w-[1300px]">
-      <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v2">Get started with Zod.</h2>
-      <div class="flex gap-4 justify-center flex-wrap">
-        <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Download Zod</a>
-        <a href="/login" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">Sign in</a>
+    <div class="text-center mt-v2">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/docs/getting-started">Read the quickstart<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="px-g2 bg-theme-bg text-theme-text py-28 md:py-52">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto max-w-prose-medium-wide">
+      <h2 class="text-4xl md:text-7xl font-normal tracking-tighter text-balance mx-auto mb-v2">Make it yours.</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">No account. No server. Add an API key and your agent is ready — in your browser, as a Chrome extension, or as a desktop app.</p>
+      <div class="flex justify-center gap-x-g3 items-center flex-wrap">
+        <div>
+          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Get the app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+        </div>
+        <div class="hidden md:block"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/product/pricing">See pricing<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
