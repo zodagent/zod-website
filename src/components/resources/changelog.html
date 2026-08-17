@@ -38,8 +38,8 @@
         <li><strong>YAML-to-steps runner</strong> — each step gets only its granted tools (schema-filtered), with a journal that carries context between steps.</li>
         <li><strong>Control flow</strong> — <code>@goto</code> transitions with <code>success</code>, <code>error</code>, <code>contains:</code>, and <code>match:</code> conditions, plus a loop guard.</li>
         <li><strong>Skill hints</strong> — steps can attach <code>@skill</code> entries that inject guidance into the step's system prompt.</li>
-        <li><strong>Live run card</strong> — a <code>workflowRun</code> card streams step-by-step progress, per-step messages, and tool-run details into the chat.</li>
-        <li><strong>Launch points</strong> — Run from the orchestrator editor, the hub "Run Active Workflow" quick action, a harness's play button, or a scheduled task.</li>
+        <li><strong>Live run card</strong> — an <code>agentRun</code> card streams step-by-step progress, per-step messages, and tool-run details into the chat.</li>
+        <li><strong>Launch points</strong> — Run from the orchestrator editor, the hub "Run Active Agent" quick action, a harness's play button, or a scheduled task.</li>
       </ul>
     </div>
 
@@ -83,8 +83,8 @@
       <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod Agent launches as a client-side, zero-backend agentic chat workspace that runs entirely in the browser.</p>
       <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
         <li><strong>Provider-agnostic chat</strong> — works with any OpenAI-compatible API: OpenAI, OpenRouter, Together, Groq, and local servers like Ollama or LM Studio.</li>
-        <li><strong>Local-first</strong> — sessions, memory, to-dos, notes, data store, and preferences all live in a single <code>localStorage</code> document. No account, no server.</li>
-        <li><strong>Built-in toolbelt</strong> — eleven tools out of the box: <code>memory</code>, <code>todo</code>, <code>notes</code>, <code>calculator</code>, <code>clipboard</code>, <code>timer</code>, <code>code_tools</code>, <code>data_store</code>, <code>confirm</code>, <code>random</code>, and <code>time</code>.</li>
+        <li><strong>Local-first</strong> — sessions, memory, to-dos, and preferences all live in a single <code>localStorage</code> document. No account, no server.</li>
+        <li><strong>Built-in toolbelt</strong> — nine tools out of the box: <code>memory</code>, <code>todo</code>, <code>calculator</code>, <code>clipboard</code>, <code>timer</code>, <code>code_tools</code>, <code>confirm</code>, <code>random</code>, and <code>time</code>.</li>
         <li><strong>Streaming agent loop</strong> — a multi-round function-calling loop runs client-side, up to six rounds, with retries, rate limiting, timeouts, and a fallback provider.</li>
         <li><strong>Task scheduler</strong> — schedule a prompt once, on an interval, daily, or weekly; results land in a new or chosen session with optional notifications.</li>
         <li><strong>Rich workspace</strong> — hub, sessions drawer, settings drawer with live YAML editors, and a touch-friendly, themeable UI.</li>

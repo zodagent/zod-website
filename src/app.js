@@ -26,11 +26,6 @@ Alpine.data('nav', () => ({
   closeMobile() { this.mobileOpen = false },
 }))
 
-Alpine.data('pricingToggle', () => ({
-  yearly: false,
-  toggle() { this.yearly = !this.yearly },
-}))
-
 Alpine.data('faq', () => ({
   open: null,
   toggle(id) { this.open = this.open === id ? null : id },

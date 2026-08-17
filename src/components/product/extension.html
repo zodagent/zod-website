@@ -112,7 +112,7 @@
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
           <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Always-on scheduling</h2>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">The scheduler runs in the background via the extension's service worker, and can be wired to <code class="font-mono text-[13px]">chrome.alarms</code> so due tasks fire even when the browser window is closed.</p>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">The scheduler runs in the background via the extension's service worker while the browser is open. Wiring it to <code class="font-mono text-[13px]">chrome.alarms</code> — so due tasks fire even with the browser closed — is on the roadmap.</p>
           <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/scheduler">Learn about the scheduler<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
       </div>
@@ -129,8 +129,8 @@
             <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
               <i data-lucide="bell" class="w-5 h-5" aria-hidden="true"></i>
             </div>
-            <h3 class="text-base font-semibold mb-v0.5">chrome.alarms</h3>
-            <p class="text-sm text-theme-text-sec leading-relaxed">Swap the in-tab ticker for chrome.alarms and scheduled tasks keep firing even when everything is closed.</p>
+            <h3 class="text-base font-semibold mb-v0.5">Always-on (roadmap)</h3>
+            <p class="text-sm text-theme-text-sec leading-relaxed">Planned: swap the in-tab ticker for chrome.alarms so scheduled tasks keep firing even when everything is closed.</p>
           </div>
           <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
             <div class="w-10 h-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
@@ -153,7 +153,7 @@
       <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">Install the extension and give your agent the whole web.</p>
       <div class="flex justify-center gap-x-g3 items-center flex-wrap">
         <div>
-          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Get the app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="https://chromewebstore.google.com/detail/njjbneanpoekfcnnllgincegchnkpoip" target="_blank" rel="noopener noreferrer">Install the extension<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>

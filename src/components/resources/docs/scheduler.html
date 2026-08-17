@@ -126,8 +126,8 @@
         </div>
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
-          <h2 class="text-base font-semibold text-theme-text mb-3">Workflow triggers</h2>
-          <p class="text-sm text-theme-text-sec leading-relaxed">Each task can optionally pick a harness from the Scheduler drawer. When the cron fires, it executes the harness's workflow steps (via the runner) instead of a bare prompt, and the resulting <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">workflowRun</code> card lands in the target session — "run this workflow at 9am daily".</p>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Agent (harness) triggers</h2>
+          <p class="text-sm text-theme-text-sec leading-relaxed">Each task can optionally pick a harness from the Scheduler drawer. When the cron fires, it executes the harness's agent steps (via the runner) instead of a bare prompt, and the resulting <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">agentRun</code> card lands in the target session — "run this agent at 9am daily".</p>
         </div>
 
         <div>
@@ -149,7 +149,7 @@
               </div>
               <div>
                 <h3 class="text-sm font-semibold text-theme-text mb-1">Runs due crons</h3>
-                <p class="text-xs text-theme-text-sec">The worker ticks every 2 seconds (and is woken on demand by a sync message from the page). For each due cron it builds history from the snapshot and runs the full agent loop — tools included — against your provider, or executes the cron's workflow harness if one is attached.</p>
+                <p class="text-xs text-theme-text-sec">The worker ticks every 2 seconds (and is woken on demand by a sync message from the page). For each due cron it builds history from the snapshot and runs the full agent loop — tools included — against your provider, or executes the cron's agent harness if one is attached.</p>
               </div>
             </div>
             <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4">
@@ -184,7 +184,7 @@
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg">
           <h2 class="text-base font-semibold text-theme-text mb-3">A note on always-on</h2>
-          <p class="text-sm text-theme-text-sec leading-relaxed">A service worker only lives while the browser itself is open — a closed tab suspends it until the browser wakes it or the next visit. For an always-on guarantee, the Chrome extension ports the scheduler to <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">chrome.alarms</code>, which fires even when the browser is fully closed.</p>
+          <p class="text-sm text-theme-text-sec leading-relaxed">A service worker only lives while the browser itself is open — a closed tab suspends it until the browser wakes it or the next visit. For an always-on guarantee, the extension target can be ported to <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">chrome.alarms</code> (a roadmap item), which fires even when the browser is fully closed.</p>
         </div>
 
         <div>

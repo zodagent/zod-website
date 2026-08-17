@@ -101,7 +101,7 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v2">
       <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">A real tool loop, running in your browser</h2>
-      <p class="text-base text-theme-text-sec text-pretty mt-v0.5">When you send a message, Zod calls your provider with the full set of tool schemas, executes requested tool calls locally, and feeds results back — up to 6 rounds. Eleven built-in tools, plus your own JavaScript tools and MCP servers over HTTP.</p>
+      <p class="text-base text-theme-text-sec text-pretty mt-v0.5">When you send a message, Zod calls your provider with the full set of tool schemas, executes requested tool calls locally, and feeds results back — up to 6 rounds. Nine built-in tools, plus your own JavaScript tools and MCP servers over HTTP.</p>
     </div>
     <div class="grid gap-g1.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
@@ -113,11 +113,6 @@
         <i data-lucide="list-checks" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
         <h3 class="text-sm font-semibold mb-v0.5">todo</h3>
         <p class="text-xs text-theme-text-sec leading-relaxed">A persistent to-do list, checked and tracked.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-        <i data-lucide="notebook-pen" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">notes</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">Key-to-value scratch facts that stick around.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="calculator" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
@@ -138,11 +133,6 @@
         <i data-lucide="braces" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
         <h3 class="text-sm font-semibold mb-v0.5">code_tools</h3>
         <p class="text-xs text-theme-text-sec leading-relaxed">JSON &amp; YAML formatting and conversion.</p>
-      </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-        <i data-lucide="database" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">data_store</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">A namespaced key-value store — a tiny database.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="shield-question" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
@@ -223,13 +213,23 @@
       <div class="w-full lg:w-3/4">
         <div class="bg-theme-card-hex rounded-sm p-g1.75">
           <div class="flex items-center justify-between mb-g1">
-            <span class="text-sm font-medium flex items-center gap-2"><i data-lucide="settings" class="w-4 h-4" aria-hidden="true"></i>Settings drawer — 6 tabs</span>
+            <span class="text-sm font-medium flex items-center gap-2"><i data-lucide="settings" class="w-4 h-4" aria-hidden="true"></i>Settings drawer — 9 tabs</span>
           </div>
           <div class="grid gap-g1.5 grid-cols-2 sm:grid-cols-3">
             <div class="bg-theme-card rounded-sm p-g1">
               <i data-lucide="server" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
+              <h3 class="text-sm font-semibold mb-v0.5">General</h3>
+              <p class="text-xs text-theme-text-sec leading-relaxed">Model, system prompt, request tuning, logging.</p>
+            </div>
+            <div class="bg-theme-card rounded-sm p-g1">
+              <i data-lucide="server" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
               <h3 class="text-sm font-semibold mb-v0.5">Providers</h3>
               <p class="text-xs text-theme-text-sec leading-relaxed">Default &amp; fallback, retries, rate limits, timeout.</p>
+            </div>
+            <div class="bg-theme-card rounded-sm p-g1">
+              <i data-lucide="brain" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
+              <h3 class="text-sm font-semibold mb-v0.5">Memory</h3>
+              <p class="text-xs text-theme-text-sec leading-relaxed">Persistent long-term memory as YAML blocks.</p>
             </div>
             <div class="bg-theme-card rounded-sm p-g1">
               <i data-lucide="puzzle" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
@@ -242,19 +242,24 @@
               <p class="text-xs text-theme-text-sec leading-relaxed">Connect MCP servers over HTTP in a few lines.</p>
             </div>
             <div class="bg-theme-card rounded-sm p-g1">
-              <i data-lucide="brain" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
-              <h3 class="text-sm font-semibold mb-v0.5">Memory</h3>
-              <p class="text-xs text-theme-text-sec leading-relaxed">Persistent long-term memory as YAML blocks.</p>
+              <i data-lucide="bot" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
+              <h3 class="text-sm font-semibold mb-v0.5">Agents</h3>
+              <p class="text-xs text-theme-text-sec leading-relaxed">List of agent harnesses, set active, edit.</p>
             </div>
             <div class="bg-theme-card rounded-sm p-g1">
-              <i data-lucide="sliders-horizontal" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
-              <h3 class="text-sm font-semibold mb-v0.5">General</h3>
-              <p class="text-xs text-theme-text-sec leading-relaxed">Model, system prompt, request tuning, logging.</p>
+              <i data-lucide="webhook" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
+              <h3 class="text-sm font-semibold mb-v0.5">Webhooks</h3>
+              <p class="text-xs text-theme-text-sec leading-relaxed">Incoming triggers across all harnesses.</p>
             </div>
             <div class="bg-theme-card rounded-sm p-g1">
-              <i data-lucide="palette" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
-              <h3 class="text-sm font-semibold mb-v0.5">Preferences</h3>
-              <p class="text-xs text-theme-text-sec leading-relaxed">36 themes, wallpapers, glass blur, answer font.</p>
+              <i data-lucide="calendar-clock" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
+              <h3 class="text-sm font-semibold mb-v0.5">Schedule</h3>
+              <p class="text-xs text-theme-text-sec leading-relaxed">Cron tasks — once, interval, daily, weekly.</p>
+            </div>
+            <div class="bg-theme-card rounded-sm p-g1">
+              <i data-lucide="smartphone" class="w-4 h-4 mb-1 text-accent" aria-hidden="true"></i>
+              <h3 class="text-sm font-semibold mb-v0.5">Pairing</h3>
+              <p class="text-xs text-theme-text-sec leading-relaxed">Device mesh sync with QR join and remote tools.</p>
             </div>
           </div>
         </div>
@@ -280,11 +285,11 @@
           <pre class="whitespace-pre-wrap text-xs leading-relaxed text-theme-text-sec"><code># Research then summarize
 ## @step:gather
 @tool:memory
-@tool:data_store
+@tool:time
 → @goto:summarize
 
 ## @step:summarize
-@tool:notes
+@tool:todo
 @skill:concise</code></pre>
         </div>
       </div>
@@ -339,7 +344,7 @@
     <div class="-mx-g2 no-scrollbar snap-x snap-mandatory scroll-px-g2 overflow-x-auto lg:mx-0 lg:snap-none lg:scroll-px-0 lg:overflow-visible">
       <div class="flex w-max gap-g1.5 px-g2 lg:grid lg:w-full lg:grid-cols-3 lg:px-0 xl:grid-cols-4">
         <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.4</span><time datetime="2026-07-20" class="text-base leading-normal">Jul 20, 2026</time></div><p class="text-base leading-normal text-theme-text">MCP servers over HTTP</p></a></article></div>
-        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.3</span><time datetime="2026-07-12" class="text-base leading-normal">Jul 12, 2026</time></div><p class="text-base leading-normal text-theme-text">Agent workflow runner</p></a></article></div>
+        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.3</span><time datetime="2026-07-12" class="text-base leading-normal">Jul 12, 2026</time></div><p class="text-base leading-normal text-theme-text">Agent runner</p></a></article></div>
         <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.2</span><time datetime="2026-07-04" class="text-base leading-normal">Jul 4, 2026</time></div><p class="text-base leading-normal text-theme-text">Background service-worker agents</p></a></article></div>
         <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0 lg:hidden xl:block"><article class="flex h-full flex-col"><a class="bg-theme-card-hex rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.1</span><time datetime="2026-06-28" class="text-base leading-normal">Jun 28, 2026</time></div><p class="text-base leading-normal text-theme-text">Custom tools &amp; structured output</p></a></article></div>
       </div>

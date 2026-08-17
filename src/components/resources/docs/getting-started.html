@@ -72,7 +72,7 @@
                 <i data-lucide="puzzle" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
               </div>
               <h3 class="text-sm font-semibold text-theme-text mb-1">Chrome extension</h3>
-              <p class="text-xs text-theme-text-sec">The same app packaged as a browser extension, with <code class="font-mono text-xs bg-theme-card-hex px-1 py-0.5 rounded">chrome.alarms</code> for always-on scheduling.</p>
+              <p class="text-xs text-theme-text-sec">The same app packaged as a browser extension (MV3), giving the agent control of every tab and page.</p>
             </div>
             <div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4">
               <div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3">
@@ -86,22 +86,25 @@
                 <i data-lucide="terminal" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
               </div>
               <h3 class="text-sm font-semibold text-theme-text mb-1">Self-host</h3>
-              <p class="text-xs text-theme-text-sec">Requires Node.js 18+ and npm. Build the static site and serve it anywhere.</p>
+              <p class="text-xs text-theme-text-sec">Requires Bun 1.3+. Build the static site and serve it anywhere.</p>
             </div>
           </div>
           <div class="bg-theme-card-hex rounded-sm p-4">
             <pre class="text-sm overflow-x-auto"><code># 1. Install dependencies
-npm install
+bun install
 
 # 2. Run the dev server
-npm run dev
+bun run dev
 #   → open the printed http://localhost:5173 URL
 
-# 3. Production build (outputs to dist-web/)
-npm run build
+# 3. Production build (all three targets: web → dist-web/, extension → dist-extension/, desktop → dist-desktop/)
+bun run build
 
 # 4. Preview the production build
-npm run preview</code></pre>
+bun run preview
+
+# 5. Run the native desktop app (Electrobun)
+bun run desktop</code></pre>
           </div>
         </div>
 
@@ -181,7 +184,7 @@ npm run preview</code></pre>
                 <i data-lucide="settings" class="w-4 h-4 text-theme-text" aria-hidden="true"></i>
               </div>
               <h3 class="text-sm font-semibold text-theme-text mb-1">Settings</h3>
-              <p class="text-xs text-theme-text-sec">Six tabs — General, Preferences, Providers, Memory, Tools, and MCP — all edited as live, syntax-highlighted YAML.</p>
+              <p class="text-xs text-theme-text-sec">Nine tabs — General, Providers, Memory, Tools, MCP, Agents, Webhooks, Schedule, and Pairing. Providers, memory, tools, and MCP are live, syntax-highlighted YAML; the rest have their own dedicated UIs.</p>
             </div>
           </div>
         </div>
