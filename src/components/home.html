@@ -58,7 +58,7 @@
             <img alt="" :src="wall" class="w-full object-cover max-sm:min-h-[200px] sm:min-h-[360px] md:min-h-[480px] lg:min-h-[560px] rounded-sm" loading="lazy"/>
             <div class="absolute inset-0 z-10" data-slide-shot>
               <template x-for="(s, i) in slides" :key="s.shot">
-                <img x-show="i === index" x-transition.opacity.duration.400ms :src="'/images/screens/' + s.shot + '.png'" :alt="s.title + ': a screenshot of Zod'" loading="lazy"/>
+                <img class="tour-frame" :class="{ 'is-on': i === index, 'is-prev': i < index }" :src="'/images/screens/' + s.shot + '.png'" :alt="s.title + ': a screenshot of Zod'" loading="lazy" :aria-hidden="i === index ? 'false' : 'true'"/>
               </template>
             </div>
           </div>
@@ -74,6 +74,7 @@
             <button type="button" @click="next()" aria-label="Next" class="w-9 h-9 rounded-full border border-theme-border flex items-center justify-center hover:bg-theme-card-hex"><i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></button>
           </div>
         </div>
+        <div class="tour-progress" :class="pause && 'is-paused'" aria-hidden="true"><template x-for="k in [tick]" :key="k"><i :style="'--tour-ms:' + ms + 'ms'"></i></template></div>
         <div class="flex flex-wrap justify-center gap-1.5 mt-v1" role="tablist">
           <template x-for="(s, i) in slides" :key="'d' + s.shot"><button type="button" role="tab" :aria-selected="i === index" :aria-label="s.title" @click="go(i)" class="h-1.5 rounded-full transition-all" :class="i === index ? 'w-6 bg-accent' : 'w-1.5 bg-theme-border'"></button></template>
         </div>

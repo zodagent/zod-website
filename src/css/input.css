@@ -321,3 +321,30 @@
 /* the hover images are slideshows now: only the frame that is on shows */
 [data-ui-example].is-anim img.ui-shot-gif { opacity: 0; }
 [data-ui-example].is-anim img.ui-shot-gif.is-on { opacity: 1; }
+
+/* ── Slideshows are animated: each frame slides and zooms in, then drifts slowly; a thin line shows the time to the next frame; the wallpaper moves gently ── */
+[data-ui-example] img.ui-shot-gif, [data-slide-shot] img { transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+[data-ui-example].is-anim img.ui-shot-gif { opacity: 0; transform: translateY(14px) scale(0.975); }
+[data-ui-example].is-anim img.ui-shot-gif.is-on { opacity: 1; transform: translateY(0) scale(1); animation: ui-drift 7s ease-out both; }
+@keyframes ui-drift { from { scale: 1; } to { scale: 1.025; } }
+.ui-progress { position: absolute; left: 14px; right: 14px; bottom: 12px; height: 3px; border-radius: 2px; background: rgba(255, 255, 255, 0.18); z-index: 6; overflow: hidden; pointer-events: none; opacity: 0; transition: opacity 0.4s; }
+[data-ui-example].is-anim .ui-progress { opacity: 1; }
+.ui-progress i { display: block; height: 100%; width: 100%; background: rgba(255, 255, 255, 0.85); transform-origin: left center; transform: scaleX(0); }
+[data-ui-example].is-anim .ui-progress i { animation: ui-progress var(--ui-ms, 3200ms) linear both; }
+@keyframes ui-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+img[data-wallpaper] { animation: wall-drift 26s ease-in-out infinite alternate; }
+@keyframes wall-drift { from { scale: 1; } to { scale: 1.07; } }
+
+/* the home tour: frames slide in from the side they come from */
+[data-slide-shot] img.tour-frame { opacity: 0; transform: translateX(7%) scale(0.965); pointer-events: none; }
+[data-slide-shot] img.tour-frame.is-prev { transform: translateX(-7%) scale(0.965); }
+[data-slide-shot] img.tour-frame.is-on { opacity: 1; transform: translateX(0) scale(1); animation: ui-drift 8s ease-out both; }
+.tour-progress { height: 3px; border-radius: 2px; background: color-mix(in srgb, currentColor 12%, transparent); overflow: hidden; margin-top: 14px; }
+.tour-progress i { display: block; height: 100%; width: 100%; background: var(--color-accent, #00a3f5); transform-origin: left center; transform: scaleX(0); animation: ui-progress var(--tour-ms, 6500ms) linear both; }
+.tour-progress.is-paused i { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  [data-ui-example] img.ui-shot-gif, [data-slide-shot] img { transition: opacity 0.2s ease; }
+  [data-ui-example].is-anim img.ui-shot-gif, [data-ui-example].is-anim img.ui-shot-gif.is-on, [data-slide-shot] img.tour-frame, [data-slide-shot] img.tour-frame.is-on { transform: none; animation: none; }
+  img[data-wallpaper] { animation: none; }
+  .ui-progress i, .tour-progress i { animation: none; }
+}
