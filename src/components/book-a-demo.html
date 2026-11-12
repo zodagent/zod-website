@@ -1,4 +1,5 @@
 <main id="main">
+<script>if(window.ZOD_BOOKING_URL){location.replace(window.ZOD_BOOKING_URL)}</script>
 
 <section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
@@ -31,6 +32,7 @@
       <div class="lg:col-span-3">
         <div class="bg-theme-card-hex rounded-sm p-g1.75">
           <h3 class="text-base font-semibold mb-v1">Choose a time</h3>
+          <a data-booking x-data x-show="window.ZOD_BOOKING_URL" x-cloak :href="window.ZOD_BOOKING_URL" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover mb-v1">Pick a time on the calendar</a>
           <div x-data="demoForm">
             <template x-if="submitted">
               <div class="text-center py-g1.5">
