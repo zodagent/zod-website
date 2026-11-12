@@ -17,7 +17,7 @@
 <script>window.ZOD_BOOKING_URL='';</script><!-- put the booking link between the quotes: the Book a demo page sends visitors there -->
 <script type="module" src="/src/app.js"></script>
 <script>document.addEventListener('DOMContentLoaded',function(){
-var SLIDES={"gif-agent-run": 10, "gif-agents": 5, "gif-chat-streaming": 8, "gif-code": 7, "gif-confirmation": 4, "gif-connectors": 6, "gif-cron": 5, "gif-dashboard": 12, "gif-memory": 3, "gif-orchestrator": 6, "gif-scheduler": 7, "gif-search": 9, "gif-session-data": 4, "gif-settings": 7, "gif-tool-loop": 7, "gif-vaults": 4, "master-demo": 13, "gif-pairing": 5};
+var SLIDES={"gif-agent-run": 6, "gif-agents": 5, "gif-chat-streaming": 8, "gif-code": 7, "gif-confirmation": 4, "gif-connectors": 3, "gif-cron": 4, "gif-dashboard": 2, "gif-memory": 3, "gif-orchestrator": 5, "gif-scheduler": 5, "gif-search": 7, "gif-session-data": 4, "gif-settings": 7, "gif-tool-loop": 5, "gif-vaults": 4, "master-demo": 13, "gif-pairing": 5};
 var w=['/images/misc/wallpaper-1.jpg','/images/misc/wallpaper-2.jpg','/images/misc/wallpaper-3.jpg','/images/misc/wallpaper-4.jpg','/images/misc/wallpaper-5.jpg'];
 document.querySelectorAll('[data-wallpaper]').forEach(function(i){i.src=w[Math.floor(Math.random()*w.length)]});
 var pool=['hub-home','chat-structured','chat-agent-run','chat-confirmation','search-palette','agent-profile','orchestrator','settings-providers','settings-memory','settings-tools','settings-mcp','settings-agents','settings-webhooks','scheduler','pairing','dashboard','group-compose','broadcast-compose','session-data-panel','cron-detail','code'];
@@ -30,6 +30,11 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
   i.loading='lazy';
   d.appendChild(i);
   var gif=d.getAttribute('data-ui-gif');
+  // a label that names the feature on screen, so a picture is never just a picture
+  var GL={'gif-dashboard':'Home','gif-chat-streaming':'Chat','gif-agent-run':'Tool steps','gif-tool-loop':'Tool steps','gif-confirmation':'Approvals','gif-search':'Search','gif-scheduler':'Routines','gif-cron':'Write a routine','gif-orchestrator':'Routine steps','gif-memory':'Memory','gif-agents':'Agents and skills','gif-connectors':'Connectors and plugins','gif-settings':'Settings','gif-vaults':'Vaults','gif-pairing':'Chrome extension','gif-code':'Code','gif-session-data':'Chat details','master-demo':'The whole app'};
+  var SL={'hub-home':'Home','chat-structured':'Answers you can act on','chat-agent-run':'Tool steps','chat-confirmation':'Approvals','search-palette':'Search','agent-profile':'Agents','orchestrator':'Routine steps','settings-providers':'Model','settings-memory':'Memory','settings-tools':'Skills','settings-mcp':'Connectors','settings-agents':'Agents','settings-webhooks':'Plugins and messaging','scheduler':'Routines','pairing':'Chrome extension','dashboard':'Search home','group-compose':'Vaults','broadcast-compose':'Notifications','session-data-panel':'Chat details','cron-detail':'A routine','code':'Code','settings-general':'Settings','books-home':'Books','books-table':'Books','books-reports':'Books','settings-approvals':'Approvals','shortcuts':'Shortcuts','extension-context':'Chrome context'};
+  var lab=GL[gif]||SL[key];
+  if(lab){var tag=document.createElement('span');tag.className='ui-label';tag.textContent=lab;tag.setAttribute('aria-hidden','true');d.appendChild(tag)}
   var n=SLIDES[gif]||0;
   if(n>1){
     // a slideshow of full-size screenshots of the real app, playing while it is on screen
@@ -57,22 +62,22 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Zod: one agent workspace on your computer" />
 <meta property="og:description" content="A local-first agent workspace with routines, memory and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
-<meta property="og:image" content="/og-image.png" />
+<meta property="og:image" content="https://www.zodagent.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Zod: one agent workspace on your computer" />
 <meta name="twitter:description" content="A local-first agent workspace with routines, memory and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
-<meta name="twitter:image" content="/og-image.png" />
+<meta name="twitter:image" content="https://www.zodagent.com/og-image.png" />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Zod",
-  "url": "https://zodagent.com",
-  "logo": "https://zodagent.com/favicon.svg",
+  "url": "https://www.zodagent.com",
+  "logo": "https://www.zodagent.com/favicon.svg",
   "description": "A local-first agent workspace: chat with an agent that uses real tools, run routines, keep memory and connect your own apps. Desktop app and Chrome extension, any OpenAI-compatible model.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Linux, macOS, Windows, Chrome",
@@ -88,6 +93,6 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Zod",
-  "url": "https://zodagent.com"
+  "url": "https://www.zodagent.com"
 }
 </script>

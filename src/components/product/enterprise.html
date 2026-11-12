@@ -36,7 +36,7 @@
     <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-3 items-stretch">
       <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
         <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-g1">
-          <i data-lucide="building-2" class="w-5 h-5 text-accent" aria-hidden="true"></i>
+          <i data-lucide="building2" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5">Self-hosted, with a password</h3>
         <p class="text-sm text-theme-text-sec leading-relaxed">Planned: run Zod in a container on your own server behind a login, with one data volume to back up. Coming soon.</p>
@@ -100,7 +100,7 @@
           <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-theme-text shrink-0" aria-hidden="true" stroke-width="2.5"></i>Any OpenAI-compatible provider, including internal gateways</li>
           <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-theme-text shrink-0" aria-hidden="true" stroke-width="2.5"></i>Your data stays on your network</li>
         </ul>
-        <a href="/resources/docs/getting-started" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg w-full">Book a demo</a>
+        <a href="/book-a-demo" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg w-full">Book a demo</a>
       </div>
 
       <!-- Air-gapped -->
@@ -114,7 +114,7 @@
           <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-theme-text shrink-0" aria-hidden="true" stroke-width="2.5"></i>With local models only (Ollama, LM Studio)</li>
           <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-theme-text shrink-0" aria-hidden="true" stroke-width="2.5"></i>Everything stays on the machine</li>
         </ul>
-        <a href="/resources/docs/getting-started" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg w-full">Book a demo</a>
+        <a href="/book-a-demo" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg w-full">Book a demo</a>
       </div>
 
     </div>
@@ -123,7 +123,7 @@
 
 <!-- FAQ -->
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
-  <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[700px]" x-data="faq">
+  <div class="w-full mx-auto px-g2 max-w-[700px]" x-data="faq">
     <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Questions and Answers</h2>
     <div class="border-t border-theme-border-02">
       <div><button @click="open = open === 'q1' ? null : 'q1'" class="flex w-full items-center justify-between py-4 text-sm font-medium text-theme-text bg-none border-none cursor-pointer text-left transition-opacity duration-150 ease-out opacity-60 hover:opacity-100" :class="open==='q1' && '!opacity-100'" aria-expanded="false" :aria-expanded="open === 'q1'"><span>Can we run Zod behind our firewall?</span><span x-show="open !== 'q1'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">+</span><span x-show="open === 'q1'" class="text-xl text-theme-text-sec shrink-0" aria-hidden="true">-</span></button><div x-show="open === 'q1'" x-cloak x-collapse class="pb-5 text-sm text-theme-text-sec leading-relaxed">Zod already runs on each computer with no cloud. Hosting it on your own server for a team is coming soon, and will work behind your firewall with an internal gateway or a local model.</div></div>

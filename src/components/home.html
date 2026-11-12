@@ -76,7 +76,7 @@
         </div>
         <div class="tour-progress" :class="pause && 'is-paused'" aria-hidden="true"><template x-for="k in [tick]" :key="k"><i :style="'--tour-ms:' + ms + 'ms'"></i></template></div>
         <div class="flex flex-wrap justify-center gap-1.5 mt-v1" role="tablist">
-          <template x-for="(s, i) in slides" :key="'d' + s.shot"><button type="button" role="tab" :aria-selected="i === index" :aria-label="s.title" @click="go(i)" class="h-1.5 rounded-full transition-all" :class="i === index ? 'w-6 bg-accent' : 'w-1.5 bg-theme-border'"></button></template>
+          <template x-for="(s, i) in slides" :key="'d' + s.shot"><button type="button" role="tab" :aria-selected="i === index" :aria-label="s.title" @click="go(i)" class="h-6 flex items-center px-0.5 cursor-pointer"><span class="h-1.5 rounded-full transition-all" :class="i === index ? 'w-6 bg-accent' : 'w-1.5 bg-theme-border'"></span></button></template>
         </div>
       </div>
     </div>
@@ -182,7 +182,7 @@
 <!-- Feature Cards -->
 <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
           <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Any model. Your choice.</h3>
@@ -201,7 +201,7 @@
 
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
           <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">An agent that uses real tools</h3>
@@ -220,7 +220,7 @@
 
 <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
           <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Answers you can read and act on</h3>
@@ -239,7 +239,7 @@
 
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
           <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Routines that actually run</h3>
@@ -258,7 +258,7 @@
 
 <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
           <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Memory that stays yours</h3>

@@ -5,18 +5,25 @@
     <div class="text-left mb-v1.5 max-w-3xl">
       <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Every feature, explained.</h1>
       <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl">Zod is a local-first agent workspace. Here is everything it does, with screenshots of the real app. Hover a screenshot to see it move. Zod is in beta and available by invitation.</p>
-      <div class="flex flex-wrap gap-1.5 mb-v2"><a href="#home-chat" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Home &amp; chat</a><a href="#tool-steps-approvals" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Tool steps &amp; approvals</a><a href="#approvals" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Approvals</a><a href="#answers-you-can-act-on" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Answers you can act on</a><a href="#search" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Search</a><a href="#routines" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Routines</a><a href="#write-a-routine" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Write a routine</a><a href="#memory" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Memory</a><a href="#agents" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Agents</a><a href="#skills" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Skills</a><a href="#connectors" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Connectors</a><a href="#messaging" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Messaging</a><a href="#chrome-extension" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Chrome extension</a><a href="#code" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Code</a><a href="#chat-details" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Chat details</a><a href="#vaults" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Vaults</a><a href="#settings-themes" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Settings &amp; themes</a><a href="#model" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Model</a><a href="#notifications" class="inline-flex text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text">Notifications</a></div>
       <div class="flex justify-start gap-x-g2 items-center flex-wrap">
-        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
-        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover" href="/resources/docs">Read the docs<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/resources/docs">Read the docs<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- the section nav: sticks under the header, scrolls sideways on a phone, and marks the section on screen -->
+<nav class="sticky top-14 z-40 bg-theme-bg/95 backdrop-blur border-b border-theme-border-02" aria-label="Sections">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="flex gap-1.5 py-2 overflow-x-auto scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"><a href="#home-chat" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Home &amp; chat</a><a href="#tool-steps-approvals" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Tool steps &amp; approvals</a><a href="#approvals" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Approvals</a><a href="#answers-you-can-act-on" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Answers you can act on</a><a href="#search" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Search</a><a href="#routines" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Routines</a><a href="#write-a-routine" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Write a routine</a><a href="#memory" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Memory</a><a href="#agents" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Agents</a><a href="#skills" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Skills</a><a href="#connectors" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Connectors</a><a href="#messaging" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Messaging</a><a href="#chrome-extension" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Chrome extension</a><a href="#code" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Code</a><a href="#chat-details" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Chat details</a><a href="#vaults" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Vaults</a><a href="#settings-themes" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Settings &amp; themes</a><a href="#model" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Model</a><a href="#notifications" data-chip class="inline-flex shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border border-theme-border text-theme-text-sec hover:text-theme-text transition-colors">Notifications</a></div>
+  </div>
+</nav>
+<script>document.addEventListener('DOMContentLoaded',function(){var chips=[].slice.call(document.querySelectorAll('[data-chip]'));var byId={};chips.forEach(function(c){byId[c.getAttribute('href').slice(1)]=c});var on=function(id){chips.forEach(function(c){var a=c.getAttribute('href').slice(1)===id;c.classList.toggle('bg-theme-text',a);c.classList.toggle('text-theme-bg',a);c.classList.toggle('border-theme-text',a);c.classList.toggle('text-theme-text-sec',!a)});var c=byId[id];if(c&&c.scrollIntoView)c.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'})};if(!('IntersectionObserver' in window))return;var seen={};var io=new IntersectionObserver(function(es){es.forEach(function(e){seen[e.target.id]=e.isIntersecting});var first=Object.keys(byId).filter(function(id){return seen[id]})[0];if(first)on(first)},{rootMargin:'-30% 0px -55% 0px'});Object.keys(byId).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})})</script>
+
 <section id="home-chat" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Home &amp; chat</div>
@@ -33,7 +40,7 @@
 
 <section id="tool-steps-approvals" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Tool steps &amp; approvals</div>
@@ -50,7 +57,7 @@
 
 <section id="approvals" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Approvals</div>
@@ -67,7 +74,7 @@
 
 <section id="answers-you-can-act-on" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Answers you can act on</div>
@@ -84,7 +91,7 @@
 
 <section id="search" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Search</div>
@@ -101,7 +108,7 @@
 
 <section id="routines" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Routines</div>
@@ -118,7 +125,7 @@
 
 <section id="write-a-routine" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Write a routine</div>
@@ -135,7 +142,7 @@
 
 <section id="memory" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Memory</div>
@@ -152,7 +159,7 @@
 
 <section id="agents" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Agents</div>
@@ -169,7 +176,7 @@
 
 <section id="skills" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Skills</div>
@@ -186,7 +193,7 @@
 
 <section id="connectors" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Connectors</div>
@@ -203,7 +210,7 @@
 
 <section id="messaging" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Messaging</div>
@@ -220,7 +227,7 @@
 
 <section id="chrome-extension" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Chrome extension</div>
@@ -237,7 +244,7 @@
 
 <section id="code" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Code</div>
@@ -254,7 +261,7 @@
 
 <section id="chat-details" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Chat details</div>
@@ -271,7 +278,7 @@
 
 <section id="vaults" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Vaults</div>
@@ -288,7 +295,7 @@
 
 <section id="settings-themes" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Settings &amp; themes</div>
@@ -305,7 +312,7 @@
 
 <section id="model" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Model</div>
@@ -322,7 +329,7 @@
 
 <section id="notifications" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
-    <div class="flex flex-col lg:flex-row items-center gap-g2">
+    <div class="flex flex-col lg:flex-row items-center gap-g2 lg:gap-[3.5rem]">
       <div class="w-full lg:w-2/5">
         <div class="max-w-prose">
           <div class="text-xs font-semibold uppercase tracking-wider text-theme-text-sec/70 mb-v0.5">Notifications</div>
@@ -360,7 +367,7 @@
       <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto mb-v1">See it live.</h2>
       <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl mx-auto">Book a demo and we will show you the real app and set you up.</p>
       <div class="flex justify-center gap-x-g2 items-center flex-wrap">
-        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>

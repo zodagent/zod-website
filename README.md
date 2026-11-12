@@ -41,6 +41,7 @@ Copies `dist/src/pages/*` to `dist/` so routes like `/product/web` serve `produc
 
 - Marketing pages use `src/partials/header.html`; docs pages use `src/partials/resource-header.html`
 - Internal links must target allowed routes (`/product*`, `/resources/docs*`, `/company/*`, `/legal/*`, etc.) — run the link check before committing
+- `/company/investors` is the pitch, one slide per page (`src/components/company/investors/`): cover, problem, solution, market, competition, product, advantages, features, traction, business model, forecast, raise, use of funds, team, advisors, thank you. Figures only the founders know (raised to date, the round, usage) are "shared on request" until they are filled in; the use-of-funds split and the plans on the business-model page are the plan, edit them as it changes
 - Site copy reflects the product: local-first, any OpenAI-compatible model, no account. Zod is closed source and has no public pricing: calls to action are "Book a demo" (`/book-a-demo`)
 - Only the desktop app and the Chrome extension are available; the browser version, self-hosting and the CLI are marked "coming soon"
 - The screenshots in `src/assets/images/screens` and the slideshows in `src/assets/images/slides` are real captures of the app

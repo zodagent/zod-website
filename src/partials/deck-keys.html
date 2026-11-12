@@ -1,0 +1,2 @@
+<!-- the investor deck: the left and right arrow keys open the previous and next slide -->
+<script>document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement&&document.activeElement.tagName))return;var d=document.querySelector('[data-deck]');if(!d)return;var h=e.key==='ArrowRight'?d.getAttribute('data-deck-next'):e.key==='ArrowLeft'?d.getAttribute('data-deck-prev'):null;if(h)location.href=h})</script>
