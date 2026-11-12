@@ -4,17 +4,17 @@
 <section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v1.5 max-w-3xl">
-      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1 mt-v3">Make it yours. A client-side agentic AI chat workspace that runs entirely in your browser.</h1>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl">Zod Agent gives you a hub-first AI workspace on top of <strong class="text-theme-text font-medium">any OpenAI-compatible API</strong> — with a real tool loop, structured responses, YAML configuration, agent workflows, and scheduled background agents. No account, no server, no data leaving your machine.</p>
+      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1 mt-v3">Make it yours. One agent workspace on your computer that does the work, and asks before it changes anything.</h1>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl">Zod is a local-first app. Chat with an agent that uses real tools, search everything from one bar, set routines that run on their own, and let it remember what matters. It works with <strong class="text-theme-text font-medium">any OpenAI-compatible model</strong> . No account, and your data stays in files on your computer. Zod is in beta.</p>
       <div class="flex justify-start gap-x-g2 items-center flex-wrap">
         <div>
-          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Get the app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
         </div>
         <div class="hidden md:block"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/resources/docs">Read the docs<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
       </div>
     </div>
     <div class="media-border-w-full relative overflow-hidden rounded-sm shadow-lg ring-1 ring-white/10" style="padding-bottom: 56.25%;">
-      <iframe class="absolute inset-0 w-full h-full rounded-sm" src="https://www.youtube.com/embed/iH--kruBEF0?autoplay=1&mute=1&loop=1&playlist=iH--kruBEF0&rel=0&modestbranding=1&controls=1" title="Zod Agent demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="absolute inset-0 w-full h-full rounded-sm" src="https://www.youtube.com/embed/iH--kruBEF0?autoplay=1&mute=1&loop=1&playlist=iH--kruBEF0&rel=0&modestbranding=1&controls=1" title="Zod demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -22,7 +22,7 @@
 <!-- Value Prop -->
 <section class="px-g2 py-[3rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2 text-center">
-    <p class="text-lg md:text-xl leading-relaxed text-balance max-w-3xl mx-auto text-theme-text-sec">Your entire workspace — sessions, memory, tools, provider keys, and preferences — lives in your browser. Close the tab and come back later: it's all still there. The only requests leaving your machine are the ones you send to the providers you configure.</p>
+    <p class="text-lg md:text-xl leading-relaxed text-balance max-w-3xl mx-auto text-theme-text-sec">Your chats, routines, memory, settings and connectors live in files on your computer, in a vault you can back up or switch. The only traffic that leaves is what you send to the model you link and the connectors you add.</p>
   </div>
 </section>
 
@@ -31,10 +31,53 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto mb-v2.5 max-w-prose-medium-wide">
       <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">One workspace, every feature.</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Hover to replay the full UI/UX demo — streaming chat, the tool loop, confirmation plans, agent runs, code, search, scheduling, orchestration, and more, all in one loop.</p>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Hover to replay a tour of the real app: search, routines, memory, connectors and a chat where the agent uses tools and asks before it acts.</p>
     </div>
     <div class="relative overflow-hidden rounded-sm">
       <div class="relative w-full h-full"><img alt="" loading="lazy" class="h-auto w-full object-cover aspect-[16/9] rounded-sm" data-wallpaper/><div class="absolute inset-0 z-10" data-ui-example data-ui-src="dashboard" data-ui-gif="master-demo"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tour: a slideshow of every feature -->
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text" id="tour" x-data="tour" @mouseenter="pause = true" @mouseleave="pause = false">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto mb-v2.5 max-w-prose-medium-wide">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">Take the tour.</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Every part of Zod, in the real app. Use the arrows, the list or the dots.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-g1.5 items-start">
+      <nav class="hidden lg:flex flex-col gap-px max-h-[560px] overflow-y-auto pr-2" aria-label="Features">
+        <template x-for="(s, i) in slides" :key="s.shot">
+          <button type="button" @click="go(i)" class="text-left px-3 py-2 rounded-[6px] text-sm transition-colors" :class="i === index ? 'bg-theme-card-hex text-theme-text font-medium' : 'text-theme-text-sec hover:bg-theme-card-hex'" x-text="s.title"></button>
+        </template>
+      </nav>
+      <div>
+        <div class="relative overflow-hidden rounded-sm">
+          <div class="relative w-full h-full">
+            <img alt="" :src="wall" class="w-full object-cover max-sm:min-h-[200px] sm:min-h-[360px] md:min-h-[480px] lg:min-h-[560px] rounded-sm" loading="lazy"/>
+            <div class="absolute inset-0 z-10" data-slide-shot>
+              <template x-for="(s, i) in slides" :key="s.shot">
+                <img x-show="i === index" x-transition.opacity.duration.400ms :src="'/images/screens/' + s.shot + '.png'" :alt="s.title + ': a screenshot of Zod'" loading="lazy"/>
+              </template>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-4 mt-v1">
+          <div class="min-w-0">
+            <h3 class="text-base font-semibold" x-text="slides[index].title"></h3>
+            <p class="text-sm text-theme-text-sec leading-relaxed" x-text="slides[index].text"></p>
+            <a :href="slides[index].href" class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150 mt-1">Read more<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button type="button" @click="prev()" aria-label="Previous" class="w-9 h-9 rounded-full border border-theme-border flex items-center justify-center hover:bg-theme-card-hex"><i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i></button>
+            <button type="button" @click="next()" aria-label="Next" class="w-9 h-9 rounded-full border border-theme-border flex items-center justify-center hover:bg-theme-card-hex"><i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-1.5 mt-v1" role="tablist">
+          <template x-for="(s, i) in slides" :key="'d' + s.shot"><button type="button" role="tab" :aria-selected="i === index" :aria-label="s.title" @click="go(i)" class="h-1.5 rounded-full transition-all" :class="i === index ? 'w-6 bg-accent' : 'w-1.5 bg-theme-border'"></button></template>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -43,16 +86,16 @@
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto mb-v2.5 max-w-prose-medium-wide">
-      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">Run it wherever you work.</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">The same agent workspace ships as a web app, a Chrome extension, and a desktop app — and can be self-hosted on your own server.</p>
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">Available now on desktop and in Chrome.</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Zod runs as a desktop app and as a Chrome extension today. The browser version, self-hosting and a command-line version are coming soon.</p>
     </div>
     <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-3 items-stretch">
       <a href="/product/web" class="group bg-theme-card-hex rounded-sm p-g1.75 flex flex-col transition-all hover:bg-theme-card-01-hex">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="globe" class="w-5 h-5" aria-hidden="true"></i>
         </div>
-        <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors">Web &amp; self-hosted</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Open it in any browser or host it on your own server. Installable as a PWA with an offline shell and background scheduler.</p>
+        <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors">Web, self-hosted &amp; CLI</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">Coming soon: open Zod in any browser tab, host it on your own server with a password, or run it from the command line.</p>
         <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Learn more<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </a>
       <a href="/product/extension" class="group bg-theme-card-hex rounded-sm p-g1.75 flex flex-col transition-all hover:bg-theme-card-01-hex">
@@ -60,7 +103,7 @@
           <i data-lucide="puzzle" class="w-5 h-5" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors">Chrome extension</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Turn Zod into an agent that can control the full browser — every tab and page — with the scheduler running in the background.</p>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">A chat side panel beside any page, the Zod app on every new tab, and a small Zod tab on each website. The agent can use your tabs, windows, groups, bookmarks, history and downloads, and asks first.</p>
         <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Learn more<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </a>
       <a href="/product/desktop" class="group bg-theme-card-hex rounded-sm p-g1.75 flex flex-col transition-all hover:bg-theme-card-01-hex">
@@ -68,7 +111,7 @@
           <i data-lucide="monitor" class="w-5 h-5" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5 group-hover:text-accent transition-colors">Desktop app</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Run the same workspace as a lightweight desktop app that can control your desktop — apps, files, and notifications included.</p>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">The whole workspace as a desktop app. Keep chats, routines, memory and connectors on your computer, and let the agent use a folder, the terminal or the screen when you switch them on.</p>
         <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Learn more<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </a>
     </div>
@@ -80,55 +123,55 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto mb-v2.5 max-w-prose-medium-wide">
       <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">Built for real work.</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Zod is a general-purpose agent workspace — here's what people use it for.</p>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Zod is one workspace for the work you repeat. Here is what it is for.</p>
     </div>
     <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
       <div class="bg-theme-bg rounded-sm p-g1.75 flex flex-col">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="search" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
-        <h3 class="text-base font-semibold mb-v0.5">Research &amp; market scans</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Point a Research agent at a topic and get findings, sources, and summaries back in a structured card — scheduled daily so the report is waiting for you.</p>
-        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See the agent run<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
+        <h3 class="text-base font-semibold mb-v0.5">Research &amp; briefings</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">Point the Researcher agent at a topic and get a short brief with sources. Make it a routine and it is waiting for you every morning.</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See a routine<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </div>
       <div class="bg-theme-bg rounded-sm p-g1.75 flex flex-col">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="terminal" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5">Coding partner</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">A Coder agent that reads your memory of the project, proposes a plan, asks before it changes anything, then applies the work and shows you a diff.</p>
-        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Review the flow<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">Choose a working folder. The agent reads, searches, edits and tests the project, and asks before it changes anything.</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See how it asks<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </div>
       <div class="bg-theme-bg rounded-sm p-g1.75 flex flex-col">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="calendar-clock" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
-        <h3 class="text-base font-semibold mb-v0.5">Scheduled intelligence</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Digests, stand-ups, and status reports on a cron — once, interval, daily, or weekly. A service worker keeps them running even when the tab is closed.</p>
-        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Try the scheduler<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
+        <h3 class="text-base font-semibold mb-v0.5">Routines that run themselves</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">Digests, stand-ups and reminders: by hand, once, every few minutes, daily, weekdays, weekly, or when something happens. A month calendar shows what ran and what will.</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See the calendar<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </div>
       <div class="bg-theme-bg rounded-sm p-g1.75 flex flex-col">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="presentation" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
-        <h3 class="text-base font-semibold mb-v0.5">Teaching &amp; demos</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Show your audience a live agent loop with visible tool calls and reasoning — no accounts, no hidden backend, just the browser.</p>
-        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Watch it stream<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
+        <h3 class="text-base font-semibold mb-v0.5">Your business apps</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">Connect your own apps with MCP. Books adds accounting, stock and payroll, with modules for clinics, schools, dispatch, legal and stays.</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See connectors<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </div>
       <div class="bg-theme-bg rounded-sm p-g1.75 flex flex-col">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="desktop" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
-        <h3 class="text-base font-semibold mb-v0.5">Desktop utility</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">On desktop, Zod can reach into apps, files, and notifications — with a native shell around the same frontend you use on the web.</p>
-        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See the desktop app<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
+        <h3 class="text-base font-semibold mb-v0.5">Your browser, tidied</h3>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">With the Chrome extension, ask Zod to read a page, fill a form, group your tabs by topic or find that page you visited last week.</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">See the extension<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </div>
       <div class="bg-theme-bg rounded-sm p-g1.75 flex flex-col">
         <div class="size-10 rounded-lg bg-theme-card flex items-center justify-center mb-g1">
           <i data-lucide="users" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5">Private &amp; local-first</h3>
-        <p class="text-sm text-theme-text-sec leading-relaxed grow">Sessions, memory, and keys live in your browser. Only the requests you choose go to providers you configure — nothing is ever sent to a Zod backend (there isn't one).</p>
+        <p class="text-sm text-theme-text-sec leading-relaxed grow">Your data lives in files on your computer. Only the requests you choose go to the model and connectors you set up. There is no Zod account and no Zod server holding your work.</p>
         <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">Read the security notes<i data-lucide="arrow-right" class="w-3 h-3" aria-hidden="true"></i></span>
       </div>
     </div>
@@ -141,9 +184,9 @@
     <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
-          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Zero backend. Provider-agnostic.</h3>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Point Zod at OpenAI, OpenRouter, Together, Groq, or a local server like Ollama or LM Studio — anything that speaks <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">/v1/chat/completions</code>. Configure many providers, pick a default and a fallback.</p>
-          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/api">Configure providers<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Any model. Your choice.</h3>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Link OpenAI, OpenRouter or a local server such as Ollama or LM Studio: anything that speaks <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">/v1/chat/completions</code>. Change the model from the chat at any time.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/model">Link a model<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="w-full lg:w-3/4">
@@ -160,9 +203,9 @@
     <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
-          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Tool-using agents in the browser</h3>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">A real multi-round function-calling loop runs client-side. The model can call 9 built-in tools, your own custom JavaScript tools, and MCP server tools over HTTP — and keep going until the task is done.</p>
-          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/tools">Explore the tool system<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">An agent that uses real tools</h3>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">The agent calls nearly a hundred built-in tools and every tool your connected MCP servers offer, reads before it states a fact, and keeps going until the task is done. Anything that changes something waits for your yes.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/tools">Explore the tools<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="w-full lg:w-3/4">
@@ -179,9 +222,9 @@
     <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
-          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Structured, rendered responses</h3>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Zod parses lightweight section markers into rich cards — thinking steps, badges, findings, todos, code blocks, files, errors, security warnings, visualizations, and Approve/Reject confirmation plans.</p>
-          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/getting-started">See how it renders<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Answers you can read and act on</h3>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Zod draws tables, charts, figures, forms, lists and cards right in the chat, shows each tool step in one quiet card, and puts an Allow and Deny card in front of anything that changes something.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/getting-started">See a chat<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="w-full lg:w-3/4">
@@ -198,9 +241,9 @@
     <div class="flex flex-col lg:flex-row-reverse items-center gap-g2">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
-          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Workflows that actually run</h3>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Compose agent workflows in the orchestrator — steps, tool grants, skills, and <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">@goto</code> transitions — and execute them against your provider with live step-by-step progress.</p>
-          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/orchestrator">Build a workflow<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Routines that actually run</h3>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Write a routine in plain words, as steps in the Zod language, or both. Test the steps with a dry run that changes nothing, then choose who does it and <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">when</code> . Each run is saved with its result.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/routines">Make a routine<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="w-full lg:w-3/4">
@@ -217,9 +260,9 @@
     <div class="flex flex-col-reverse lg:flex-row items-center gap-g2">
       <div class="w-full lg:w-1/4">
         <div class="max-w-prose">
-          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Scheduled &amp; background agents</h3>
-          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Schedule prompts once, on an interval, daily, or weekly. A service worker keeps running scheduled agents even after you close the tab — and the results land in your sessions when you return.</p>
-          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/scheduler">Learn about scheduling<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          <h3 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">Memory that stays yours</h3>
+          <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2">Say &ldquo;remember that&hellip;&rdquo; and Zod keeps it as a plain note you can read, edit and forget. Routines and chats find memories by their words.</p>
+          <a class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/75 transition-colors duration-150" href="/resources/docs/routines">See memory<i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="w-full lg:w-3/4">
@@ -236,56 +279,56 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto mb-v2 max-w-prose-medium-wide">
       <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto">A toolbelt in every conversation</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Every reply comes with real tools the agent can call — not just text.</p>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mt-v0.5">Every answer can use real tools, not just words.</p>
     </div>
     <div class="grid gap-g1.5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="calculator" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">calculator</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">Safe arithmetic with a hand-written parser.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">search</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Find chats, routines, settings and records from one bar.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="list-todo" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">todo</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">A persistent to-do list that survives sessions.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">routines</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Make and run work that repeats.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="sticky-note" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
         <h3 class="text-sm font-semibold mb-v0.5">memory</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">Long-term markdown memory blocks.</p>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Notes it keeps and finds again.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="clipboard" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">clipboard</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">System clipboard read and write.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">files</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Read and write in your working folder.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="clock" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">timer</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">In-browser reminders with notifications.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">browser</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Read pages and act in your Chrome tabs.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="braces" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">code_tools</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">JSON &amp; YAML utilities.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">web</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Search the web and read a page.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="shield-question" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">confirm</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">Ask before destructive actions.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">approvals</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Ask before anything changes.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="dices" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">random</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">UUIDs, dice, numbers, and hashing.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">connectors</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Any MCP server, your own apps.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="timer" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">time</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">Timezones and conversions.</p>
+        <h3 class="text-sm font-semibold mb-v0.5">skills</h3>
+        <p class="text-xs text-theme-text-sec leading-relaxed">Know-how it loads when a request matches.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center flex flex-col items-center justify-center">
-        <p class="text-sm font-semibold text-theme-text-sec">+ custom tools &amp; MCP</p>
+        <p class="text-sm font-semibold text-theme-text-sec">+ your connectors</p>
       </div>
     </div>
     <div class="text-center mt-v2">
@@ -300,10 +343,10 @@
     <h2 class="text-theme-text mb-v1 text-xl font-semibold tracking-tight leading-snug">Changelog</h2>
     <div class="-mx-g2 no-scrollbar snap-x snap-mandatory scroll-px-g2 overflow-x-auto lg:mx-0 lg:snap-none lg:scroll-px-0 lg:overflow-visible">
       <div class="flex w-max gap-g1.5 px-g2 lg:grid lg:w-full lg:grid-cols-3 lg:px-0 xl:grid-cols-4">
-        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.4</span><time datetime="2026-07-20" class="text-base leading-normal">Jul 20, 2026</time></div><p class="text-base leading-normal text-theme-text">MCP servers over HTTP</p></a></article></div>
-        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.3</span><time datetime="2026-07-12" class="text-base leading-normal">Jul 12, 2026</time></div><p class="text-base leading-normal text-theme-text">Agent runner</p></a></article></div>
-        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.2</span><time datetime="2026-07-04" class="text-base leading-normal">Jul 4, 2026</time></div><p class="text-base leading-normal text-theme-text">Background service-worker agents</p></a></article></div>
-        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0 min-w-[260px] lg:min-w-0 lg:hidden xl:block"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">1.1</span><time datetime="2026-06-28" class="text-base leading-normal">Jun 28, 2026</time></div><p class="text-base leading-normal text-theme-text">Custom tools &amp; structured output</p></a></article></div>
+        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">Ext 1.4</span><time datetime="2026-07-20" class="text-base leading-normal">Beta</time></div><p class="text-base leading-normal text-theme-text">All of Chrome, in the chrome extension</p></a></article></div>
+        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">Routines</span><time datetime="2026-07-12" class="text-base leading-normal">Beta</time></div><p class="text-base leading-normal text-theme-text">Memory in Routines, and a calendar of what ran</p></a></article></div>
+        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">Vaults</span><time datetime="2026-07-04" class="text-base leading-normal">Beta</time></div><p class="text-base leading-normal text-theme-text">Each vault keeps its own look and settings</p></a></article></div>
+        <div class="w-3/4 shrink-0 snap-start sm:w-2/3 md:w-7/12 lg:w-auto lg:shrink min-w-[260px] lg:min-w-0 min-w-[260px] lg:min-w-0 lg:hidden xl:block"><article class="flex h-full flex-col"><a class="bg-theme-bg rounded-sm pt-[0.99375rem] px-g1.75 pb-g1.75 flex h-full grow flex-col pb-g2" href="/resources/changelog"><div class="text-theme-text-mid relative -left-0.5 flex items-center gap-x-g1.5"><span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-hex text-theme-text-sec">Chat</span><time datetime="2026-06-28" class="text-base leading-normal">Beta</time></div><p class="text-base leading-normal text-theme-text">Approvals, tool steps and the side panel chat</p></a></article></div>
       </div>
     </div>
     <a class="inline-flex items-center text-sm font-medium cursor-pointer transition-colors duration-150 ease-out mt-4 text-accent" href="/resources/changelog">See what's new in Zod<i data-lucide="arrow-right" class="w-4 h-4 ml-1 inline-block" aria-hidden="true"></i></a>
@@ -315,10 +358,10 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto max-w-prose-medium-wide">
       <h2 class="text-4xl md:text-7xl font-normal tracking-tighter text-balance mx-auto mb-v2">Make it yours.</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">No account. No server. Add an API key and your agent is ready — in your browser, as a Chrome extension, or as a desktop app.</p>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">No account. Link a model and your agent is ready, on your desktop and in Chrome. The browser version, self-hosting and the CLI are coming soon.</p>
       <div class="flex justify-center gap-x-g3 items-center flex-wrap">
         <div>
-          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/resources/download">Get the app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
         </div>
         <div class="hidden md:block"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/resources/docs/getting-started">Read the docs<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
       </div>

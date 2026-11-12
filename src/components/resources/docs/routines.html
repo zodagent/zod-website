@@ -1,0 +1,107 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+            <a href="/resources/docs/model" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Model &amp; provider</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using Zod</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/chat" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chat &amp; context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; skills</a>
+            <a href="/resources/docs/routines" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Routines &amp; calendar</a>
+            <a href="/resources/docs/memory" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Memory</a>
+            <a href="/resources/docs/search" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Search &amp; filters</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Power</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Tools &amp; approvals</a>
+            <a href="/resources/docs/connectors" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Connectors &amp; MCP</a>
+            <a href="/resources/docs/extension" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chrome extension</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Your workspace</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/vaults" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Vaults, settings &amp; backup</a>
+            <a href="/resources/docs/shortcuts" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Keyboard shortcuts</a>
+            <a href="/resources/docs/troubleshooting" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Troubleshooting</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All docs</a>
+            <a href="/product/features" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Every feature</a>
+            <a href="/resources/help" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Help center</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Routines &amp; calendar</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">A routine is work Zod does for you, again and again. It says who does it, what it does and when it runs, and it shows its own calendar and runs.</p>
+
+      <div class="space-y-8">
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">One page for everything that runs on its own</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Open Routines with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘4</code>, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">in:routines</code> or the sidebar. The page is a month calendar of what ran and what will, then your routines, their latest runs, your memory, and ready-made routines to start from.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3"><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3"><i data-lucide="user" class="w-4 h-4 text-theme-text" aria-hidden="true"></i></div><h3 class="text-sm font-semibold text-theme-text mb-1">Who</h3><p class="text-xs text-theme-text-sec">Zod, or one of your agents. Make or change an agent right on the routine&rsquo;s page.</p></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3"><i data-lucide="list-checks" class="w-4 h-4 text-theme-text" aria-hidden="true"></i></div><h3 class="text-sm font-semibold text-theme-text mb-1">What</h3><p class="text-xs text-theme-text-sec">Words to ask, steps that run by themselves, or both.</p></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3"><i data-lucide="clock" class="w-4 h-4 text-theme-text" aria-hidden="true"></i></div><h3 class="text-sm font-semibold text-theme-text mb-1">When</h3><p class="text-xs text-theme-text-sec">By hand, once, every few minutes, daily, weekdays, weekly, or when something happens.</p></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center mb-3"><i data-lucide="send" class="w-4 h-4 text-theme-text" aria-hidden="true"></i></div><h3 class="text-sm font-semibold text-theme-text mb-1">Where</h3><p class="text-xs text-theme-text-sec">Kept in Zod, or sent to a chat app such as Telegram or Slack.</p></div></div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Make a routine</h2>
+        <div class="space-y-3"><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">1</div><div><h3 class="text-sm font-semibold text-theme-text mb-1">Press New routine</h3><p class="text-xs text-theme-text-sec">A routine opens on a page of its own.</p></div></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">2</div><div><h3 class="text-sm font-semibold text-theme-text mb-1">Choose who does it</h3><p class="text-xs text-theme-text-sec">Zod, or an agent such as Researcher. Pick &ldquo;New agent&rdquo; to make one without leaving.</p></div></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">3</div><div><h3 class="text-sm font-semibold text-theme-text mb-1">Say what to do</h3><p class="text-xs text-theme-text-sec">Write it as you would ask in a chat. Add steps if you want parts to run without a model.</p></div></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">4</div><div><h3 class="text-sm font-semibold text-theme-text mb-1">Choose when</h3><p class="text-xs text-theme-text-sec">The date and time pickers fit the window; a repeat can be as short as a few minutes.</p></div></div><div class="rounded-sm border border-theme-border-02 bg-theme-bg p-4 flex gap-4"><div class="w-8 h-8 rounded-[6px] bg-theme-card-hex flex items-center justify-center shrink-0 text-sm font-semibold text-accent">5</div><div><h3 class="text-sm font-semibold text-theme-text mb-1">Test, then save</h3><p class="text-xs text-theme-text-sec">Test the steps runs them without changing anything and shows what each step found.</p></div></div></div>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Steps: the Zod language</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">One step per line. The same language is used by search, by routines and by the agent.</p>
+        <div class="overflow-x-auto"><table class="w-full text-left"><tbody><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">in:notifications is:error</td><td class="py-2 text-sm text-theme-text-sec">find rows: a place, then filters</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">| do:read</td><td class="py-2 text-sm text-theme-text-sec">act on what was found, with a verb</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">say: {{count}} unread errors</td><td class="py-2 text-sm text-theme-text-sec">say something, using what was found</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">ask: shall I continue?</td><td class="py-2 text-sm text-theme-text-sec">stop and ask you</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">if … then … else …</td><td class="py-2 text-sm text-theme-text-sec">decide</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">skill: close-the-month</td><td class="py-2 text-sm text-theme-text-sec">load a skill</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">agent: Researcher</td><td class="py-2 text-sm text-theme-text-sec">hand a part to an agent</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">read: memory:Invoice reminders</td><td class="py-2 text-sm text-theme-text-sec">bring a page in</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">run: another routine</td><td class="py-2 text-sm text-theme-text-sec">run another set of steps</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">loop: …</td><td class="py-2 text-sm text-theme-text-sec">repeat</td></tr></tbody></table></div>
+        <p class="text-sm text-theme-text-sec leading-relaxed">&ldquo;How steps are written&rdquo; on the routine&rsquo;s page shows every kind of step with an example. Thirty-two ready-made step sets in seven groups are there to start from: research the web, code and projects, keep Zod healthy, memory and docs, skills and agents, connectors and tools, and decide and repeat.</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Runs</h2>
+        <ul class="space-y-2 text-sm text-theme-text-sec leading-relaxed list-disc pl-5">
+          <li>Each run is saved with its result and shows in the Latest runs list.</li>
+          <li>A run cut off by a stop is reported as cut off and is not repeated.</li>
+          <li>You are notified when a run finishes or fails.</li>
+          <li>A routine&rsquo;s run never takes over the window you are working in.</li>
+        </ul>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Parts of Routines</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Memory, Agents, Skills and Plugins are opened from Routines, or by typing <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">in:memory</code>, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">in:agents</code>, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">in:skills</code> or <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">in:plugins</code>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Next</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a href="/resources/docs/memory" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Memory <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">What Zod remembers.</p></a><a href="/resources/docs/search" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Search &amp; filters <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">The filters steps are made of.</p></a><a href="/resources/docs/agents" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Agents &amp; skills <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Who does a routine.</p></a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

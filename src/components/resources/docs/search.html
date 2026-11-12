@@ -1,0 +1,95 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+            <a href="/resources/docs/model" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Model &amp; provider</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using Zod</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/chat" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chat &amp; context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; skills</a>
+            <a href="/resources/docs/routines" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Routines &amp; calendar</a>
+            <a href="/resources/docs/memory" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Memory</a>
+            <a href="/resources/docs/search" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Search &amp; filters</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Power</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Tools &amp; approvals</a>
+            <a href="/resources/docs/connectors" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Connectors &amp; MCP</a>
+            <a href="/resources/docs/extension" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chrome extension</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Your workspace</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/vaults" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Vaults, settings &amp; backup</a>
+            <a href="/resources/docs/shortcuts" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Keyboard shortcuts</a>
+            <a href="/resources/docs/troubleshooting" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Troubleshooting</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All docs</a>
+            <a href="/product/features" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Every feature</a>
+            <a href="/resources/help" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Help center</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Search &amp; filters</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">One bar over chats, routines, pages, settings, memory, docs, help and every connector&rsquo;s records. Words search like grep; filters narrow and act.</p>
+
+      <div class="space-y-8">
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Open it</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Press <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘K</code> or click the search box. Type to see results grouped by kind: chats and schedules, pages and tools, knowledge, and the open web. Results can be sorted by best, newest, oldest, A to Z or Z to A.</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Words</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Words are matched like grep, with a typo allowed. When the words find nothing, the linked model is asked what you meant and its phrasing is searched the same way. A plain question about Zod (&ldquo;how do I change the wallpaper&rdquo;) is answered from the docs and help, or opens the setting itself.</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Filters</h2>
+        <div class="overflow-x-auto"><table class="w-full text-left"><tbody><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">in:routines</td><td class="py-2 text-sm text-theme-text-sec">go to a place: routines, memory, agents, skills, plugins, connectors, settings, notifications, chats, files, shortcuts and any connector&rsquo;s lists</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">is:error is:unread</td><td class="py-2 text-sm text-theme-text-sec">narrow by state</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">kind:…</td><td class="py-2 text-sm text-theme-text-sec">narrow by kind of row</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">after:30d</td><td class="py-2 text-sm text-theme-text-sec">only newer than a time</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">over:500</td><td class="py-2 text-sm text-theme-text-sec">a number filter, where a list has numbers</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">sort:recent</td><td class="py-2 text-sm text-theme-text-sec">order the results</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">limit:20</td><td class="py-2 text-sm text-theme-text-sec">how many to show</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">match:exact</td><td class="py-2 text-sm text-theme-text-sec">literal words only</td></tr><tr class="border-t border-theme-border-02"><td class="py-2 pr-4 align-top font-mono text-[13px] text-theme-text whitespace-nowrap">| do:verb</td><td class="py-2 text-sm text-theme-text-sec">act on what was found, such as resume, read or submit</td></tr></tbody></table></div>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Press Tab to complete the filter you are typing, the arrow keys to move through results, Enter to open one, <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘↵</code> to run a <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">| do:</code> chain, and Escape to clear and close.</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">The same language everywhere</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">What you type here is what a routine&rsquo;s steps are made of and what the agent uses to find things. A search you like can be saved as a view.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Next</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a href="/resources/docs/routines" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Routines &amp; calendar <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Run a search as steps.</p></a><a href="/resources/docs/memory" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Memory <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Searched with everything else.</p></a><a href="/resources/docs/shortcuts" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Keyboard shortcuts <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Move through search from the keyboard.</p></a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

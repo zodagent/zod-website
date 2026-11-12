@@ -5,7 +5,7 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[800px]">
     <div class="mb-v1">
       <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Data Use and Privacy Overview</h1>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v1">Last updated: August 3, 2026</p>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v1">Last updated: November 12, 2026</p>
     </div>
   </div>
 </section>
@@ -21,12 +21,12 @@
         <h2 class="text-xl font-semibold tracking-tight leading-snug">Local-first by default</h2>
       </div>
     </div>
-    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod Agent runs entirely in your browser. There is no account, no backend, and no server that stores or processes your data. All workspace data lives on your device:</p>
+    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod runs on your computer. There is no account and no Zod server that stores or processes your data. All workspace data lives on your device:</p>
     <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-1">
-      <li>Sessions, memory, todos, notes, data stores, provider configuration, and preferences are stored in your browser's <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">localStorage</code></li>
-      <li>The background scheduler mirrors state to IndexedDB so scheduled tasks can run in a service worker</li>
+      <li>Chats, memory, routines, connectors, provider configuration and preferences are stored in files on your computer, in your vault&rsquo;s data folder (by default <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">~/.zodagent</code>)</li>
+      <li>Routines run while the app is running and keep each run&rsquo;s result in the same files</li>
       <li>We do not collect telemetry, analytics, or any usage data</li>
-      <li>You can export your full workspace as JSON and import it anywhere</li>
+      <li>You can back up your vault and restore it on another computer; a backup never contains keys or passwords</li>
     </ul>
   </div>
 </section>
@@ -44,9 +44,9 @@
     </div>
     <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">The only data that leaves your device is what you explicitly send to an AI provider:</p>
     <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-1">
-      <li>Requests go directly from your browser to the provider endpoint you configure (e.g. OpenRouter, OpenAI, Groq, Together, Ollama, LM Studio)</li>
+      <li>Requests go directly from your computer to the provider endpoint you configure (e.g. OpenRouter, OpenAI, Ollama, LM Studio) and to the connectors you add</li>
       <li>We do not proxy, log, or inspect those requests</li>
-      <li>Provider API keys are stored only in your browser and sent only to the provider <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">baseUrl</code> you set</li>
+      <li>Your provider API key is stored on your computer and sent only to the provider <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">address</code> you linked</li>
       <li>Anything you send to a provider is subject to that provider's own terms and data policies</li>
     </ul>
   </div>
@@ -59,8 +59,8 @@
     <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-2">
       <li><strong>Zod:</strong> We cannot see your data. There is no server on our side to receive it.</li>
       <li><strong>Your AI provider:</strong> Only the specific content you send in a request, per their policy.</li>
-      <li><strong>Your browser/device:</strong> Data persists locally until you clear storage, remove the extension, or uninstall the app.</li>
-      <li><strong>Extension and desktop surfaces:</strong> The Chrome extension and desktop app act on your browser tabs and desktop only with your opt-in, and nothing is transmitted beyond the provider requests you trigger.</li>
+      <li><strong>Your browser/device:</strong> Data persists locally until you delete the vault folder or uninstall the app together with its data.</li>
+      <li><strong>Extension and desktop surfaces:</strong> The Chrome extension and desktop app act on your browser tabs and desktop only with your opt-in, and nothing is transmitted beyond the model and connector requests you trigger.</li>
     </ul>
   </div>
 </section>

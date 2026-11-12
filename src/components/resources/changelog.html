@@ -4,7 +4,7 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto max-w-prose-medium-wide">
       <h1 class="text-4xl md:text-7xl font-normal tracking-tight leading-[1.15] text-balance mx-auto mb-v1">Changelog</h1>
-      <p class="text-lg leading-normal text-theme-text-sec text-pretty max-w-xl mx-auto">See what is new in Zod Agent.</p>
+      <p class="text-lg leading-normal text-theme-text-sec text-pretty max-w-xl mx-auto">See what is new in Zod. Zod is in beta, so versions are named for what changed.</p>
     </div>
   </div>
 </section>
@@ -14,80 +14,80 @@
 
     <div class="bg-theme-card-hex rounded-sm p-g1.75 mb-v2">
       <div class="flex items-center gap-g1 mb-v1">
-        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">1.4</span>
-        <span class="text-xs text-theme-text-sec">Jul 20, 2026</span>
+        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">Extension 1.4</span>
+        <span class="text-xs text-theme-text-sec">Beta</span>
       </div>
-      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">MCP servers over HTTP</h2>
-      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod now speaks the Model Context Protocol over plain HTTP — no local bridge daemon required.</p>
+      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">All of Chrome, Chrome only</h2>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">The Chrome extension is made for Google Chrome 116 or newer and can now manage Chrome itself, not only pages.</p>
       <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-        <li><strong>MCP-over-HTTP client</strong> — connect to any MCP server that exposes a JSON-RPC endpoint over HTTP (<code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>).</li>
-        <li><strong>Settings → MCP tab</strong> — declare servers as YAML with a <code>name</code>, <code>url</code>, and optional <code>headers</code>.</li>
-        <li><strong>Session support</strong> — the client tracks <code>Mcp-Session-Id</code> headers and handles both JSON and SSE responses.</li>
-        <li><strong>Surface in the loop</strong> — each connected server's tools are offered to the model and executed on call, alongside built-ins and custom tools.</li>
+        <li><strong>Manage Chrome</strong> — pin, mute, move and group tabs, manage windows, bookmarks, history, downloads and recently closed tabs (<code>browser_tab_actions</code>, <code>browser_bookmarks</code>, <code>browser_history</code>).</li>
+        <li><strong>Side panel</strong> — a chat made for the browser, with the model picker and Ask first at the top, files, a picture of the page and dictation. Type <code>@</code>, <code>/</code>for memories and skills, and save answers or pages to Zod's memory. It pairs with the desktop app by itself, shows a green dot on the toolbar icon when connected, and has a switch for <code>Ask first</code>.</li>
+        <li><strong>Zod tab on every website</strong> — a small logo tab on each page that says what the agent is doing, and opens the panel with <code>Alt+Z</code> or the toolbar.</li>
+        <li><strong>New tabs</strong> — every new tab can open the whole Zod app, in step with the desktop app. Install in Zod from a right-click on a GitHub link.</li>
       </ul>
     </div>
 
     <div class="bg-theme-card-hex rounded-sm p-g1.75 mb-v2">
       <div class="flex items-center gap-g1 mb-v1">
-        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">1.3</span>
-        <span class="text-xs text-theme-text-sec">Jul 12, 2026</span>
+        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">Routines</span>
+        <span class="text-xs text-theme-text-sec">Beta</span>
       </div>
-      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Workflow execution harness</h2>
-      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Orchestration YAML no longer just edits — it runs. The runner turns multi-step harnesses into live agent workflows.</p>
+      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">One page for everything Zod does on its own</h2>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Schedules and flows became Routines: who does it, what it does, and when it runs, on one page.</p>
       <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-        <li><strong>YAML-to-steps runner</strong> — each step gets only its granted tools (schema-filtered), with a journal that carries context between steps.</li>
-        <li><strong>Control flow</strong> — <code>@goto</code> transitions with <code>success</code>, <code>error</code>, <code>contains:</code>, and <code>match:</code> conditions, plus a loop guard.</li>
-        <li><strong>Skill hints</strong> — steps can attach <code>@skill</code> entries that inject guidance into the step's system prompt.</li>
-        <li><strong>Live run card</strong> — an <code>agentRun</code> card streams step-by-step progress, per-step messages, and tool-run details into the chat.</li>
-        <li><strong>Launch points</strong> — Run from the orchestrator editor, the hub "Run Active Agent" quick action, a harness's play button, or a scheduled task.</li>
+        <li><strong>Calendar</strong> — a month view of what ran and what will, with a Coming up list and a colour per routine.</li>
+        <li><strong>Steps</strong> — <code></code> Write steps in the Zod language, test them with a dry run that changes nothing, and read how steps are written beside the editor. <code></code>, <code></code>, <code></code> <code></code> </li>
+        <li><strong>Who and when</strong> — choose Zod or one of your agents, and start by hand, once, every few minutes, daily, weekdays, weekly or when something happens. <code></code> </li>
+        <li><strong>Durable runs</strong> — a run cut off by a stop is reported, not repeated, and each run keeps its result. <code></code> </li>
+        <li><strong>Memory</strong> — what Zod remembers now lives in Routines, with the latest notes on the page and a full list to add, edit and forget.</li>
       </ul>
     </div>
 
     <div class="bg-theme-card-hex rounded-sm p-g1.75 mb-v2">
       <div class="flex items-center gap-g1 mb-v1">
-        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">1.2</span>
-        <span class="text-xs text-theme-text-sec">Jul 4, 2026</span>
+        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">Vaults</span>
+        <span class="text-xs text-theme-text-sec">Beta</span>
       </div>
-      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Background service-worker agents</h2>
-      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Scheduled tasks now keep running even when the tab is closed, powered by a classic service worker.</p>
+      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Each vault keeps its own look</h2>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">A vault is a separate workspace. Each one now keeps everything of its own, including how it looks.</p>
       <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-        <li><strong>Background scheduler</strong> — a service worker mirrors your <code>localStorage</code> state into IndexedDB and ticks due crons while you're away.</li>
-        <li><strong>Full agent loop offline</strong> — background runs execute tools and workflows against your configured provider, with up to 3 concurrent agents.</li>
-        <li><strong>Outbox sync</strong> — results land in an IndexedDB outbox; the page imports new sessions, messages, and cron status the next time you open it.</li>
-        <li><strong>Survives reload</strong> — a run that finishes while you're away appears as a done task with its reply when you come back.</li>
-        <li><strong>PWA sidekick</strong> — the same service worker keeps the app shell cached for offline use.</li>
+        <li><strong>Saved layout</strong> — folded cards, panel and composer sizes, recent searches and theme hints are saved with the vault, so it comes back the same in any window. <code></code> </li>
+        <li><strong>Backups</strong> — a backup includes it, without keys or passwords.</li>
+        <li><strong>Switching</strong> — switch, make and edit vaults from the vault button in the title bar.</li>
+        <li><strong>Search</strong> — docs, help and memory are found by their words from the one search bar.</li>
+        <li><strong>Beta</strong> — what is steady, what is changing and the known limits are listed in the docs.</li>
       </ul>
     </div>
 
     <div class="bg-theme-card-hex rounded-sm p-g1.75 mb-v2">
       <div class="flex items-center gap-g1 mb-v1">
-        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">1.1</span>
-        <span class="text-xs text-theme-text-sec">Jun 28, 2026</span>
+        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">Chat</span>
+        <span class="text-xs text-theme-text-sec">Beta</span>
       </div>
-      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Custom tools &amp; structured output</h2>
+      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Approvals, tool steps and answers you can act on</h2>
       <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-        <li><strong>Custom tool runtime</strong> — write JavaScript <code>implementation</code>s in Settings → Tools; they execute in a sandbox with <code>args</code>, <code>ctx</code> state, <code>fetch</code>, and timers.</li>
-        <li><strong>Structured output cards</strong> — the model can emit <code>[section]</code> markers that render as thinking, findings, suggestions, to-dos, code blocks, files, errors, security warnings, and confirmations.</li>
-        <li><strong>Approve / Reject plans</strong> — a <code>[confirmation]</code> card shows a plan with a tool checklist you can approve or reject before anything runs.</li>
-        <li><strong>Aligned YAML editor</strong> — a hand-rolled formatter keeps every config block's colons aligned, wraps long values, and re-measures to the editor width.</li>
-        <li><strong>Socratic line editing</strong> — syntax-highlighted keys, masked secrets, clickable boolean toggles, and an "ask AI to edit this YAML" prompt on every section.</li>
+        <li><strong>Tool steps</strong> — one quiet card per answer, &ldquo;Used 3 tools&rdquo;, opened to see each step. <code></code> <code></code>, <code></code>  <code></code></li>
+        <li><strong>Rendered answers</strong> — tables, charts, figures, forms and cards drawn in the chat, with <code>copy</code> and retry on every answer.</li>
+        <li><strong>Allow and Deny</strong> — a card says what is about to happen before <code>anything</code> changes, and the model picker sits in the composer.</li>
+        <li><strong>Clean forms</strong> — every form uses one clear layout: a small label, a field, and a focus ring.</li>
+        <li><strong>Pickers</strong> — date and time pickers fit the window as one solid card.</li>
       </ul>
     </div>
 
     <div class="bg-theme-card-hex rounded-sm p-g1.75">
       <div class="flex items-center gap-g1 mb-v1">
-        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">1.0</span>
-        <span class="text-xs text-theme-text-sec">Jun 15, 2026</span>
+        <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec">First beta</span>
+        <span class="text-xs text-theme-text-sec">Beta</span>
       </div>
-      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Initial release — chat, providers, built-in tools, scheduler</h2>
-      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod Agent launches as a client-side, zero-backend agentic chat workspace that runs entirely in the browser.</p>
+      <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">Zod, local-first</h2>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod is a local-first agent workspace: one app for chat, search, routines, memory and connectors.</p>
       <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-        <li><strong>Provider-agnostic chat</strong> — works with any OpenAI-compatible API: OpenAI, OpenRouter, Together, Groq, and local servers like Ollama or LM Studio.</li>
-        <li><strong>Local-first</strong> — sessions, memory, to-dos, and preferences all live in a single <code>localStorage</code> document. No account, no server.</li>
-        <li><strong>Built-in toolbelt</strong> — nine tools out of the box: <code>memory</code>, <code>todo</code>, <code>calculator</code>, <code>clipboard</code>, <code>timer</code>, <code>code_tools</code>, <code>confirm</code>, <code>random</code>, and <code>time</code>.</li>
-        <li><strong>Streaming agent loop</strong> — a multi-round function-calling loop runs client-side, up to six rounds, with retries, rate limiting, timeouts, and a fallback provider.</li>
-        <li><strong>Task scheduler</strong> — schedule a prompt once, on an interval, daily, or weekly; results land in a new or chosen session with optional notifications.</li>
-        <li><strong>Rich workspace</strong> — hub, sessions drawer, settings drawer with live YAML editors, and a touch-friendly, themeable UI.</li>
+        <li><strong>Any model</strong> — works with any OpenAI-compatible API: OpenAI, OpenRouter, and local servers like Ollama or LM Studio.</li>
+        <li><strong>Local-first</strong> — chats, routines, memory and settings live in files on your computer. <code></code> No account, no Zod server.</li>
+        <li><strong>Tools</strong> — nearly a hundred built-in tools, for example <code>memory</code>, <code>search</code>, <code>files</code>, <code>web</code>, <code>routines</code>, <code>browser</code>, <code>approvals</code>, <code>connectors</code> <code>skills</code>.</li>
+        <li><strong>Asks first</strong> — anything that writes, deletes, installs or schedules asks first. Looking runs on its own.</li>
+        <li><strong>Routines</strong> — start by hand, once, on a timetable or when something happens; results are kept with notifications.</li>
+        <li><strong>Connectors</strong> — MCP in both directions, a catalog, per-tool permissions, and apps like Books.</li>
       </ul>
     </div>
 

@@ -39,7 +39,20 @@ Alpine.data('contactForm', () => ({
   phone: '',
   message: '',
   submitted: false,
+  // a static site has no server: the message opens in the visitor's email app, ready to send
   submit() {
+    const body = 'Name: ' + this.name + '\nEmail: ' + this.email + (this.company ? '\nCompany: ' + this.company : '') + (this.teamSize ? '\nTeam size: ' + this.teamSize : '') + '\n\n' + this.message
+    window.location.href = 'mailto:contact@zodagent.com?subject=' + encodeURIComponent('Message from the Zod website') + '&body=' + encodeURIComponent(body)
+    this.submitted = true
+  }
+}))
+
+Alpine.data('demoForm', () => ({
+  name: '', email: '', company: '', teamSize: '', date: '', time: '10:00', zone: (Intl.DateTimeFormat().resolvedOptions().timeZone || ''), message: '', topics: ['The whole product'], submitted: false,
+  get today() { return new Date().toISOString().slice(0, 10) },
+  submit() {
+    const body = 'Please book me a Zod demo.\n\nName: ' + this.name + '\nEmail: ' + this.email + (this.company ? '\nCompany or school: ' + this.company : '') + (this.teamSize ? '\nTeam size: ' + this.teamSize : '') + '\nPreferred time: ' + this.date + ' ' + this.time + ' (' + this.zone + ')\nI would like to see: ' + this.topics.join(', ') + (this.message ? '\n\n' + this.message : '')
+    window.location.href = 'mailto:contact@zodagent.com?subject=' + encodeURIComponent('Zod demo request: ' + this.name) + '&body=' + encodeURIComponent(body)
     this.submitted = true
   }
 }))
@@ -112,6 +125,17 @@ function initSkipNav() {
 }
 
 window.Alpine = Alpine
+// the home page's slideshow of every feature: a screenshot of the real app on a wallpaper
+Alpine.data('tour', () => ({
+  slides: [{"title": "Home", "shot": "hub-home", "text": "One prompt box that opens into your places: model, search, vault, routines, chats, connectors and settings.", "href": "/resources/docs/chat"}, {"title": "Home, icons-only sidebar", "shot": "slide-home-mini", "text": "Collapse the sidebar to icons, or hide it, and the workspace gets out of the way.", "href": "/resources/docs/chat"}, {"title": "A chat that does the work", "shot": "chat-agent-run", "text": "Each tool step is shown in one quiet card, opened to see what it did and whether it worked.", "href": "/resources/docs/chat"}, {"title": "It asks first", "shot": "chat-confirmation", "text": "Anything that changes something stops at an Allow and Deny card, and says what it will do.", "href": "/resources/docs/tools"}, {"title": "Chat with the slim sidebar", "shot": "slide-chat-mini", "text": "Long answers, tables and files get the full width, with the chat list a click away.", "href": "/resources/docs/chat"}, {"title": "Search", "shot": "search-palette", "text": "One bar over chats, routines, pages, settings, memory and docs, with filters and verbs.", "href": "/resources/docs/search"}, {"title": "Routines and the calendar", "shot": "scheduler", "text": "A month of what ran and what will, and a Coming up list.", "href": "/resources/docs/routines"}, {"title": "Write a routine", "shot": "cron-detail", "text": "Who does it, what it does, when it runs, and a dry run to test it.", "href": "/resources/docs/routines"}, {"title": "Memory", "shot": "settings-memory", "text": "Notes Zod keeps, finds by their words, and lets you edit and forget.", "href": "/resources/docs/memory"}, {"title": "Agents", "shot": "settings-agents", "text": "Ten starter agents and your own, each with its own instructions, skills and tools.", "href": "/resources/docs/agents"}, {"title": "Skills", "shot": "settings-tools", "text": "Saved know-how the agent loads when a request matches.", "href": "/resources/docs/agents"}, {"title": "Connectors", "shot": "settings-mcp", "text": "MCP servers and apps, with a permission for every tool.", "href": "/resources/docs/connectors"}, {"title": "Messaging", "shot": "settings-webhooks", "text": "Talk to Zod from Telegram, Slack, Email and more.", "href": "/resources/docs/connectors"}, {"title": "Chrome extension", "shot": "pairing", "text": "A chat panel beside any page, control of Chrome, and a Zod tab on every site.", "href": "/resources/docs/extension"}, {"title": "Vaults", "shot": "group-compose", "text": "Separate workspaces, each with its own data and look.", "href": "/resources/docs/vaults"}, {"title": "Model", "shot": "settings-providers", "text": "Any OpenAI-compatible model, including a local one.", "href": "/resources/docs/model"}, {"title": "Settings", "shot": "settings-general", "text": "One clean settings page, themes and wallpapers.", "href": "/resources/docs/vaults"}, {"title": "Notifications", "shot": "broadcast-compose", "text": "Told once, clearly, with a button to what it is about.", "href": "/resources/docs/vaults"}],
+  index: 0, pause: false, timer: null,
+  walls: ['/images/misc/wallpaper-1.jpg', '/images/misc/wallpaper-2.jpg', '/images/misc/wallpaper-3.jpg', '/images/misc/wallpaper-4.jpg', '/images/misc/wallpaper-5.jpg'],
+  get wall() { return this.walls[this.index % this.walls.length] },
+  init() { this.timer = setInterval(() => { if (!this.pause && !document.hidden) this.next() }, 6500) },
+  destroy() { clearInterval(this.timer) },
+  go(i) { this.index = i }, next() { this.index = (this.index + 1) % this.slides.length }, prev() { this.index = (this.index - 1 + this.slides.length) % this.slides.length },
+}))
+
 Alpine.start()
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,0 +1,115 @@
+<main id="main">
+
+<div class="max-w-[1300px] mx-auto w-full px-g2">
+  <div class="flex mx-auto max-w-[1280px]">
+
+    <aside class="sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto w-60 flex-shrink-0 hidden lg:block py-8 pr-6 border-r border-theme-border-02">
+      <div class="text-sm font-semibold text-theme-text mb-4">Documentation</div>
+      <nav class="flex flex-col gap-6">
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Getting Started</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/getting-started" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Quickstart</a>
+            <a href="/resources/docs/model" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Model &amp; provider</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using Zod</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/chat" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Chat &amp; context</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; skills</a>
+            <a href="/resources/docs/routines" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Routines &amp; calendar</a>
+            <a href="/resources/docs/memory" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Memory</a>
+            <a href="/resources/docs/search" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Search &amp; filters</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Power</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/tools" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Tools &amp; approvals</a>
+            <a href="/resources/docs/connectors" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Connectors &amp; MCP</a>
+            <a href="/resources/docs/extension" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Chrome extension</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Your workspace</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs/vaults" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Vaults, settings &amp; backup</a>
+            <a href="/resources/docs/shortcuts" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Keyboard shortcuts</a>
+            <a href="/resources/docs/troubleshooting" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Troubleshooting</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Reference</div>
+          <div class="flex flex-col gap-px">
+            <a href="/resources/docs" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">All docs</a>
+            <a href="/product/features" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Every feature</a>
+            <a href="/resources/help" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Help center</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0 px-0 lg:pl-10 py-8">
+
+      <a href="/resources/docs" class="inline-flex items-center gap-1 text-xs font-medium text-theme-text-sec hover:text-theme-text transition-colors duration-150 mb-4">
+        <i data-lucide="arrow-left" class="w-3 h-3" aria-hidden="true"></i>
+        Back to docs
+      </a>
+      <h1 class="text-2xl md:text-[28px] leading-[1.15] font-semibold tracking-tight text-theme-text mb-3">Chat &amp; context</h1>
+      <p class="text-sm text-theme-text-sec leading-relaxed mb-8 max-w-2xl">A chat is a conversation with an agent that can use tools. It streams its answer, shows what it did, and asks first.</p>
+
+      <div class="space-y-8">
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Home and chats</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Home is a greeting, the time and one prompt box. Your chats are listed in the sidebar, newest first; search finds them by title and by what was said. The sidebar can be full, icons only, or hidden (<code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘\</code>).</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">The composer</h2>
+        <ul class="space-y-2 text-sm text-theme-text-sec leading-relaxed list-disc pl-5">
+          <li><strong>+ menu</strong>: attach files, add a picture, mention a memory, agent or another chat with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">@</code>, run a skill with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">/</code>, or turn the chat into a routine.</li>
+          <li><strong>Voice</strong>: dictate a message; it is transcribed by your model provider.</li>
+          <li><strong>Resize</strong>: drag the corner to make the box taller or wider; Escape gives the size back.</li>
+          <li><strong>Queue and steer</strong>: press Enter while it works to queue a message; press <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘↵</code> to steer the agent now.</li>
+          <li><strong>Model and Ask first</strong>: chips under the box change the model and whether actions ask first.</li>
+        </ul>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">What the agent shows</h2>
+        <ul class="space-y-2 text-sm text-theme-text-sec leading-relaxed list-disc pl-5">
+          <li><strong>Tool steps</strong>: one quiet card per answer, such as &ldquo;Read 2 files, ran 1 command&rdquo;, opened to see each step, its result and whether it failed.</li>
+          <li><strong>Approvals</strong>: an Allow and Deny card says what is about to happen before it does, and what it did afterwards.</li>
+          <li><strong>Rendered answers</strong>: tables, charts, figures, lists, forms and cards drawn in the chat, and files you can download.</li>
+          <li><strong>Actions on an answer</strong>: copy, save, retry; edit and resend your own messages.</li>
+        </ul>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">The chat details panel</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Press <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘I</code> inside a chat to open its details: the model and working folder, what the agent may use (Terminal, Browser, Remote control), whether it asks before acting, how much of the context window is used and by what, and the connectors that are on. It shows only in a chat, and only for that chat.</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Context and long chats</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">The context meter shows messages, tool results, connector tools, skills and the system prompt as a share of the model&rsquo;s window. When a chat grows long, Compact this chat (<code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘⇧K</code>) summarises its older part to free room.</p>
+        </div>
+
+        <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
+        <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Quick actions</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">Right-click anywhere for a menu that adapts to where you are: actions for this chat or this search first, then Start, New and Go to.</p>
+        </div>
+
+        <div>
+          <h2 class="text-base font-semibold text-theme-text mb-3">Next</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a href="/resources/docs/agents" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Agents &amp; skills <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Give the agent a role and know-how.</p></a><a href="/resources/docs/tools" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Tools &amp; approvals <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">What it can use, and how it asks.</p></a><a href="/resources/docs/shortcuts" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Keyboard shortcuts <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Every shortcut in one list.</p></a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

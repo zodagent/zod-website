@@ -298,3 +298,26 @@
   --spacing-v6: calc(var(--v) * 6);
   --width-prose-medium-wide: 80ch;
 }
+
+/* the tour's screenshots use the same frame as the other screenshots on a wallpaper */
+[data-slide-shot] { display: flex; align-items: center; justify-content: center; }
+[data-slide-shot]::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 90% at 50% 50%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.3) 100%); pointer-events: none; }
+[data-slide-shot] img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 92%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.55), 0 8px 20px -8px rgba(0, 0, 0, 0.4);
+  background: #0d0d0d;
+  transition: opacity 0.25s ease;
+}
+
+/* the hover images are slideshows now: only the frame that is on shows */
+[data-ui-example].is-anim img.ui-shot-gif { opacity: 0; }
+[data-ui-example].is-anim img.ui-shot-gif.is-on { opacity: 1; }

@@ -5,7 +5,7 @@
         <svg class="h-5 lg:h-6 w-auto text-theme-text" xmlns="http://www.w3.org/2000/svg" viewBox="4.0365 3.7214 455 174.3693" aria-hidden="true">
           <!-- @import "./logo.html" -->
         </svg>
-        <span class="sr-only">Zod Agent</span>
+        <span class="sr-only">Zod</span>
       </a>
     <div class="hidden lg:flex">
       <nav role="navigation" aria-label="Main navigation">
@@ -16,16 +16,16 @@
               <div class="relative p-1 border border-theme-border-02 rounded-xl bg-theme-bg min-w-44 shadow-[0_0_1rem_rgba(0,0,0,0.02)_0_0_0.5rem_rgba(0,0,0,0.01)]">
                 <div class="absolute -top-[5px] left-4 w-2.5 h-2.5 rotate-45 border-l border-t border-theme-border-02 bg-theme-bg"></div>
                 <ul class="flex flex-col list-none">
-                  <li><a href="/product" class="flex items-center px-3 py-1.5 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">The app</a></li>
-                  <li><a href="/product/web" class="flex items-center px-3 py-1.5 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Web &amp; self-hosted</a></li>
+                  <li><a href="/product" class="flex items-center px-3 py-1.5 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">The workspace</a></li>
+                  <li><a href="/product/web" class="flex items-center px-3 py-1.5 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Web &amp; self-hosted (soon)</a></li>
                   <li><a href="/product/extension" class="flex items-center px-3 py-1.5 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Chrome extension</a></li>
                   <li><a href="/product/desktop" class="flex items-center px-3 py-1.5 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Desktop app</a></li>
                 </ul>
               </div>
             </div>
           </li>
-          <li><a href="/product/enterprise" class="px-4 py-2 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Enterprise</a></li>
-          <li><a href="/product/pricing" class="px-4 py-2 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Pricing</a></li>
+          <li><a href="/product/enterprise" class="px-4 py-2 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Enterprise (soon)</a></li>
+          <li><a href="/product/features" class="px-4 py-2 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Features</a></li>
           <li><a href="/resources/docs" class="px-4 py-2 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Docs</a></li>
           <li class="relative" @mouseenter="openResources=true" @mouseleave="openResources=false">
             <a href="/resources/changelog" class="px-4 py-2 text-sm text-theme-text/60 hover:text-theme-text transition-colors rounded-lg hover:bg-theme-card-hover-hex">Resources</a>
@@ -49,7 +49,7 @@
       </nav>
     </div>
     <div class="flex items-center gap-3">
-      <a href="/resources/download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-sm px-3 py-1.5 max-sm:hidden">Get the app<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      <a href="/book-a-demo" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg text-sm px-3 py-1.5 max-sm:hidden">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
       <button @click="mobileOpen=!mobileOpen" class="block lg:hidden p-2 !bg-transparent border-none cursor-pointer text-theme-text" aria-label="Open navigation" :aria-expanded="mobileOpen">
         <i data-lucide="menu" class="w-5 h-5" aria-hidden="true"></i>
       </button>
@@ -65,16 +65,16 @@
       <li class="border-b border-theme-border-02">
         <button @click="openProduct=!openProduct" class="flex w-full items-center py-3 !bg-transparent border-none cursor-pointer text-theme-text">Product<i data-lucide="chevron-right" class="w-4 h-4 ml-auto transition-transform duration-200" :class="openProduct && 'rotate-90'" aria-hidden="true"></i></button>
         <ul x-show="openProduct" x-collapse class="flex flex-col list-none pl-4 pb-3" x-cloak>
-          <li><a href="/product" class="block py-2 text-sm text-theme-text/60 hover:text-theme-text">The app</a></li>
-          <li><a href="/product/web" class="block py-2 text-sm text-theme-text/60 hover:text-theme-text">Web &amp; self-hosted</a></li>
+          <li><a href="/product" class="block py-2 text-sm text-theme-text/60 hover:text-theme-text">The workspace</a></li>
+          <li><a href="/product/web" class="block py-2 text-sm text-theme-text/60 hover:text-theme-text">Web &amp; self-hosted (soon)</a></li>
           <li><a href="/product/extension" class="block py-2 text-sm text-theme-text/60 hover:text-theme-text">Chrome extension</a></li>
           <li><a href="/product/desktop" class="block py-2 text-sm text-theme-text/60 hover:text-theme-text">Desktop app</a></li>
         </ul>
       </li>
-      <li class="border-b border-theme-border-02"><a href="/product/enterprise" class="block py-3 text-theme-text">Enterprise</a></li>
-      <li class="border-b border-theme-border-02"><a href="/product/pricing" class="block py-3 text-theme-text">Pricing</a></li>
+      <li class="border-b border-theme-border-02"><a href="/product/enterprise" class="block py-3 text-theme-text">Enterprise (soon)</a></li>
+      <li class="border-b border-theme-border-02"><a href="/product/features" class="block py-3 text-theme-text">Features</a></li>
       <li class="border-b border-theme-border-02"><a href="/resources/docs" class="block py-3 text-theme-text">Docs</a></li>
-      <li class="border-b border-theme-border-02"><a href="/resources/download" class="block py-3 text-theme-text">Get the app</a></li>
+      <li class="border-b border-theme-border-02"><a href="/book-a-demo" class="block py-3 text-theme-text">Book a demo</a></li>
       <li class="border-b border-theme-border-02">
         <button @click="openResources=!openResources" class="flex w-full items-center py-3 !bg-transparent border-none cursor-pointer text-theme-text">Resources<i data-lucide="chevron-right" class="w-4 h-4 ml-auto transition-transform duration-200" :class="openResources && 'rotate-90'" aria-hidden="true"></i></button>
         <ul x-show="openResources" x-collapse class="flex flex-col list-none pl-4 pb-3" x-cloak>

@@ -1,0 +1,76 @@
+<main id="main">
+
+<section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v1.5 max-w-2xl">
+      <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Book a demo.</h1>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl">Zod is in beta and available by invitation. Pick a time, tell us what you would like to see, and we will show you the real app and set you up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-g2">
+      <div class="lg:col-span-2">
+        <div class="max-w-prose">
+          <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance mb-v1">What you will see</h2>
+          <ul class="space-y-3"><li class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="message-circle" class="w-4 h-4 text-accent" aria-hidden="true"></i></div><div><span class="text-sm font-medium">A chat that does the work</span><p class="text-xs text-theme-text-sec">The agent using real tools, showing each step, and asking before it changes anything.</p></div></li><li class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="repeat" class="w-4 h-4 text-accent" aria-hidden="true"></i></div><div><span class="text-sm font-medium">Routines and the calendar</span><p class="text-xs text-theme-text-sec">Make a routine live: who does it, what it does, when it runs.</p></div></li><li class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="bookmark" class="w-4 h-4 text-accent" aria-hidden="true"></i></div><div><span class="text-sm font-medium">Memory, agents and skills</span><p class="text-xs text-theme-text-sec">What Zod remembers, the roles it can take, and know-how it loads.</p></div></li><li class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="plug" class="w-4 h-4 text-accent" aria-hidden="true"></i></div><div><span class="text-sm font-medium">Connectors</span><p class="text-xs text-theme-text-sec">Your own apps through MCP, and Books for accounting, stock and payroll.</p></div></li><li class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="puzzle" class="w-4 h-4 text-accent" aria-hidden="true"></i></div><div><span class="text-sm font-medium">The Chrome extension</span><p class="text-xs text-theme-text-sec">The side panel chat, control of your tabs and the Zod tab on every site.</p></div></li><li class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-theme-card flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="shield-check" class="w-4 h-4 text-accent" aria-hidden="true"></i></div><div><span class="text-sm font-medium">Privacy and control</span><p class="text-xs text-theme-text-sec">Where your data lives, what asks first, and what stays off until you switch it on.</p></div></li></ul>
+          <p class="text-xs text-theme-text-sec mt-v1.5">About 30 minutes, on a video call. Nothing to prepare. Prefer to write first? <a href="/contact-sales" class="text-accent underline underline-offset-2 decoration-accent/30">Contact us</a>.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <h3 class="text-base font-semibold mb-v1">Choose a time</h3>
+          <div x-data="demoForm">
+            <template x-if="submitted">
+              <div class="text-center py-g1.5">
+                <i data-lucide="check-circle" class="w-8 h-8 mx-auto mb-2 text-accent" aria-hidden="true"></i>
+                <h3 class="text-lg font-semibold mb-v0.5">Your email is ready to send</h3>
+                <p class="text-sm text-theme-text-sec text-pretty">We opened your email app with your request. Press send and we will confirm the time within a couple of days. If nothing opened, write to <a href="mailto:contact@zodagent.com" class="text-accent underline underline-offset-2 decoration-accent/30">contact@zodagent.com</a>.</p>
+              </div>
+            </template>
+            <template x-if="!submitted">
+              <form class="grid gap-4" @submit.prevent="submit">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div><label class="block text-sm font-medium mb-1">Name <span class="text-theme-text-sec">*</span></label><input type="text" required placeholder="Your name" x-model="name" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                  <div><label class="block text-sm font-medium mb-1">Work email <span class="text-theme-text-sec">*</span></label><input type="email" required placeholder="you@company.com" x-model="email" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div><label class="block text-sm font-medium mb-1">Company or school</label><input type="text" placeholder="Where you work" x-model="company" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                  <div><label class="block text-sm font-medium mb-1">Team size</label><input type="text" placeholder="Just me, 5, 50…" x-model="teamSize" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div><label class="block text-sm font-medium mb-1">Preferred date <span class="text-theme-text-sec">*</span></label><input type="date" required x-model="date" :min="today" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                  <div><label class="block text-sm font-medium mb-1">Time <span class="text-theme-text-sec">*</span></label><input type="time" required x-model="time" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                  <div><label class="block text-sm font-medium mb-1">Time zone</label><input type="text" x-model="zone" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></div>
+                </div>
+                <div>
+                  <span class="block text-sm font-medium mb-2">What would you like to see?</span>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="The whole product" x-model="topics" class="rounded border border-theme-border-02"> The whole product</label><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="Routines" x-model="topics" class="rounded border border-theme-border-02"> Routines</label><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="The Chrome extension" x-model="topics" class="rounded border border-theme-border-02"> The Chrome extension</label><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="Connectors and my own apps" x-model="topics" class="rounded border border-theme-border-02"> Connectors and my own apps</label><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="Books and business modules" x-model="topics" class="rounded border border-theme-border-02"> Books and business modules</label><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="Using it with a team" x-model="topics" class="rounded border border-theme-border-02"> Using it with a team</label><label class="flex items-center gap-2 text-sm"><input type="checkbox" value="Privacy and security" x-model="topics" class="rounded border border-theme-border-02"> Privacy and security</label></div>
+                </div>
+                <div><label class="block text-sm font-medium mb-1">Anything else?</label><textarea rows="3" placeholder="What you want to use Zod for" x-model="message" class="w-full px-3 py-2.5 rounded-lg border border-theme-border-02 bg-theme-card text-sm text-theme-text placeholder:text-theme-text-mid"></textarea></div>
+                <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></button>
+              </form>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-center mx-auto max-w-prose-medium-wide">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight text-balance mx-auto mb-v1">Want to look around first?</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-xl mx-auto">Every feature is explained in plain words, with screenshots of the real app.</p>
+      <div class="flex justify-center gap-x-g2 items-center flex-wrap">
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover" href="/product/features">See every feature<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text hover:bg-theme-button-bg-hover" href="/resources/docs">Read the docs<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>

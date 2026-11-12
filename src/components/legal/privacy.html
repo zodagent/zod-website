@@ -5,7 +5,7 @@
   <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[800px]">
     <div class="mb-v1">
       <h1 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Privacy Policy</h1>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty">Last updated: August 3, 2026</p>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty">Last updated: November 12, 2026</p>
     </div>
   </div>
 </section>
@@ -31,8 +31,8 @@
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text" id="s1">
   <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[720px]">
     <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">1. The short version</h2>
-    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod Agent is a client-side application. There is no account, no backend, and no server that stores your data. Conversations, memory, configuration, and preferences live in your browser on your device. We do not collect, store, or process your data.</p>
-    <p class="text-sm text-theme-text-sec leading-relaxed">This Privacy Policy covers the Zod Agent application and website. Because the app runs locally, the data it handles is yours and stays on your device.</p>
+    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Zod is a local-first application. There is no account and no Zod server that stores your data. Conversations, memory, routines, configuration and preferences live in files on your computer. We do not collect, store, or process your data.</p>
+    <p class="text-sm text-theme-text-sec leading-relaxed">This Privacy Policy covers the Zod application and website. Because the app runs locally, the data it handles is yours and stays on your device.</p>
   </div>
 </section>
 
@@ -64,7 +64,7 @@
     <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">4. How your data flows</h2>
     <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">The only data that leaves your device is what you explicitly send to an AI provider in a request:</p>
     <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-      <li>Requests go directly from your browser to the provider endpoint you configure (e.g. OpenRouter, OpenAI, Groq, Together, Ollama, LM Studio)</li>
+      <li>Requests go directly from your computer to the provider endpoint you configure (e.g. OpenRouter, OpenAI, Ollama, LM Studio), and to the connectors you add</li>
       <li>We do not proxy, log, or inspect those requests</li>
       <li>Anything you send to a provider is subject to that provider's own terms and data policies</li>
     </ul>
@@ -75,10 +75,10 @@
 <section class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text" id="s5">
   <div class="w-full mx-auto max-w-[1300px] px-g2 max-w-[720px]">
     <h2 class="text-xl font-semibold tracking-tight leading-snug mb-v1">5. Retention and control</h2>
-    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Your workspace is stored in your browser's <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">localStorage</code> and IndexedDB (for scheduled background tasks). It remains on your device until you:</p>
+    <p class="text-sm text-theme-text-sec leading-relaxed mb-v1">Your workspace is stored in files on your computer, in the data folder of each vault (by default <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">~/.zodagent</code> ). It remains on your device until you:</p>
     <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
-      <li>Export and import it as JSON via Settings &rarr; General</li>
-      <li>Clear your browser storage</li>
+      <li>Back it up and restore it from Settings &rarr; Backup (a backup never contains keys or passwords)</li>
+      <li>Delete the vault folder</li>
       <li>Remove the Chrome extension or uninstall the desktop app</li>
     </ul>
   </div>

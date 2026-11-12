@@ -1,6 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Zod Agent is a client-side, agentic AI chat workspace that runs entirely in your browser. Zero backend. Works with any OpenAI-compatible API. Local-first, tool-using, YAML-configured." />
+<meta name="description" content="Zod is a local-first agent workspace: chat with an agent that uses real tools, search everything from one bar, run routines on a schedule, and keep memory. Desktop app and Chrome extension. Works with any OpenAI-compatible model. In beta." />
 <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#14120b" media="(prefers-color-scheme: dark)" />
 <meta name="color-scheme" content="light dark" />
@@ -16,6 +16,7 @@
 <script>!function(){var e=localStorage.getItem("marketing-theme")||"system",t="system"===e?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":e;document.documentElement.setAttribute("data-theme",t)}()</script>
 <script type="module" src="/src/app.js"></script>
 <script>document.addEventListener('DOMContentLoaded',function(){
+var SLIDES={"gif-agent-run": 10, "gif-agents": 5, "gif-chat-streaming": 8, "gif-code": 7, "gif-confirmation": 4, "gif-connectors": 6, "gif-cron": 5, "gif-dashboard": 13, "gif-memory": 3, "gif-orchestrator": 6, "gif-scheduler": 7, "gif-search": 9, "gif-session-data": 5, "gif-settings": 7, "gif-tool-loop": 6, "gif-vaults": 4, "master-demo": 17, "gif-pairing": 5};
 var w=['/images/misc/wallpaper-1.jpg','/images/misc/wallpaper-2.jpg','/images/misc/wallpaper-3.jpg','/images/misc/wallpaper-4.jpg','/images/misc/wallpaper-5.jpg'];
 document.querySelectorAll('[data-wallpaper]').forEach(function(i){i.src=w[Math.floor(Math.random()*w.length)]});
 var pool=['hub-home','chat-structured','chat-agent-run','chat-confirmation','search-palette','agent-profile','orchestrator','settings-providers','settings-memory','settings-tools','settings-mcp','settings-agents','settings-webhooks','scheduler','pairing','dashboard','group-compose','broadcast-compose','session-data-panel','cron-detail','code'];
@@ -23,47 +24,54 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
   var key=d.getAttribute('data-ui-src')||pool[Math.floor(Math.random()*pool.length)];
   var i=document.createElement('img');
   i.src='/images/screens/'+key+'.png';
-  i.alt='Zod Agent screenshot';
+  i.alt='Zod screenshot';
   i.className='ui-shot-static';
   i.loading='lazy';
   d.appendChild(i);
   var gif=d.getAttribute('data-ui-gif');
-  if(gif){
-    var g=document.createElement('img');
-    g.src='/images/gifs/'+gif+'.apng';
-    g.alt='Zod Agent animation';
-    g.className='ui-shot-gif';
-    g.loading='lazy';
-    g.addEventListener('error',function(){g.src='/images/gifs/'+gif+'.gif'});
-    d.appendChild(g);
-    d.addEventListener('mouseenter',function(){d.classList.add('is-anim')});
-    d.addEventListener('mouseleave',function(){d.classList.remove('is-anim')});
+  var n=SLIDES[gif]||0;
+  if(n>1){
+    // a slideshow of full-size screenshots of the real app, playing while it is on screen
+    var imgs=[],idx=0,timer=null;
+    for(var k=1;k<=n;k++){
+      var g=document.createElement('img');
+      g.src='/images/slides/'+gif+'/'+('00'+k).slice(-3)+'.webp';
+      g.alt='Zod in use';
+      g.className='ui-shot-gif'+(k===1?' is-on':'');
+      g.loading='lazy';
+      d.appendChild(g);imgs.push(g);
+    }
+    var show=function(j){imgs.forEach(function(m,q){m.classList.toggle('is-on',q===j)})};
+    var play=function(){if(timer)return;d.classList.add('is-anim');timer=setInterval(function(){idx=(idx+1)%n;show(idx)},2200)};
+    var stop=function(){clearInterval(timer);timer=null};
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?play():stop()})},{threshold:0.35}).observe(d)}else{play()}
+    d.addEventListener('mouseenter',stop);d.addEventListener('mouseleave',function(){if(d.classList.contains('is-anim'))play()});
   }
 });
 });</script>
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Zod Agent: AI chat workspace in your browser" />
-<meta property="og:description" content="A client-side, agentic AI chat workspace. Zero backend. Works with any OpenAI-compatible API. Local-first and private by design." />
+<meta property="og:title" content="Zod: one agent workspace on your computer" />
+<meta property="og:description" content="A local-first agent workspace with routines, memory and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
 <meta property="og:image" content="/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Zod Agent: AI chat workspace in your browser" />
-<meta name="twitter:description" content="A client-side, agentic AI chat workspace. Zero backend. Works with any OpenAI-compatible API. Local-first and private by design." />
+<meta name="twitter:title" content="Zod: one agent workspace on your computer" />
+<meta name="twitter:description" content="A local-first agent workspace with routines, memory and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
 <meta name="twitter:image" content="/og-image.png" />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Zod Agent",
+  "name": "Zod",
   "url": "https://zodagent.com",
   "logo": "https://zodagent.com/favicon.svg",
-  "description": "A client-side, agentic AI chat workspace that runs entirely in your browser. Zero backend, works with any OpenAI-compatible API, local-first and private by design.",
+  "description": "A local-first agent workspace: chat with an agent that uses real tools, run routines, keep memory and connect your own apps. Desktop app and Chrome extension, any OpenAI-compatible model.",
   "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Any",
+  "operatingSystem": "Linux, macOS, Windows, Chrome",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -75,7 +83,7 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Zod Agent",
+  "name": "Zod",
   "url": "https://zodagent.com"
 }
 </script>

@@ -1,6 +1,6 @@
 # zod-website
 
-Public marketing & documentation site for Zod Agent — a client-side, agentic AI chat workspace that runs in your browser.
+Public marketing & documentation site for Zod, a local-first agent workspace (desktop app and Chrome extension). Zod is proprietary software, available by invitation while it is in beta.
 
 Part of the [zodagent](https://github.com/zodagent) ecosystem.
 
@@ -41,5 +41,7 @@ Copies `dist/src/pages/*` to `dist/` so routes like `/product/web` serve `produc
 
 - Marketing pages use `src/partials/header.html`; docs pages use `src/partials/resource-header.html`
 - Internal links must target allowed routes (`/product*`, `/resources/docs*`, `/company/*`, `/legal/*`, etc.) — run the link check before committing
-- Site copy reflects the product: local-first, any OpenAI-compatible API, no backend, no account
+- Site copy reflects the product: local-first, any OpenAI-compatible model, no account. Zod is closed source and has no public pricing: calls to action are "Book a demo" (`/book-a-demo`)
+- Only the desktop app and the Chrome extension are available; the browser version, self-hosting and the CLI are marked "coming soon"
+- The screenshots in `src/assets/images/screens` and the slideshows in `src/assets/images/slides` are real captures of the app
 - `src/app-details.md` is the internal source of truth and must not be referenced in site copy
