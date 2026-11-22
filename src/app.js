@@ -108,6 +108,51 @@ Alpine.data('marketplace', () => ({
   },
 }))
 
+// The desktop downloads (resources/download.html): the newest release on the public builds repo, one card per system. A system whose
+// app is not attached to the release yet says "Coming soon"; each one appears here the moment someone publishes it with `bun run release`.
+Alpine.data('download', () => ({
+  api: 'https://api.github.com/repos/zodagent/zod-releases/releases/latest',
+  releases: 'https://github.com/zodagent/zod-releases/releases',
+  version: '',
+  date: '',
+  loading: true,
+  failed: false,
+  mine: '',
+  items: [
+    { id: 'mac', name: 'macOS', icon: 'apple', note: 'Open the .dmg and drag Zod to Applications. The first time, right-click it and choose Open.', pick: [/\.dmg$/i] },
+    { id: 'win', name: 'Windows', icon: 'monitor', note: 'Run the installer. Choose this computer or a USB drive.', pick: [/\.exe$/i, /windows.*\.zip$/i, /win.*setup.*\.zip$/i] },
+    { id: 'linux', name: 'Linux', icon: 'terminal', note: 'Unpack it and run the installer inside (x64).', pick: [/linux.*installer\.tar\.gz$/i, /linux-x64-.*setup\.tar\.gz$/i] },
+  ],
+  async init() {
+    const ua = `${navigator.userAgent} ${navigator.platform}`
+    this.mine = /Mac/i.test(ua) && !/iPhone|iPad/i.test(ua) ? 'mac' : /Win/i.test(ua) ? 'win' : /Linux|X11/i.test(ua) && !/Android/i.test(ua) ? 'linux' : ''
+    try {
+      const r = await fetch(this.api, { headers: { accept: 'application/vnd.github+json' } })
+      if (!r.ok) throw new Error(String(r.status))
+      const j = await r.json()
+      this.version = String(j.tag_name || '').replace(/^v/, '')
+      this.date = j.published_at ? new Date(j.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''
+      const assets = j.assets || []
+      const mb = (n) => `${Math.max(1, Math.round(n / 1048576))} MB`
+      for (const it of this.items) {
+        let hit = null
+        for (const re of it.pick) {
+          hit = assets.find((a) => re.test(a.name))
+          if (hit) break
+        }
+        it.url = hit ? hit.browser_download_url : ''
+        it.file = hit ? hit.name : ''
+        it.size = hit ? mb(hit.size) : ''
+      }
+    } catch {
+      this.failed = true
+    }
+    this.loading = false
+    this.items.sort((a, b) => (b.id === this.mine) - (a.id === this.mine))
+    this.$nextTick(() => createIcons({ icons }))
+  },
+}))
+
 Alpine.data('faq', () => ({
   open: null,
   toggle(id) { this.open = this.open === id ? null : id },
