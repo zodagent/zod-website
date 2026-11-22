@@ -17,9 +17,8 @@
           <div class="text-xs font-semibold text-theme-text-sec/70 uppercase tracking-wider mb-1.5 px-2">Using Zod</div>
           <div class="flex flex-col gap-px">
             <a href="/resources/docs/chat" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] bg-theme-card-hex font-medium">Chat &amp; context</a>
-            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents &amp; skills</a>
+            <a href="/resources/docs/agents" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Agents</a>
             <a href="/resources/docs/routines" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Routines &amp; calendar</a>
-            <a href="/resources/docs/memory" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Memory</a>
             <a href="/resources/docs/search" class="block px-2 py-[5px] text-sm text-theme-text rounded-[4px] hover:bg-theme-card-hex transition-colors">Search &amp; filters</a>
           </div>
         </div>
@@ -70,13 +69,13 @@
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
         <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">The composer</h2>
         <ul class="space-y-2 text-sm text-theme-text-sec leading-relaxed list-disc pl-5">
-          <li><strong>+ menu</strong>: attach files, add a picture, mention a memory, agent or another chat with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">@</code>, run a skill with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">/</code>, or turn the chat into a routine.</li>
+          <li><strong>+ menu</strong>: attach files, add a picture, mention a routine, agent or another chat with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">@</code>, run a routine with <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">/</code>, or turn the chat into a routine.</li>
           <li><strong>Voice</strong>: dictate a message; it is transcribed by your model provider.</li>
           <li><strong>Resize</strong>: drag the corner to make the box taller or wider; Escape gives the size back.</li>
           <li><strong>Queue and steer</strong>: press Enter while it works to queue a message; press <code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘↵</code> to steer the agent now.</li>
           <li><strong>Model and Ask first</strong>: chips under the box change the model and whether actions ask first.</li>
         </ul>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3"><figure class="rounded-sm overflow-hidden border border-theme-border-02 bg-theme-card-hex"><img src="/images/docs/doc-composer-menu.webp" alt="The + menu: files, pictures, mentions, skills." loading="lazy" class="w-full h-auto block"><figcaption class="text-xs text-theme-text-sec px-3 py-2">The + menu: files, pictures, mentions, skills.</figcaption></figure><figure class="rounded-sm overflow-hidden border border-theme-border-02 bg-theme-card-hex"><img src="/images/docs/doc-ask-first.webp" alt="Ask first and Auto, from the chip under the box." loading="lazy" class="w-full h-auto block"><figcaption class="text-xs text-theme-text-sec px-3 py-2">Ask first and Auto, from the chip under the box.</figcaption></figure></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3"><figure class="rounded-sm overflow-hidden border border-theme-border-02 bg-theme-card-hex"><img src="/images/docs/doc-composer-menu.webp" alt="The + menu: files, pictures, mentions, routines." loading="lazy" class="w-full h-auto block"><figcaption class="text-xs text-theme-text-sec px-3 py-2">The + menu: files, pictures, mentions, routines.</figcaption></figure><figure class="rounded-sm overflow-hidden border border-theme-border-02 bg-theme-card-hex"><img src="/images/docs/doc-ask-first.webp" alt="Ask first and Auto, from the chip under the box." loading="lazy" class="w-full h-auto block"><figcaption class="text-xs text-theme-text-sec px-3 py-2">Ask first and Auto, from the chip under the box.</figcaption></figure></div>
         </div>
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
@@ -98,7 +97,7 @@
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
         <h2 class="text-base font-semibold text-theme-text mb-3 mt-2">Context and long chats</h2>
-        <p class="text-sm text-theme-text-sec leading-relaxed">The context meter shows messages, tool results, connector tools, skills and the system prompt as a share of the model&rsquo;s window. When a chat grows long, Compact this chat (<code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘⇧K</code>) summarises its older part to free room.</p>
+        <p class="text-sm text-theme-text-sec leading-relaxed">The context meter shows messages, tool results, connector tools and the system prompt as a share of the model&rsquo;s window. When a chat grows long, Compact this chat (<code class="font-mono text-[13px] bg-theme-card-hex px-1.5 py-0.5 rounded">⌘⇧K</code>) summarises its older part to free room.</p>
         </div>
 
         <div class="rounded-sm border border-theme-border-02 p-5 bg-theme-bg space-y-3">
@@ -109,7 +108,7 @@
 
         <div>
           <h2 class="text-base font-semibold text-theme-text mb-3">Next</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a href="/resources/docs/agents" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Agents &amp; skills <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Give the agent a role and know-how.</p></a><a href="/resources/docs/tools" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Tools &amp; approvals <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">What it can use, and how it asks.</p></a><a href="/resources/docs/shortcuts" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Keyboard shortcuts <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Every shortcut in one list.</p></a></div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a href="/resources/docs/agents" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Agents <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Give the agent a role and know-how.</p></a><a href="/resources/docs/tools" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Tools &amp; approvals <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">What it can use, and how it asks.</p></a><a href="/resources/docs/shortcuts" class="block rounded-sm border border-theme-border-02 bg-theme-bg p-4 transition-all hover:border-accent/50 group"><h3 class="text-sm font-semibold text-theme-text mb-1 group-hover:text-accent transition-colors">Keyboard shortcuts <i data-lucide="arrow-right" class="w-3 h-3 inline" aria-hidden="true"></i></h3><p class="text-xs text-theme-text-sec">Every shortcut in one list.</p></a></div>
         </div>
 
       </div>

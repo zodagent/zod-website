@@ -1,6 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Zod is a local-first agent workspace: chat with an agent that uses real tools, search everything from one bar, run routines on a schedule, and keep memory. Desktop app and Chrome extension. Works with any OpenAI-compatible model. In beta." />
+<meta name="description" content="Zod is a local-first agent workspace: chat with an agent that uses real tools, search everything from one bar, run routines on a schedule. Desktop app and Chrome extension. Works with any OpenAI-compatible model. In beta." />
 <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#14120b" media="(prefers-color-scheme: dark)" />
 <meta name="color-scheme" content="light dark" />
@@ -31,8 +31,8 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
   d.appendChild(i);
   var gif=d.getAttribute('data-ui-gif');
   // a label that names the feature on screen, so a picture is never just a picture
-  var GL={'gif-dashboard':'Home','gif-chat-streaming':'Chat','gif-agent-run':'Tool steps','gif-tool-loop':'Tool steps','gif-confirmation':'Approvals','gif-search':'Search','gif-scheduler':'Routines','gif-cron':'Write a routine','gif-orchestrator':'Routine steps','gif-memory':'Memory','gif-agents':'Agents and skills','gif-connectors':'Connectors and plugins','gif-settings':'Settings','gif-vaults':'Vaults','gif-pairing':'Chrome extension','gif-code':'Code','gif-session-data':'Chat details','master-demo':'The whole app'};
-  var SL={'hub-home':'Home','chat-structured':'Answers you can act on','chat-agent-run':'Tool steps','chat-confirmation':'Approvals','search-palette':'Search','agent-profile':'Agents','orchestrator':'Routine steps','settings-providers':'Model','settings-memory':'Memory','settings-tools':'Skills','settings-mcp':'Connectors','settings-agents':'Agents','settings-webhooks':'Plugins and messaging','scheduler':'Routines','pairing':'Chrome extension','dashboard':'Search home','group-compose':'Vaults','broadcast-compose':'Notifications','session-data-panel':'Chat details','cron-detail':'A routine','code':'Code','settings-general':'Settings','books-home':'Books','books-table':'Books','books-reports':'Books','settings-approvals':'Approvals','shortcuts':'Shortcuts','extension-context':'Chrome context'};
+  var GL={'gif-dashboard':'Home','gif-chat-streaming':'Chat','gif-agent-run':'Tool steps','gif-tool-loop':'Tool steps','gif-confirmation':'Approvals','gif-search':'Search','gif-scheduler':'Routines','gif-cron':'Write a routine','gif-orchestrator':'Routine steps','gif-memory':'Memory','gif-agents':'Agents','gif-connectors':'Connectors','gif-settings':'Settings','gif-vaults':'Vaults','gif-pairing':'Chrome extension','gif-code':'Code','gif-session-data':'Chat details','master-demo':'The whole app'};
+  var SL={'hub-home':'Home','chat-structured':'Answers you can act on','chat-agent-run':'Tool steps','chat-confirmation':'Approvals','search-palette':'Search','agent-profile':'Agents','orchestrator':'Routine steps','settings-providers':'Model','settings-memory':'Memory','settings-tools':'Tools','settings-mcp':'Connectors','settings-agents':'Agents','settings-webhooks':'Messaging','scheduler':'Routines','pairing':'Chrome extension','dashboard':'Search home','group-compose':'Vaults','broadcast-compose':'Notifications','session-data-panel':'Chat details','cron-detail':'A routine','code':'Code','settings-general':'Settings','books-home':'Books','books-table':'Books','books-reports':'Books','settings-approvals':'Approvals','shortcuts':'Shortcuts','extension-context':'Chrome context'};
   var lab=GL[gif]||SL[key];
   if(lab){var tag=document.createElement('span');tag.className='ui-label';tag.textContent=lab;tag.setAttribute('aria-hidden','true');d.appendChild(tag)}
   var n=SLIDES[gif]||0;
@@ -61,14 +61,14 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Zod: one agent workspace on your computer" />
-<meta property="og:description" content="A local-first agent workspace with routines, memory and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
+<meta property="og:description" content="A local-first agent workspace with routines and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
 <meta property="og:image" content="https://www.zodagent.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Zod: one agent workspace on your computer" />
-<meta name="twitter:description" content="A local-first agent workspace with routines, memory and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
+<meta name="twitter:description" content="A local-first agent workspace with routines and connectors. Desktop app and Chrome extension. Any OpenAI-compatible model. In beta." />
 <meta name="twitter:image" content="https://www.zodagent.com/og-image.png" />
 
 <script type="application/ld+json">
@@ -78,7 +78,7 @@ document.querySelectorAll('[data-ui-example]').forEach(function(d){
   "name": "Zod",
   "url": "https://www.zodagent.com",
   "logo": "https://www.zodagent.com/favicon.svg",
-  "description": "A local-first agent workspace: chat with an agent that uses real tools, run routines, keep memory and connect your own apps. Desktop app and Chrome extension, any OpenAI-compatible model.",
+  "description": "A local-first agent workspace: chat with an agent that uses real tools, run routines and connect your own apps. Desktop app and Chrome extension, any OpenAI-compatible model.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Linux, macOS, Windows, Chrome",
   "offers": {

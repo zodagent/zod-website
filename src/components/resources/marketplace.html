@@ -18,6 +18,61 @@
   </div>
 </section>
 
+<!-- the connectors marketplace: the list is read from the public repo zodagent/marketplace -->
+<section id="connectors" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text" x-data="marketplace">
+  <div class="w-full mx-auto max-w-[1300px] px-g2">
+    <div class="text-left mb-v2 max-w-2xl">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Connectors marketplace</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty">MCP servers and apps you can add to Zod. The list is open: it lives in <a class="text-accent hover:text-accent/75" href="https://github.com/zodagent/marketplace" rel="noopener">zodagent/marketplace</a>, and the app reads the same file. Apps such as Sheets and Books keep their own repositories.</p>
+    </div>
+
+    <div class="flex flex-col gap-g1 mb-g1.5">
+      <input type="search" x-model="q" placeholder="Search connectors" aria-label="Search connectors" class="w-full max-w-md rounded-full bg-theme-bg border border-theme-border-01 px-4 py-2.5 text-sm text-theme-text placeholder:text-theme-text-sec"/>
+      <div class="flex flex-wrap gap-2">
+        <template x-for="c in cats" :key="c">
+          <button type="button" @click="cat = c" class="rounded-full px-3 py-1.5 text-xs border transition-colors duration-150" :class="cat === c ? 'bg-theme-button-bg text-theme-button-text border-theme-button-bg' : 'bg-theme-bg text-theme-text-sec border-theme-border-01 hover:text-theme-text'" x-text="c"></button>
+        </template>
+      </div>
+    </div>
+
+    <p x-show="loading" class="text-sm text-theme-text-sec">Loading the list…</p>
+    <p x-show="failed" x-cloak class="text-sm text-theme-text-sec">The list could not be loaded. You can read it on <a class="text-accent" href="https://github.com/zodagent/marketplace/blob/main/connectors.json" rel="noopener">GitHub</a>.</p>
+    <p x-show="!loading && !failed && !shown.length" x-cloak class="text-sm text-theme-text-sec">Nothing matches that search.</p>
+
+    <div class="grid gap-g1.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start">
+      <template x-for="c in shown" :key="c.id">
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 shrink-0 rounded-sm bg-theme-bg flex items-center justify-center text-sm font-semibold text-accent" x-text="(c.name || '?').charAt(0).toUpperCase()" aria-hidden="true"></div>
+            <div class="min-w-0 flex-1">
+              <h3 class="text-sm font-semibold flex flex-wrap items-center gap-2"><span x-text="c.name"></span>
+                <span x-show="c.app" class="text-[0.65rem] font-normal rounded-full px-2 py-0.5 bg-theme-bg text-accent">App</span>
+                <span x-show="c.market && c.market.reviewed" class="text-[0.65rem] font-normal rounded-full px-2 py-0.5 bg-theme-bg text-theme-text-sec">Reviewed</span>
+                <span x-show="c.private" class="text-[0.65rem] font-normal rounded-full px-2 py-0.5 bg-theme-bg text-theme-text-sec">Private repo</span>
+              </h3>
+              <p class="text-xs text-theme-text-sec mt-v0.5" x-text="c.cat"></p>
+            </div>
+          </div>
+          <p class="text-xs text-theme-text-sec leading-relaxed mt-v1" x-text="c.desc"></p>
+          <button type="button" @click="toggle(c.id)" class="mt-v1 text-xs font-medium text-accent hover:text-accent/75" x-text="open === c.id ? 'Hide details' : 'How to add it'"></button>
+          <div x-show="open === c.id" x-cloak class="mt-v1 text-xs text-theme-text-sec leading-relaxed">
+            <p class="mb-1">In Zod: Connectors, then Add. It runs:</p>
+            <pre class="font-mono bg-theme-bg rounded-sm p-2 overflow-x-auto"><code x-text="run(c)"></code></pre>
+            <template x-if="c.env && c.env.length"><p class="mt-2">Asks for: <span x-text="c.env.map((e) => e.name).join(', ')"></span></p></template>
+            <template x-if="c.note"><p class="mt-2" x-text="c.note"></p></template>
+            <template x-if="c.market && c.market.permissions && c.market.permissions.length"><p class="mt-2">Declares: <span x-text="c.market.permissions.map((p) => perms[p] || p).join(' ')"></span></p></template>
+            <template x-if="c.tools && c.tools.length"><p class="mt-2">Tools: <span x-text="c.tools.map((t) => t.name).join(', ')"></span></p></template>
+            <p class="mt-2"><a class="text-accent" :href="c.repo || (c.market && c.market.source)" x-show="c.repo || (c.market && c.market.source)" rel="noopener">Source</a></p>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <p class="text-xs text-theme-text-sec mt-g1.5 max-w-prose" x-show="trust" x-text="trust"></p>
+    <p class="text-xs text-theme-text-sec mt-v0.5"><a class="text-accent" href="https://github.com/zodagent/marketplace#add-a-connector" rel="noopener">Add yours with a pull request</a></p>
+  </div>
+</section>
+
 <section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v2">
@@ -25,11 +80,7 @@
       <p class="text-base text-theme-text-sec text-pretty mt-v0.5">The agent has these families of tools in every chat, and finds the rest when it needs them.</p>
     </div>
     <div class="grid gap-g1.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
-        <i data-lucide="brain" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
-        <h3 class="text-sm font-semibold mb-v0.5">memory</h3>
-        <p class="text-xs text-theme-text-sec leading-relaxed">Remember, recall and forget notes that persist across chats.</p>
-      </div>
+      
       <div class="bg-theme-card-hex rounded-sm p-g1.75 text-center">
         <i data-lucide="list-checks" class="w-5 h-5 mx-auto mb-2 text-accent" aria-hidden="true"></i>
         <h3 class="text-sm font-semibold mb-v0.5">to-do</h3>

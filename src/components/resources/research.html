@@ -27,14 +27,14 @@
           <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card text-accent">Architecture</span>
         </div>
         <h2 class="text-base font-semibold mb-v0.5">One agent, run by the server on your computer</h2>
-        <p class="text-sm text-theme-text-sec leading-relaxed">The window is only a renderer. When you send a message, the app server on your computer runs the agent: it builds the history, calls the model you linked with the tool definitions, runs each requested tool here, feeds the results back and repeats until the job is done. Anything that writes, deletes, installs or schedules stops at an Allow and Deny card first. The same agent serves the app, the Chrome extension&rsquo;s side panel and MCP clients, so there is one agent, one memory and one set of approvals, however you reach it.</p>
+        <p class="text-sm text-theme-text-sec leading-relaxed">The window is only a renderer. When you send a message, the app server on your computer runs the agent: it builds the history, calls the model you linked with the tool definitions, runs each requested tool here, feeds the results back and repeats until the job is done. Anything that writes, deletes, installs or schedules stops at an Allow and Deny card first. The same agent serves the app, the Chrome extension&rsquo;s side panel and MCP clients, so there is one agent and one set of approvals, however you reach it.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75">
         <div class="flex items-center gap-x-2 text-xs text-theme-text-mid mb-v0.5">
           <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card text-accent">Rendering</span>
         </div>
-        <h2 class="text-base font-semibold mb-v0.5">One grammar draws every block</h2>
-        <p class="text-sm text-theme-text-sec leading-relaxed">Rather than a separate page per kind of answer, Zod has one grammar, written in text, that draws every block: tables, charts, figures, lists, forms, cards and whole pages. The same grammar renders pages, chat answers, MCP tool results and the search box, so a connector&rsquo;s app can look like Zod without shipping any design. Plain text passes through untouched, and a block that cannot be drawn says why instead of failing quietly.</p>
+        <h2 class="text-base font-semibold mb-v0.5">Connectors will bring their own screens</h2>
+        <p class="text-sm text-theme-text-sec leading-relaxed">A connector is an MCP server. When it needs screens, it will ship them as an MCP App: a real web page that Zod shows in a sandboxed frame. Every call the page makes will go through the same Allow and Deny policy as any other tool, so an app can look and feel like Zod without being trusted with more than you allowed. This is in progress.</p>
       </div>
       <div class="bg-theme-card-hex rounded-sm p-g1.75">
         <div class="flex items-center gap-x-2 text-xs text-theme-text-mid mb-v0.5">

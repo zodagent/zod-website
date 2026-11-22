@@ -90,7 +90,6 @@ const pages = {
   'docs-chat': 'resources/docs/chat.html',
   'docs-agents': 'resources/docs/agents.html',
   'docs-routines': 'resources/docs/routines.html',
-  'docs-memory': 'resources/docs/memory.html',
   'docs-search': 'resources/docs/search.html',
   'docs-tools': 'resources/docs/tools.html',
   'docs-connectors': 'resources/docs/connectors.html',
