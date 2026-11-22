@@ -29,8 +29,12 @@ Alpine.data('nav', () => ({
 // The connectors marketplace (resources/marketplace.html): the list lives in the public repo zodagent/marketplace and is read here
 // when the page opens; the page says so when it cannot be reached.
 Alpine.data('marketplace', () => ({
-  url: 'https://raw.githubusercontent.com/zodagent/marketplace/main/connectors.json',
+  base: 'https://raw.githubusercontent.com/zodagent/marketplace/main',
   repo: 'https://github.com/zodagent/marketplace',
+  tab: 'connectors',
+  routines: { categories: [], schedules: [], flows: [] },
+  rcat: 'All',
+  ropen: '',
   items: [],
   perms: {},
   trust: '',
@@ -42,9 +46,16 @@ Alpine.data('marketplace', () => ({
   open: '',
   async init() {
     try {
-      const r = await fetch(this.url, { cache: 'no-cache' })
+      const [r, rr] = await Promise.all([
+        fetch(`${this.base}/connectors.json`, { cache: 'no-cache' }),
+        fetch(`${this.base}/routines.json`, { cache: 'no-cache' }).catch(() => null),
+      ])
       if (!r.ok) throw new Error(String(r.status))
       const j = await r.json()
+      if (rr && rr.ok) {
+        const x = await rr.json()
+        this.routines = { categories: x.categories || [], schedules: x.schedules || [], flows: x.flows || [] }
+      }
       this.items = Array.isArray(j.connectors) ? j.connectors : []
       this.perms = j.permissions || {}
       this.trust = j.trust || ''
@@ -53,6 +64,28 @@ Alpine.data('marketplace', () => ({
       this.failed = true
     }
     this.loading = false
+    this.$nextTick(() => createIcons({ icons }))
+  },
+  logo(c) {
+    return c.logo ? `${this.base}/${c.logo}` : ''
+  },
+  get rcats() {
+    return ['All', 'Timed', ...this.routines.categories.map((c) => c.name)]
+  },
+  // every ready-made routine in one list: the timed ones first, then the step lists by category
+  get rshown() {
+    const q = this.q.trim().toLowerCase()
+    const name = (id) => (this.routines.categories.find((c) => c.id === id) || {}).name || 'Other'
+    const rows = [
+      ...this.routines.schedules.map((t) => ({ key: `s:${t.id}`, icon: t.icon || 'calendar-clock', title: t.title, desc: t.desc, cat: 'Timed', how: t.prompt, kind: 'Runs on a schedule' })),
+      ...this.routines.flows.map((f) => ({ key: `f:${f.id}`, icon: 'list-ordered', title: f.name, desc: f.description, cat: name(f.category), how: f.lines.join('\n'), kind: 'Steps' })),
+    ]
+    return rows.filter((r) => (this.rcat === 'All' || r.cat === this.rcat) && (!q || `${r.title} ${r.desc} ${r.cat}`.toLowerCase().includes(q)))
+  },
+  show(tab) {
+    this.tab = tab
+    this.q = ''
+    this.$nextTick(() => createIcons({ icons }))
   },
   get cats() {
     const n = {}

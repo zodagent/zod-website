@@ -22,11 +22,15 @@
 <section id="connectors" class="px-g2 py-[4.2rem] bg-theme-card text-theme-text" x-data="marketplace">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v2 max-w-2xl">
-      <h2 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Connectors marketplace</h2>
-      <p class="text-base leading-normal text-theme-text-sec text-pretty">MCP servers and apps you can add to Zod. The list is open: it lives in <a class="text-accent hover:text-accent/75" href="https://github.com/zodagent/marketplace" rel="noopener">zodagent/marketplace</a>, and the app reads the same file. Apps such as Sheets and Books keep their own repositories.</p>
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Marketplace</h2>
+      <p class="text-base leading-normal text-theme-text-sec text-pretty">MCP servers, apps and ready-made routines you can add to Zod. The lists are open: it lives in <a class="text-accent hover:text-accent/75" href="https://github.com/zodagent/marketplace" rel="noopener">zodagent/marketplace</a>, and the app reads the same file. Apps such as Sheets and Books keep their own repositories.</p>
     </div>
 
-    <div class="flex flex-col gap-g1 mb-g1.5">
+    <div class="flex gap-2 mb-g1">
+      <button type="button" @click="show('connectors')" class="rounded-full px-4 py-2 text-sm border transition-colors duration-150" :class="tab === 'connectors' ? 'bg-theme-button-bg text-theme-button-text border-theme-button-bg' : 'bg-theme-bg text-theme-text-sec border-theme-border-01 hover:text-theme-text'">Connectors</button>
+      <button type="button" @click="show('routines')" class="rounded-full px-4 py-2 text-sm border transition-colors duration-150" :class="tab === 'routines' ? 'bg-theme-button-bg text-theme-button-text border-theme-button-bg' : 'bg-theme-bg text-theme-text-sec border-theme-border-01 hover:text-theme-text'">Routines</button>
+    </div>
+    <div x-show="tab === 'connectors'" class="flex flex-col gap-g1 mb-g1.5">
       <input type="search" x-model="q" placeholder="Search connectors" aria-label="Search connectors" class="w-full max-w-md rounded-full bg-theme-bg border border-theme-border-01 px-4 py-2.5 text-sm text-theme-text placeholder:text-theme-text-sec"/>
       <div class="flex flex-wrap gap-2">
         <template x-for="c in cats" :key="c">
@@ -35,15 +39,25 @@
       </div>
     </div>
 
+    <div x-show="tab === 'routines'" x-cloak class="flex flex-col gap-g1 mb-g1.5">
+      <input type="search" x-model="q" placeholder="Search routines" aria-label="Search routines" class="w-full max-w-md rounded-full bg-theme-bg border border-theme-border-01 px-4 py-2.5 text-sm text-theme-text placeholder:text-theme-text-sec"/>
+      <div class="flex flex-wrap gap-2">
+        <template x-for="c in rcats" :key="c">
+          <button type="button" @click="rcat = c" class="rounded-full px-3 py-1.5 text-xs border transition-colors duration-150" :class="rcat === c ? 'bg-theme-button-bg text-theme-button-text border-theme-button-bg' : 'bg-theme-bg text-theme-text-sec border-theme-border-01 hover:text-theme-text'" x-text="c"></button>
+        </template>
+      </div>
+    </div>
+
     <p x-show="loading" class="text-sm text-theme-text-sec">Loading the list…</p>
     <p x-show="failed" x-cloak class="text-sm text-theme-text-sec">The list could not be loaded. You can read it on <a class="text-accent" href="https://github.com/zodagent/marketplace/blob/main/connectors.json" rel="noopener">GitHub</a>.</p>
-    <p x-show="!loading && !failed && !shown.length" x-cloak class="text-sm text-theme-text-sec">Nothing matches that search.</p>
+    <p x-show="!loading && !failed && tab === 'connectors' && !shown.length" x-cloak class="text-sm text-theme-text-sec">Nothing matches that search.</p>
 
-    <div class="grid gap-g1.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start">
+    <div x-show="tab === 'connectors'" class="grid gap-g1.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start">
       <template x-for="c in shown" :key="c.id">
         <div class="bg-theme-card-hex rounded-sm p-g1.75">
           <div class="flex items-start gap-3">
-            <div class="w-9 h-9 shrink-0 rounded-sm bg-theme-bg flex items-center justify-center text-sm font-semibold text-accent" x-text="(c.name || '?').charAt(0).toUpperCase()" aria-hidden="true"></div>
+            <img :src="logo(c)" x-show="c.logo" alt="" width="40" height="40" loading="lazy" class="w-10 h-10 shrink-0 rounded-[10px]"/>
+            <div x-show="!c.logo" class="w-10 h-10 shrink-0 rounded-[10px] bg-theme-bg flex items-center justify-center text-sm font-semibold text-accent" x-text="(c.name || '?').charAt(0).toUpperCase()" aria-hidden="true"></div>
             <div class="min-w-0 flex-1">
               <h3 class="text-sm font-semibold flex flex-wrap items-center gap-2"><span x-text="c.name"></span>
                 <span x-show="c.app" class="text-[0.65rem] font-normal rounded-full px-2 py-0.5 bg-theme-bg text-accent">App</span>
@@ -64,6 +78,24 @@
             <template x-if="c.tools && c.tools.length"><p class="mt-2">Tools: <span x-text="c.tools.map((t) => t.name).join(', ')"></span></p></template>
             <p class="mt-2"><a class="text-accent" :href="c.repo || (c.market && c.market.source)" x-show="c.repo || (c.market && c.market.source)" rel="noopener">Source</a></p>
           </div>
+        </div>
+      </template>
+    </div>
+
+
+    <div x-show="tab === 'routines'" x-cloak class="grid gap-g1.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start">
+      <template x-for="r in rshown" :key="r.key">
+        <div class="bg-theme-card-hex rounded-sm p-g1.75">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 shrink-0 rounded-[10px] bg-theme-bg flex items-center justify-center text-accent"><i :data-lucide="r.icon" class="w-5 h-5" aria-hidden="true"></i></div>
+            <div class="min-w-0 flex-1">
+              <h3 class="text-sm font-semibold" x-text="r.title"></h3>
+              <p class="text-xs text-theme-text-sec mt-v0.5"><span x-text="r.cat"></span> · <span x-text="r.kind"></span></p>
+            </div>
+          </div>
+          <p class="text-xs text-theme-text-sec leading-relaxed mt-v1" x-text="r.desc"></p>
+          <button type="button" @click="ropen = ropen === r.key ? '' : r.key" class="mt-v1 text-xs font-medium text-accent hover:text-accent/75" x-text="ropen === r.key ? 'Hide steps' : 'See the steps'"></button>
+          <pre x-show="ropen === r.key" x-cloak class="mt-v1 text-xs font-mono bg-theme-bg rounded-sm p-2 overflow-x-auto whitespace-pre-wrap" x-text="r.how"></pre>
         </div>
       </template>
     </div>
