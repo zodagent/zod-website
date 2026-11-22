@@ -18,7 +18,32 @@
   </div>
 </section>
 
-<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+<section class="px-g2 pt-[4.2rem] pb-g2 bg-theme-card text-theme-text" x-data="changelog">
+  <div class="w-full mx-auto px-g2 max-w-[720px]">
+    <div class="mb-v2">
+      <h2 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] mb-v1">Releases</h2>
+      <p class="text-sm text-theme-text-sec">Read live from <a class="text-accent" :href="releases" rel="noopener">GitHub</a>: every version, as it is published.</p>
+    </div>
+    <p x-show="loading" class="text-sm text-theme-text-sec">Loading the releases…</p>
+    <p x-show="failed" x-cloak class="text-sm text-theme-text-sec">The releases could not be loaded. They are all on <a class="text-accent" :href="releases" rel="noopener">GitHub</a>.</p>
+    <template x-for="r in list" :key="r.tag">
+      <div class="bg-theme-card-hex rounded-sm p-g1.75 mb-v2">
+        <div class="flex items-center gap-g1 mb-v1">
+          <span class="inline-flex text-xs font-medium px-2 py-0.5 rounded-sm bg-theme-card-03-hex text-theme-text-sec" x-text="'Zod ' + r.version"></span>
+          <span class="text-xs text-theme-text-sec" x-text="r.date"></span>
+        </div>
+        <p class="text-sm text-theme-text-sec leading-relaxed mb-v1" x-show="r.intro" x-html="r.intro"></p>
+        <ul class="list-disc pl-5 text-sm text-theme-text-sec leading-[1.8] space-y-0.5">
+          <template x-for="(b, i) in r.bullets" :key="i"><li x-html="b"></li></template>
+        </ul>
+        <p class="mt-v1 text-xs"><a class="text-accent" :href="r.url" rel="noopener"><span x-show="r.more" x-text="'And ' + r.more + ' more. '"></span>Open this release on GitHub</a></p>
+      </div>
+    </template>
+    <h2 class="text-xl font-semibold tracking-tight leading-snug mt-v3 mb-v1 text-theme-text-sec" x-show="!loading">Earlier changes</h2>
+  </div>
+</section>
+
+<section class="px-g2 pt-0 pb-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto px-g2 max-w-[720px]">
 
     <div class="bg-theme-card-hex rounded-sm p-g1.75 mb-v2">

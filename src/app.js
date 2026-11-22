@@ -153,6 +153,47 @@ Alpine.data('download', () => ({
   },
 }))
 
+// The changelog (resources/changelog.html): the notes of each release on the public builds repo, newest first. The notes are the version's
+// section of the app's CHANGELOG.md, attached by `bun run release`, so this page is up to date the moment a version is published.
+Alpine.data('changelog', () => ({
+  api: 'https://api.github.com/repos/zodagent/zod-releases/releases?per_page=12',
+  releases: 'https://github.com/zodagent/zod-releases/releases',
+  list: [],
+  loading: true,
+  failed: false,
+  esc: (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'),
+  inline(t) {
+    return this.esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>')
+  },
+  async init() {
+    try {
+      const r = await fetch(this.api, { headers: { accept: 'application/vnd.github+json' } })
+      if (!r.ok) throw new Error(String(r.status))
+      const rows = await r.json()
+      this.list = rows
+        .filter((x) => !x.draft && !x.prerelease)
+        .map((x) => {
+          const lines = String(x.body || '').split('\n').map((l) => l.trim()).filter(Boolean)
+          const bullets = lines.filter((l) => /^[-*] /.test(l)).map((l) => this.inline(l.slice(2)))
+          const intro = lines.filter((l) => !/^[-*#]/.test(l)).map((l) => this.inline(l)).join(' ')
+          return {
+            tag: x.tag_name,
+            version: String(x.tag_name).replace(/^v/, ''),
+            url: x.html_url,
+            date: x.published_at ? new Date(x.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '',
+            intro,
+            bullets: bullets.slice(0, 10),
+            more: Math.max(0, bullets.length - 10),
+          }
+        })
+        .filter((x) => x.bullets.length || x.intro)
+    } catch {
+      this.failed = true
+    }
+    this.loading = false
+  },
+}))
+
 Alpine.data('faq', () => ({
   open: null,
   toggle(id) { this.open = this.open === id ? null : id },
