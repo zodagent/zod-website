@@ -21,17 +21,26 @@ Beta, available by invitation. Proprietary (the repository currently carries MIT
   (OpenRouter by default, with free models; OpenAI, Anthropic, Google Gemini, Groq, Mistral, DeepSeek, xAI, Together, Ollama, LM Studio and
   more) plus Advanced for any other address. Anything that writes, deletes, installs or schedules asks first (Allow / Deny) unless Auto is on.
   Without a model, the chat says so and links to Settings.
-- **Search and dorks.** One bar over pages, connectors, tools, chats, routines, settings and every connector's records, with a filter
-  language (`in:routines`, `is:error`, `after:30d`, `limit:20`, `| do:pause`). If the words find nothing, the linked model is asked what was meant.
-- **Routines.** One page for everything Zod does on its own (`in:routines`). A routine is one thing: its **instructions** (a full markdown
-  editor), optional **exact steps** (lines in the Zod language, with a dry-run test that changes nothing), **when** it runs (by hand, once,
-  every few minutes or hours, at a time on chosen days, or when something happens) and the **tools** it may use (a searchable list).
-  **Ask Zod**, a box on the routine, builds or changes any part from a sentence; nothing is saved until Save. A routine is called by name:
-  `/its-name` or `@[Its title]`. A saved flow is a routine that has steps. The page also shows a month calendar and the latest runs. Runs are
-  durable: one cut off by a stop is reported, not repeated. Agents (roles with their own instructions and tools) are opened from Routines.
-- **Connectors.** How Zod reaches other things: MCP servers (a program Zod starts, or an address), each under an Allow / Deny policy. Zod is
-  also an MCP server at `/mcp` (reads are free, a change needs `confirm: true`, a remote caller is read-only). There is no plugin system.
-  Screens from a connector are meant to arrive as MCP Apps (not built yet).
+- **Search.** One bar over pages, connectors, chats, routines and settings, with a filter language (`in:routines`, `is:error`, `after:30d`,
+  `limit:20`). Any sentence of three words or more also gets an **Ask Zod to do this** row. If the words find nothing, the linked model is asked what was meant.
+- **Routines.** What Zod does on its own (`in:routines`). A routine is a goal, a script that runs with no model (so a run costs no tokens),
+  when it runs, and what it may do alone (grants you approve for that exact script). Zod makes them: you ask in a chat ("set me up…",
+  "make a routine that…", or a link to an agent, skill or workflow it should learn from), and its **live panel** opens beside the chat as it
+  works. The page has **Explore** (ideas; one click opens a chat where Zod makes it) and **Mine** (a switch each, a calendar and the latest
+  runs). Five routines come with Zod (morning briefing, health check, connector watch, routine doctor, weekly review) and five run by hand
+  with arguments. When a run fails Zod writes a lesson and suggests a fix you apply in one tap. Home shows **What's new for you**: the cards
+  those routines produce. Runs are durable: one cut off by a stop is reported, not repeated.
+- **Connectors.** MCP servers (a program Zod starts, or an address). **Explore** lists what Zod could connect (a click opens a chat where
+  Zod installs it) and the MCP registry; **Connected** has a switch each. Zod adds them when asked, headless or through the app's own
+  screens; each tool keeps an Allow / Ask / Off policy. The chat's side panel has a Connectors tab with every tool and what it did. Zod is
+  also an MCP server at `/mcp` (`capability_find`, `capability_do`, `script_run`, the routine tools; reads are free, a change needs
+  `confirm: true`, a remote caller is read-only). There is no plugin system.
+- **Soul.** Who Zod is, as small parts (identity, voice, values, care, initiative) on the Soul page. Zod composes them when asked
+  (including presets: Accountant, Coach, Researcher, Minimalist, Companion, Operator); you switch parts on or off. What is on goes into
+  its instructions in every chat.
+- **Slash commands and mentions.** `/setup`, `/routine`, `/connect`, `/learn`, `/fix`, `/soul`, `/status` start a sentence Zod carries
+  out; `/new`, `/clear`, `/resume`, `/rename`, `/export` manage the chat; `/routines`, `/connectors`, `/soul`, `/settings` go to pages;
+  `/its-name` runs a routine. `@[Title]` hands Zod a routine, connector, agent or chat.
 - **Operations and the system builder.** One screen over the append-only event ledger (events, entities, resources, obligations, plans,
   attention, system designs). The builder surveys what exists, writes a design, builds it in stages, verifies it and records what happened.
 - **Vaults.** Separate workspaces (title bar switcher), each with its own chats, settings, routines, agents and look.
@@ -43,11 +52,11 @@ Beta, available by invitation. Proprietary (the repository currently carries MIT
 
 ## What was removed (so old copy is wrong if it mentions these)
 
-- **Memory (Knowledge)**, with its notes, tools and pages. **Skills**: the ones people wrote became routines run by hand. **The plugin
+- **Memory (Knowledge)**, with its notes, tools and pages. **Skills** and **Flows** (the step language): routines with scripts took their place; the dork verbs, the Flows page and the step editor are gone. **The plugin
   system**: Zod's parts are part of Zod, and outside things are MCP servers. **The SDK** (`@zod/sdk`). **Hubs and the Library page.**
 - **Books** (accounting) lives in its own repository, `zodagent/books`. It used to load as a plugin; it can no longer, and the way to
   reach it is still being decided. Do not promise it on the site.
-- Zod's own page and UI-block language (`zod-ui`, `zod-page`) is obsolete; MCP Apps are the direction.
+- Zod's own page and UI-block language (`zod-ui`, `zod-page`) is obsolete; MCP Apps are the direction. Connectors and routines are no longer added or edited by hand: Zod does it when asked; people only switch them on or off.
 
 ## Stack and layout
 
