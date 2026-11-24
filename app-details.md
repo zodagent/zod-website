@@ -38,7 +38,8 @@ Beta, available by invitation. Proprietary (the repository currently carries MIT
 - **Soul.** Who Zod is, as small parts (identity, voice, values, care, initiative) on the Soul page. Zod composes them when asked
   (including presets: Accountant, Coach, Researcher, Minimalist, Companion, Operator); you switch parts on or off. What is on goes into
   its instructions in every chat.
-- **Slash commands and mentions.** `/setup`, `/routine`, `/connect`, `/learn`, `/fix`, `/soul`, `/status` start a sentence Zod carries
+- **Learn, set up, tour.** `/learn` puts a saved guide to the whole app in the chat, `/setup` checks this computer and walks you to a full setup for what you want to use Zod for, and `/tour` walks you around the real screens. All three answer at once with no model.
+- **Slash commands and mentions.** `/routine`, `/connect`, `/import`, `/fix`, `/soul`, `/status` start a sentence Zod carries
   out; `/new`, `/clear`, `/resume`, `/rename`, `/export` manage the chat; `/routines`, `/connectors`, `/soul`, `/settings` go to pages;
   `/its-name` runs a routine. `@[Title]` hands Zod a routine, connector, agent or chat.
 - **Operations and the system builder.** One screen over the append-only event ledger (events, entities, resources, obligations, plans,
