@@ -15,7 +15,7 @@
       </template>
       <a x-show="primary" x-cloak href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">All systems</a>
     </div>
-    <p class="text-xs text-theme-text-sec mt-v1" x-show="primary" x-cloak><span x-text="primary && primary.size"></span> · Version <span x-text="version"></span></p>
+    <p class="text-xs text-theme-text-sec mt-v1" x-show="primary" x-cloak><span x-text="primary && primary.label ? primary.label + ' · ' : ''"></span><span x-text="primary && primary.size"></span> · Version <span x-text="primary && primary.version"></span></p>
   </div>
 </section>
 
@@ -25,7 +25,7 @@
     <div class="text-left mb-v2 max-w-2xl">
       <h2 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Download Zod for desktop</h2>
       <p class="text-base leading-normal text-theme-text-sec text-pretty">
-        <span x-show="version" x-cloak>Version <span x-text="version"></span><span x-show="date"> · <span x-text="date"></span></span>. </span>One installer per system; the app then updates itself when it starts.
+        <span x-show="version" x-cloak>Latest version <span x-text="version"></span><span x-show="date"> · <span x-text="date"></span></span>. </span>One installer per system; the app then updates itself when it starts.
       </p>
     </div>
 
@@ -41,23 +41,29 @@
           <h3 class="text-lg font-semibold tracking-tight leading-snug mb-v0.5" x-text="it.name"></h3>
           <p class="text-sm text-theme-text-sec leading-relaxed grow mb-v1" x-text="it.note"></p>
           <div x-show="loading" class="h-[2.75rem] rounded-full bg-theme-card-03-hex animate-pulse" aria-hidden="true"></div>
-          <template x-if="!loading && it.url">
-            <div>
-              <a :href="it.url" class="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg"><i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i>Download <span class="opacity-70 ml-1" x-text="it.size"></span></a>
-              <p class="text-xs text-theme-text-sec mt-3 break-all text-center" x-text="it.file"></p>
-            </div>
-          </template>
-          <template x-if="!loading && !it.url && failed">
-            <a :href="releases" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">View on GitHub<i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a>
-          </template>
-          <template x-if="!loading && !it.url && !failed">
-            <span class="inline-flex w-full items-center justify-center rounded-full px-5 py-2.5 text-base font-normal leading-none border border-theme-border-01 text-theme-text-sec">Coming soon</span>
-          </template>
+          <div class="flex flex-col gap-3" x-show="!loading">
+            <template x-for="v in it.variants" :key="v.label">
+              <div>
+                <template x-if="v.url">
+                  <div>
+                    <a :href="v.url" class="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg"><i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i><span x-text="it.variants.length > 1 ? v.label : 'Download'"></span><span class="opacity-70" x-text="v.size"></span></a>
+                    <p class="text-xs text-theme-text-sec mt-2 text-center break-all"><span x-text="'v' + v.version"></span><span x-show="v.version !== version"> (latest for this system)</span> · <span x-text="v.file"></span></p>
+                  </div>
+                </template>
+                <template x-if="!v.url && failed">
+                  <a :href="releases" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex"><span x-text="v.label"></span><i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a>
+                </template>
+                <template x-if="!v.url && !failed">
+                  <span class="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none border border-theme-border-01 text-theme-text-sec"><span x-text="v.label"></span> · Not built yet</span>
+                </template>
+              </div>
+            </template>
+          </div>
         </div>
       </template>
     </div>
 
-    <p class="text-xs text-theme-text-sec mt-g1.5 max-w-prose">Builds come from the public <a class="text-accent underline" :href="releases" rel="noopener">zodagent/zod-releases</a> repository. Each system is added to a version when it has been built there, so a system can lag a few hours behind the others. You can also move Zod to a USB drive from Settings after installing.</p>
+    <p class="text-xs text-theme-text-sec mt-g1.5 max-w-prose">Builds come from the public <a class="text-accent underline" :href="releases" rel="noopener">zodagent/zod-releases</a> repository. Not every version includes every system, so each button gives the newest build available for that system. You can also move Zod to a USB drive from Settings after installing.</p>
   </div>
 </section>
 </div>

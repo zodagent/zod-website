@@ -111,41 +111,62 @@ Alpine.data('marketplace', () => ({
 // The desktop downloads (resources/download.html): the newest release on the public builds repo, one card per system. A system whose
 // app is not attached to the release yet says "Coming soon"; each one appears here the moment someone publishes it with `bun run release`.
 Alpine.data('download', () => ({
-  api: 'https://api.github.com/repos/zodagent/zod-releases/releases/latest',
+  api: 'https://api.github.com/repos/zodagent/zod-releases/releases?per_page=40',
   releases: 'https://github.com/zodagent/zod-releases/releases',
   version: '',
   date: '',
   loading: true,
   failed: false,
   mine: '',
-  get primary() {
-    return this.items.find((i) => i.id === this.mine && i.url) || null
-  },
+  // Many releases are incremental (one system only), so each variant is taken from the newest release that actually has its installer.
   items: [
-    { id: 'mac', name: 'macOS', icon: 'apple', note: 'Open the .dmg and drag Zod to Applications. The first time, right-click it and choose Open.', pick: [/\.dmg$/i] },
-    { id: 'win', name: 'Windows', icon: 'monitor', note: 'Run the installer. Choose this computer or a USB drive.', pick: [/\.exe$/i, /windows.*\.zip$/i, /win.*setup.*\.zip$/i] },
-    { id: 'linux', name: 'Linux', icon: 'terminal', note: 'Unpack it and run the installer inside (x64).', pick: [/linux.*installer\.tar\.gz$/i, /linux-x64-.*setup\.tar\.gz$/i] },
+    { id: 'mac', name: 'macOS', icon: 'apple', note: 'Open the .dmg and drag Zod to Applications. The first time, right-click it and choose Open.', variants: [
+      { label: 'Apple Silicon', pick: [/^ZodAgent-macos-arm64\.dmg$/i, /macos-arm64-ZodAgent\.dmg$/i] },
+      { label: 'Intel', pick: [/^ZodAgent-macos-x64\.dmg$/i, /macos-x64-ZodAgent\.dmg$/i] },
+    ] },
+    { id: 'win', name: 'Windows', icon: 'monitor', note: 'Run the installer. Choose this computer or a USB drive.', variants: [
+      { label: 'Windows x64', pick: [/^ZodAgent-Setup-.*\.exe$/i, /win-x64-ZodAgent-Setup\.zip$/i] },
+    ] },
+    { id: 'linux', name: 'Linux', icon: 'terminal', note: 'Unpack it and run the installer inside.', variants: [
+      { label: 'x64', pick: [/linux-x64-installer\.tar\.gz$/i, /linux-x64-ZodAgent-Setup\.tar\.gz$/i] },
+      { label: 'ARM64', pick: [/linux-arm64-installer\.tar\.gz$/i, /linux-arm64-ZodAgent-Setup\.tar\.gz$/i] },
+    ] },
   ],
+  get primary() {
+    const it = this.items.find((i) => i.id === this.mine)
+    const v = it && it.variants.find((x) => x.url)
+    return v ? { name: it.name, label: it.variants.length > 1 ? v.label : '', url: v.url, size: v.size, version: v.version } : null
+  },
   async init() {
     const ua = `${navigator.userAgent} ${navigator.platform}`
     this.mine = /Mac/i.test(ua) && !/iPhone|iPad/i.test(ua) ? 'mac' : /Win/i.test(ua) ? 'win' : /Linux|X11/i.test(ua) && !/Android/i.test(ua) ? 'linux' : ''
     try {
       const r = await fetch(this.api, { headers: { accept: 'application/vnd.github+json' } })
       if (!r.ok) throw new Error(String(r.status))
-      const j = await r.json()
-      this.version = String(j.tag_name || '').replace(/^v/, '')
-      this.date = j.published_at ? new Date(j.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''
-      const assets = j.assets || []
+      const rows = (await r.json()).filter((x) => !x.draft && !x.prerelease)
+      if (!rows.length) throw new Error('none')
+      const fmt = (d) => (d ? new Date(d).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '')
+      this.version = String(rows[0].tag_name || '').replace(/^v/, '')
+      this.date = fmt(rows[0].published_at)
       const mb = (n) => `${Math.max(1, Math.round(n / 1048576))} MB`
       for (const it of this.items) {
-        let hit = null
-        for (const re of it.pick) {
-          hit = assets.find((a) => re.test(a.name))
-          if (hit) break
+        for (const v of it.variants) {
+          v.url = ''
+          for (const rel of rows) {
+            let hit = null
+            for (const re of v.pick) {
+              hit = (rel.assets || []).find((a) => re.test(a.name))
+              if (hit) break
+            }
+            if (hit) {
+              v.url = hit.browser_download_url
+              v.file = hit.name
+              v.size = mb(hit.size)
+              v.version = String(rel.tag_name || '').replace(/^v/, '')
+              break
+            }
+          }
         }
-        it.url = hit ? hit.browser_download_url : ''
-        it.file = hit ? hit.name : ''
-        it.size = hit ? mb(hit.size) : ''
       }
     } catch {
       this.failed = true
