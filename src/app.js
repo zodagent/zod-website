@@ -118,6 +118,9 @@ Alpine.data('download', () => ({
   loading: true,
   failed: false,
   mine: '',
+  get primary() {
+    return this.items.find((i) => i.id === this.mine && i.url) || null
+  },
   items: [
     { id: 'mac', name: 'macOS', icon: 'apple', note: 'Open the .dmg and drag Zod to Applications. The first time, right-click it and choose Open.', pick: [/\.dmg$/i] },
     { id: 'win', name: 'Windows', icon: 'monitor', note: 'Run the installer. Choose this computer or a USB drive.', pick: [/\.exe$/i, /windows.*\.zip$/i, /win.*setup.*\.zip$/i] },

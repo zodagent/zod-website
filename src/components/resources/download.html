@@ -1,18 +1,26 @@
 <main id="main">
 
+<div x-data="download">
 <!-- Hero -->
-<section class="px-g2 py-[2.5rem] bg-theme-bg text-theme-text">
+<section class="px-g2 pt-10 pb-4 bg-theme-bg text-theme-text">
   <div class="w-full mx-auto px-g2 max-w-[720px] text-center">
-    <h1 class="text-2xl md:text-5xl font-normal tracking-tight leading-[1.15] mb-v1 mt-v3">Get Zod</h1>
-    <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">Zod is in beta. Download the desktop app for your system below; it updates itself each time it starts.</p>
-    <div class="flex flex-wrap gap-g1.5 justify-center">
-      <a href="#download" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" >Download for desktop<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+    <h1 class="text-2xl md:text-5xl font-normal tracking-tight leading-[1.15] mb-4 mt-6">Get Zod</h1>
+    <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">Zod is in beta. Download the desktop app for your system; it updates itself each time it starts.</p>
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-xs sm:max-w-none mx-auto">
+      <template x-if="primary">
+        <a :href="primary.url" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg"><i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i>Download for <span x-text="primary.name"></span></a>
+      </template>
+      <template x-if="!primary">
+        <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Choose your system<i data-lucide="arrow-down" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+      </template>
+      <a x-show="primary" x-cloak href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">All systems</a>
     </div>
+    <p class="text-xs text-theme-text-sec mt-v1" x-show="primary" x-cloak><span x-text="primary && primary.size"></span> · Version <span x-text="version"></span></p>
   </div>
 </section>
 
 <!-- Desktop downloads: read live from the public builds repo (zodagent/zod-releases) -->
-<section id="download" class="px-g2 py-[4.2rem] bg-theme-bg text-theme-text" x-data="download">
+<section id="download" class="px-g2 py-12 md:py-[4.2rem] bg-theme-bg text-theme-text scroll-mt-20">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v2 max-w-2xl">
       <h2 class="text-2xl md:text-4xl font-normal tracking-tight leading-[1.15] text-balance mb-v1">Download Zod for desktop</h2>
@@ -21,59 +29,63 @@
       </p>
     </div>
 
-    <p x-show="loading" class="text-sm text-theme-text-sec">Looking up the latest version…</p>
-    <p x-show="failed" x-cloak class="text-sm text-theme-text-sec">The downloads could not be loaded. Every version is on <a class="text-accent" :href="releases" rel="noopener">GitHub</a>.</p>
+    <p x-show="failed" x-cloak class="text-sm text-theme-text-sec mb-g1.5" role="status">The latest version could not be looked up right now. Every version is on <a class="text-accent underline" :href="releases" rel="noopener">GitHub</a>.</p>
 
     <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-3 items-stretch">
       <template x-for="it in items" :key="it.id">
-        <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col" :class="it.id === mine && 'ring-1 ring-accent'">
-          <div class="flex items-center justify-between mb-g1">
+        <div class="bg-theme-card-hex rounded-lg p-6 md:p-8 flex flex-col" :class="it.id === mine && 'ring-1 ring-accent'">
+          <div class="flex items-center justify-between mb-5">
             <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center"><i :data-lucide="it.icon" class="w-5 h-5 text-accent" aria-hidden="true"></i></div>
             <span x-show="it.id === mine" x-cloak class="inline-flex text-xs font-medium px-2 py-0.5 rounded-full bg-theme-card-03-hex text-accent">Your system</span>
           </div>
           <h3 class="text-lg font-semibold tracking-tight leading-snug mb-v0.5" x-text="it.name"></h3>
           <p class="text-sm text-theme-text-sec leading-relaxed grow mb-v1" x-text="it.note"></p>
-          <template x-if="it.url">
+          <div x-show="loading" class="h-[2.75rem] rounded-full bg-theme-card-03-hex animate-pulse" aria-hidden="true"></div>
+          <template x-if="!loading && it.url">
             <div>
-              <a :href="it.url" class="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg">Download <span x-text="it.size"></span></a>
-              <p class="text-xs text-theme-text-sec mt-v0.5 break-all" x-text="it.file"></p>
+              <a :href="it.url" class="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg"><i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i>Download <span class="opacity-70 ml-1" x-text="it.size"></span></a>
+              <p class="text-xs text-theme-text-sec mt-3 break-all text-center" x-text="it.file"></p>
             </div>
           </template>
-          <template x-if="!it.url && !loading">
+          <template x-if="!loading && !it.url && failed">
+            <a :href="releases" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex">View on GitHub<i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a>
+          </template>
+          <template x-if="!loading && !it.url && !failed">
             <span class="inline-flex w-full items-center justify-center rounded-full px-5 py-2.5 text-base font-normal leading-none border border-theme-border-01 text-theme-text-sec">Coming soon</span>
           </template>
         </div>
       </template>
     </div>
 
-    <p class="text-xs text-theme-text-sec mt-g1.5 max-w-prose">Builds come from the public <a class="text-accent" :href="releases" rel="noopener">zodagent/zod-releases</a> repository. Each system is added to a version when it has been built there, so a system can lag a few hours behind the others. You can also move Zod to a USB drive from Settings after installing.</p>
+    <p class="text-xs text-theme-text-sec mt-g1.5 max-w-prose">Builds come from the public <a class="text-accent underline" :href="releases" rel="noopener">zodagent/zod-releases</a> repository. Each system is added to a version when it has been built there, so a system can lag a few hours behind the others. You can also move Zod to a USB drive from Settings after installing.</p>
   </div>
 </section>
+</div>
 
 <!-- First run -->
-<section class="px-g2 py-[4.2rem] bg-theme-card text-theme-text">
+<section class="px-g2 py-12 md:py-[4.2rem] bg-theme-card text-theme-text">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-left mb-v2">
       <h2 class="text-xl font-semibold tracking-tight leading-snug text-balance">Your first run</h2>
       <p class="text-base text-theme-text-sec text-pretty mt-v0.5">Getting started takes a few minutes.</p>
     </div>
     <div class="grid gap-g1.5 grid-cols-1 md:grid-cols-3 items-stretch">
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-g1">
+      <div class="bg-theme-bg border border-theme-border-01 rounded-lg p-6 md:p-8 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-5">
           <i data-lucide="monitor" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5">1. Download and install</h3>
         <p class="text-sm text-theme-text-sec leading-relaxed">Pick your system above and run the installer. Prefer help? Book a demo and we will set it up with you.</p>
       </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-g1">
+      <div class="bg-theme-bg border border-theme-border-01 rounded-lg p-6 md:p-8 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-5">
           <i data-lucide="settings" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5">2. Link a model</h3>
         <p class="text-sm text-theme-text-sec leading-relaxed">Open Settings, then Model provider, add an OpenAI-compatible API (OpenAI, OpenRouter, Ollama, LM Studio and more), press Test connection and pick a model.</p>
       </div>
-      <div class="bg-theme-card-hex rounded-sm p-g1.75 flex flex-col">
-        <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-g1">
+      <div class="bg-theme-bg border border-theme-border-01 rounded-lg p-6 md:p-8 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-theme-card border border-theme-border-02 flex items-center justify-center mb-5">
           <i data-lucide="message-square" class="w-5 h-5 text-accent" aria-hidden="true"></i>
         </div>
         <h3 class="text-base font-semibold mb-v0.5">3. Chat, then make it yours</h3>
@@ -87,16 +99,16 @@
 </section>
 
 <!-- Final CTA -->
-<section class="px-g2 bg-theme-bg text-theme-text py-28 md:py-52">
+<section class="px-g2 bg-theme-bg text-theme-text py-20 md:py-40">
   <div class="w-full mx-auto max-w-[1300px] px-g2">
     <div class="text-center mx-auto max-w-prose-medium-wide">
       <h2 class="text-4xl md:text-7xl font-normal tracking-tighter text-balance mx-auto mb-v2">Make it yours.</h2>
       <p class="text-base leading-normal text-theme-text-sec text-pretty mb-v2 max-w-2xl mx-auto">No account. Link a model and your agent is ready, on your desktop.</p>
-      <div class="flex justify-center gap-x-g3 items-center flex-wrap">
+      <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 items-stretch sm:items-center max-w-xs sm:max-w-none mx-auto">
         <div>
-          <a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
+          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-button-bg text-theme-button-text border border-theme-button-bg hover:bg-theme-button-hover-bg hover:border-theme-button-hover-bg" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a>
         </div>
-        <div class="hidden md:block"><a class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="/book-a-demo">Book a demo<i data-lucide="arrow-right" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
+        <div><a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-base font-normal leading-none whitespace-nowrap no-underline cursor-pointer transition-all duration-150 ease-out bg-theme-card-03-hex text-theme-text border border-theme-border-01 hover:bg-theme-card-04-hex" href="#download">Download Zod<i data-lucide="arrow-up" class="w-4 h-4 ml-1.5" aria-hidden="true"></i></a></div>
       </div>
     </div>
   </div>
